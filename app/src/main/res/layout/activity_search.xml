@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="searchViewModel"
+            type="com.xpns.ui.search.SearchViewModel" />
+
+        <variable
+            name="eventHandler"
+            type="com.xpns.ui.search.SearchEventHandler" />
+
+        <variable
+            name="query"
+            type="String" />
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        style="@style/match"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.search.SearchActivity">
+
+        <android.support.design.widget.AppBarLayout
+            style="@style/block"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            style="@style/match"
+            android:paddingStart="@dimen/zero_horizontal_margin_big_activity"
+            android:paddingEnd="@dimen/zero_horizontal_margin_big_activity"
+            android:visibility="@{(searchViewModel.isError||searchViewModel.loader) ? View.GONE: View.VISIBLE}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <LinearLayout
+            style="@style/block"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{searchViewModel.isError ? View.VISIBLE: View.GONE}">
+
+            <TextView
+                android:id="@+id/text_view_error_msg"
+                style="@style/wrap"
+                android:layout_gravity="center_horizontal"
+                android:text="@{searchViewModel.errorMessage}"
+                android:textAlignment="center"
+                tools:text="No Data has loaded" />
+
+            <Button
+                android:id="@+id/retry"
+                style="@style/wrap"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:onClick="@{(view) -> eventHandler.onRetrySearch(searchViewModel,query)}"
+                android:text="@string/retry" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:visibility="@{searchViewModel.loader ? View.VISIBLE: View.GONE}"
+            tools:visibility="visible" />
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>
