@@ -6,28 +6,35 @@ ext {
     targetSdkVersion = 28
     // Update to date for 28/12/2018
     buildToolsVersion = "28.0.3"
-    def versionSupportLib = '28.0.0'
-    def versionArchComp = '1.1.1'
-    def versionConstraintLayout = '1.1.3'
-    def versionDagger = '2.15'
+    def versionAndroidXLifecycle = '2.0.0'
+    def versionAndroidXCardView  = "1.0.0"
+    def versionAndroidXConstraintLayout  = "1.1.3"
+    def versionAndroidXAnnotation = "1.0.1"
+    def versionAndroidXRecyclerView = "1.0.0"
+    def versionAndroidXPaging  = "2.0.0"
+    def versionAndroidXAppcompat  = "1.0.2"
+    def versionMaterial  = "1.0.0"
+    def versionDagger = '2.16'
     def versionRetrofit = '2.5.0'
     def versionOkhttp = '3.12.1'
     def versionRxJava = '2.2.4'
     def versionRxAndroid = '2.1.0'
     def versionGlide = '4.8.0'
-    def pagingVersion = "1.0.1"
+  
+
+    
+
 
     def androidLibs = [kotlin             : [group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk7', version: kotlinVersion],
-                       lifecycleExtensions: [group: 'android.arch.lifecycle', name: 'extensions', version: versionArchComp],
-                       lifecycleCompiler  : [group: 'android.arch.lifecycle', name: 'compiler', version: versionArchComp],
-                       pagingRuntime      : [group: 'android.arch.paging', name: 'runtime', version: pagingVersion],
-                       appCompat          : [group: 'com.android.support', name: 'appcompat-v7', version: versionSupportLib],
-                       design             : [group: 'com.android.support', name: 'design', version: versionSupportLib],
-                       cardview           : [group: 'com.android.support', name: 'cardview-v7', version: versionSupportLib],
-                       constraintLayout   : [group: 'com.android.support.constraint', name: 'constraint-layout', version: versionConstraintLayout],
-                       supportannotations : [group: 'com.android.support', name: 'support-annotations', version: versionSupportLib],
-                       recyclerviewv7     : [group: 'com.android.support', name: 'recyclerview-v7', version: versionSupportLib],
-                       databindingCompiler: [group: 'com.android.databinding', name: 'compiler', version: gradleVersion]]
+                       lifecycleExtensions: [group: 'androidx.lifecycle', name: 'lifecycle-extensions', version: versionAndroidXLifecycle],
+                       lifecycleCompiler  : [group: 'androidx.lifecycle', name: 'lifecycle-compiler', version: versionAndroidXLifecycle],
+                       pagingRuntime      : [group: 'androidx.paging', name: 'paging-runtime', version: versionAndroidXPaging],
+                       appCompat          : [group: 'androidx.appcompat', name: 'appcompat', version: versionAndroidXAppcompat],
+                       material             : [group: 'com.google.android.material', name: 'material', version: versionMaterial],
+                       cardview           : [group: 'androidx.cardview', name: 'cardview', version: versionAndroidXCardView],
+                       constraintLayout   : [group: 'androidx.constraintlayout', name: 'constraintlayout', version: versionAndroidXConstraintLayout],
+                       supportannotations : [group: 'androidx.annotation', name: 'annotation', version: versionAndroidXAnnotation],
+                       recyclerview     : [group: 'androidx.recyclerview', name: 'recyclerview', version: versionAndroidXRecyclerView]]
 
     def libs = [dagger                   : [group: 'com.google.dagger', name: 'dagger', version: versionDagger],
                 daggerCompiler           : [group: 'com.google.dagger', name: 'dagger-compiler', version: versionDagger],
@@ -49,11 +56,11 @@ ext {
                        [configuration: "kapt", dependency: androidLibs.lifecycleCompiler],
                        [configuration: "implementation", dependency: androidLibs.pagingRuntime],
                        [configuration: "implementation", dependency: androidLibs.appCompat],
-                       [configuration: "implementation", dependency: androidLibs.design],
+                       [configuration: "implementation", dependency: androidLibs.material],
                        [configuration: "implementation", dependency: androidLibs.cardview],
                        [configuration: "implementation", dependency: androidLibs.constraintLayout],
                        [configuration: "implementation", dependency: androidLibs.supportannotations],
-                       [configuration: "implementation", dependency: androidLibs.recyclerviewv7],
+                       [configuration: "implementation", dependency: androidLibs.recyclerview],
                        [configuration: "implementation", dependency: libs.dagger],
                        [configuration: "implementation", dependency: libs.daggerAndroidSupport],
                        [configuration: "kapt", dependency: libs.daggerCompiler],

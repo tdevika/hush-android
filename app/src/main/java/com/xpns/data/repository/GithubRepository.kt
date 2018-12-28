@@ -1,6 +1,6 @@
 package com.xpns.data.repository
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import com.xpns.data.model.RepositoriesResponse
 import com.xpns.data.model.Subscribers
 import com.xpns.data.services.ApiService

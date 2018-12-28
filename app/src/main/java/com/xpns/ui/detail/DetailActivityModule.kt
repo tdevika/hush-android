@@ -1,6 +1,6 @@
 package com.xpns.ui.detail
 
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.xpns.injection.module.BaseActivityModule
 import dagger.Module
 import dagger.Provides
@@ -18,7 +18,7 @@ class DetailActivityModule {
     }
 
     @Provides
-    fun provideLinearLayoutManager(activity: DetailActivity): LinearLayoutManager {
-        return LinearLayoutManager(activity)
+    fun provideLinearLayoutManager(activity: DetailActivity): androidx.recyclerview.widget.LinearLayoutManager {
+        return androidx.recyclerview.widget.LinearLayoutManager(activity)
     }
 }

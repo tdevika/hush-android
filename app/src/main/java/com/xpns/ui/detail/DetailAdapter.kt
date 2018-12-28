@@ -1,15 +1,14 @@
 package com.xpns.ui.detail
 
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
-import android.support.v7.widget.RecyclerView
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.xpns.R
 import com.xpns.data.model.Subscribers
 import com.xpns.databinding.ItemDetailBinding
 
-class DetailAdapter(private var subscribers: List<Subscribers>) : RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
+class DetailAdapter(private var subscribers: List<Subscribers>) : androidx.recyclerview.widget.RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
 
     fun updateData(repositories: List<Subscribers>) {
         this.subscribers = repositories
@@ -31,9 +30,9 @@ class DetailAdapter(private var subscribers: List<Subscribers>) : RecyclerView.A
         return subscribers.size
     }
 
-    inner class DetailViewHolder(private val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class DetailViewHolder(private val binding: ItemDetailBinding) : androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {
         fun bind(subscribers: Subscribers) {
-          //  binding.subscriberModel = subscribers
+            binding.subscriberModel = subscribers
             binding.executePendingBindings()
         }
     }

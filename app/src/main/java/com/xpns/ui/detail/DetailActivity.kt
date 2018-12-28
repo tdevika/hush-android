@@ -1,8 +1,8 @@
 package com.xpns.ui.detail
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.xpns.R
 import com.xpns.data.model.Subscribers
 import com.xpns.ui.base.BaseActivity
@@ -18,7 +18,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding, DetailViewModel>() {
     lateinit var detailAdapter: DetailAdapter
 
     @Inject
-    lateinit var linearLayoutManager: LinearLayoutManager
+    lateinit var linearLayoutManager: androidx.recyclerview.widget.LinearLayoutManager
 
     @Inject
     lateinit var eventHandler: DetailEventHandler

@@ -1,6 +1,6 @@
 package com.xpns.ui.detail
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import com.xpns.data.model.Subscribers
 import com.xpns.data.repository.GithubRepository
 import com.xpns.injection.scope.ActivityScope

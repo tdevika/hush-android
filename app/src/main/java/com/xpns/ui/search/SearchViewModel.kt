@@ -1,6 +1,6 @@
 package com.xpns.ui.search
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import com.xpns.data.model.RepositoriesResponse
 import com.xpns.data.repository.GithubRepository
 import com.xpns.injection.scope.ActivityScope

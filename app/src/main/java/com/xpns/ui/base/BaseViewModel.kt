@@ -1,8 +1,8 @@
 package com.xpns.ui.base
 
-import android.arch.lifecycle.LifecycleObserver
-import android.arch.lifecycle.ViewModel
-import android.databinding.ObservableField
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.ViewModel
+import androidx.databinding.ObservableField
 
 abstract class BaseViewModel : ViewModel(), LifecycleObserver {
 

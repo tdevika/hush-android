@@ -1,16 +1,15 @@
 package com.xpns.ui.search
 
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
-import android.support.v7.widget.RecyclerView
+import androidx.databinding.DataBindingUtil
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.xpns.R
 import com.xpns.data.model.Item
+import com.xpns.databinding.ItemSearchBinding
 
 class SearchAdapter(private var repositories: List<Item>,
-                    private val eventHandler: SearchEventHandler) : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
+                    private val eventHandler: SearchEventHandler) : androidx.recyclerview.widget.RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
     fun updateData(repositories: List<Item>) {
         Log.d("=====", "===" + repositories.size)
@@ -19,7 +18,7 @@ class SearchAdapter(private var repositories: List<Item>,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
-        val bindings: ViewDataBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+        val bindings: ItemSearchBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
                 R.layout.item_search, parent, false)
         return SearchViewHolder(bindings)
     }
@@ -33,10 +32,10 @@ class SearchAdapter(private var repositories: List<Item>,
         return repositories.size
     }
 
-    inner class SearchViewHolder(private val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class SearchViewHolder(private val binding: ItemSearchBinding) : androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {
         fun bind(repository: Item, eventHandler: SearchEventHandler) {
-//            binding.repositoryModel = repository
-//            binding.eventHandler = eventHandler
+            binding.repositoryModel = repository
+            binding.eventHandler = eventHandler
             binding.executePendingBindings()
         }
     }

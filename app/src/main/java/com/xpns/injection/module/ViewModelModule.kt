@@ -1,7 +1,7 @@
 package com.xpns.injection.module
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.xpns.injection.scope.ViewModelScope
 import com.xpns.ui.detail.DetailViewModel
 import com.xpns.ui.search.SearchViewModel
