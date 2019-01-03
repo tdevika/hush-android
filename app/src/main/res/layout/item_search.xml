@@ -1,75 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools">
 
     <data>
 
-        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.xpns.ui.search.SearchViewModel" />
 
         <variable
-            name="repositoryModel"
-            type="com.xpns.data.model.Item" />
+            name="category"
+            type="String" />
     </data>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_item_recycler_view"
-        android:layout_width="match_parent"
+    <com.google.android.material.chip.Chip
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/card_margin_horizontal_big_activity"
-        android:layout_marginTop="@dimen/card_margin_vertical_big_activity"
-        android:layout_marginEnd="@dimen/card_margin_horizontal_big_activity"
-        android:layout_marginBottom="@dimen/card_margin_vertical_big_activity"
-        android:background="@color/white"
+        android:checkable="true"
+        android:text="@{category}"
         android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
-        card_view:cardElevation="@dimen/card_recycler_elevation">
+        android:textAppearance="?android:attr/textAppearance"
+        app:chipBackgroundColor="@color/colorPrimaryLight" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/text_margin">
 
-            <ImageView
-                android:id="@+id/avatar"
-                android:layout_width="@dimen/dp56"
-                android:layout_height="@dimen/dp56"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="@dimen/text_margin"
-                android:background="@drawable/round"
-                bind:circleCrop="@{true}"
-                bind:imageUrl="@{repositoryModel.owner.avatarUrl}" />
+    <!--<androidx.cardview.widget.CardView-->
+        <!--android:id="@+id/card_view_item_recycler_view"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:clickable="true"-->
+        <!--android:focusable="true"-->
+        <!--android:foreground="?attr/selectableItemBackground"-->
+        <!--android:onClick="@{() -> viewModel.onCategoryItemClick(category)}"-->
+        <!--card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"-->
+        <!--card_view:cardElevation="@dimen/card_recycler_elevation">-->
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/avatar"
-                android:text="@{repositoryModel.name??` `}"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+        <!--<RelativeLayout-->
+            <!--android:layout_width="@dimen/dp86"-->
+            <!--android:layout_height="@dimen/dp86">-->
 
-            <TextView
-                android:id="@+id/desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/name"
-                android:layout_marginTop="@dimen/text_margin_very_small"
-                android:layout_toEndOf="@id/avatar"
-                android:text="@{repositoryModel.description??` `}" />
+            <!--<androidx.appcompat.widget.AppCompatImageView-->
+                <!--android:id="@+id/category_icon"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:padding="@dimen/dp16"-->
+                <!--android:src="@drawable/ic_account" />-->
 
-            <TextView
-                android:id="@+id/forks"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/desc"
-                android:layout_marginTop="@dimen/text_margin_very_small"
-                android:layout_toEndOf="@id/avatar"
-                android:drawableStart="@drawable/ic_repo_forked"
-                android:text="@{Integer.toString(repositoryModel.forksCount)??` `}" />
-
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+          <!---->
+            <!--<androidx.appcompat.widget.AppCompatTextView-->
+                <!--android:id="@+id/category_name"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/category_icon"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:text="@{category}"-->
+                <!--android:textSize="12sp" />-->
+        <!--</RelativeLayout>-->
+    <!--</androidx.cardview.widget.CardView>-->
 </layout>

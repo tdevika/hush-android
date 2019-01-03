@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -8,42 +9,73 @@
         <variable
             name="viewModel"
             type="com.xpns.ui.search.SearchViewModel" />
+
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:padding="24dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="24dp">
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/amount"
+        <LinearLayout
+            android:id="@+id/amount_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:hint="@string/hint_amount"
-            android:inputType="number"
-            android:gravity="center"
-            android:padding="24dp"
-            android:paddingBottom="16dp"
-            android:text="@={viewModel.amount}"
-            android:textSize="48sp" />
+            android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/category"
-            android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/currency"
+                android:textSize="36sp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="start"
+                android:hint="@string/hint_amount"
+                android:inputType="numberDecimal"
+                android:padding="24dp"
+                android:paddingBottom="16dp"
+                android:text="@={viewModel.amount}"
+                android:textSize="48sp" />
+
+        </LinearLayout>
+
+        <!--<androidx.recyclerview.widget.RecyclerView-->
+        <!--android:id="@+id/rv_category"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/amount_container"/>-->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/amount"
-            android:layout_centerHorizontal="true"
-            android:padding="8dp"
-            android:entries="@array/categories"
-            android:selectedItemPosition="@={viewModel.categoryPosition}" />
+            android:layout_below="@+id/amount_container"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:clipToPadding="false"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:scrollbars="none">
+
+            <com.xpns.utils.CustomChipGroup
+                android:id="@+id/cg_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+        </HorizontalScrollView>
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:onClick="@{() -> viewModel.onSubmit()}"
             android:text="@string/submit" />
     </RelativeLayout>

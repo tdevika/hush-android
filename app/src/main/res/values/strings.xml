@@ -7,7 +7,8 @@
     <string name="repo_name">Repository Name &#160;</string>
     <string name="empty_search_result">No results found</string>
     <string name="title_activity_main2">Main2Activity</string>
-    <string name="hint_amount">€ 0.00</string>
+    <string name="hint_amount">0.00</string>
+    <string name="currency">€</string>
     <string name="submit">Submit</string>
     <string-array name="categories">
         <item>Food Drinks</item>

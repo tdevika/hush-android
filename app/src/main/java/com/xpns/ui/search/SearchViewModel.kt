@@ -10,11 +10,14 @@ import javax.inject.Inject
 @ActivityScope
 class SearchViewModel @Inject constructor(private val githubRepository: GithubRepository) : BaseViewModel() {
     var amount: ObservableField<String> = ObservableField()
-    var categoryPosition: ObservableField<Int> = ObservableField()
-    var category = arrayOf("Food Drinks", "Health/medical", "Clothes shoes", "Transportation", "Gifts","Utilities","Travel","Debt","Other","Housing","Investments")
+    var category: String = ""
+
+    fun onCategoryItemClick(item: String) {
+        category = item
+    }
 
     fun onSubmit() {
-        githubRepository.saveExpens(amount.get()!!,category[categoryPosition.get()!!])
+        githubRepository.saveExpens(amount.get()!!, category)
     }
 }
 
