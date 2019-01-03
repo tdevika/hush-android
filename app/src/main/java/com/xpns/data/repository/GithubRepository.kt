@@ -36,4 +36,12 @@ class GithubRepository @Inject constructor(private val apiService: ApiService,
                 }))
     }
 
+    fun saveExpens(amount: String, expenseCategory: String) {
+        disposableProvider.get().add(apiService.saveExpens(amount,expenseCategory)
+                .onBackground()
+                .subscribe({ response ->
+                }, {
+                }))
+    }
+
 }

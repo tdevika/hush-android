@@ -47,5 +47,6 @@
     <dimen name="dp8">8dp</dimen>
     <dimen name="dp16">16dp</dimen>
     <dimen name="dp60">60dp</dimen>
+    <dimen name="mb_corner_radius_2">2dp</dimen>
 
 </resources>

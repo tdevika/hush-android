@@ -8,10 +8,6 @@
         <import type="android.view.View" />
 
         <variable
-            name="eventHandler"
-            type="com.xpns.ui.search.SearchEventHandler" />
-
-        <variable
             name="repositoryModel"
             type="com.xpns.data.model.Item" />
     </data>
@@ -28,7 +24,6 @@
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
-        android:onClick="@{(view) -> eventHandler.onItemClick(repositoryModel)}"
         card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
         card_view:cardElevation="@dimen/card_recycler_elevation">
 

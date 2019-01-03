@@ -1,82 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
         <import type="android.view.View" />
 
         <variable
-            name="searchViewModel"
+            name="viewModel"
             type="com.xpns.ui.search.SearchViewModel" />
-
-        <variable
-            name="eventHandler"
-            type="com.xpns.ui.search.SearchEventHandler" />
-
-        <variable
-            name="query"
-            type="String" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        style="@style/match"
-        android:fitsSystemWindows="true"
-        tools:context=".ui.search.SearchActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="24dp"
+        android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-            style="@style/block"
-            android:theme="@style/AppTheme.AppBarOverlay">
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/hint_amount"
+            android:inputType="number"
+            android:gravity="center"
+            android:padding="24dp"
+            android:paddingBottom="16dp"
+            android:text="@={viewModel.amount}"
+            android:textSize="48sp" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|enterAlways" />
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/amount"
+            android:layout_centerHorizontal="true"
+            android:padding="8dp"
+            android:entries="@array/categories"
+            android:selectedItemPosition="@={viewModel.categoryPosition}" />
 
-        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:onClick="@{() -> viewModel.onSubmit()}"
+            android:text="@string/submit" />
+    </RelativeLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            style="@style/match"
-            android:paddingStart="@dimen/zero_horizontal_margin_big_activity"
-            android:paddingEnd="@dimen/zero_horizontal_margin_big_activity"
-            android:visibility="@{(searchViewModel.isError||searchViewModel.loader) ? View.GONE: View.VISIBLE}"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-        <LinearLayout
-            style="@style/block"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            android:visibility="@{searchViewModel.isError ? View.VISIBLE: View.GONE}">
-
-            <TextView
-                android:id="@+id/text_view_error_msg"
-                style="@style/wrap"
-                android:layout_gravity="center_horizontal"
-                android:text="@{searchViewModel.errorMessage}"
-                android:textAlignment="center"
-                tools:text="No Data has loaded" />
-
-            <Button
-                android:id="@+id/retry"
-                style="@style/wrap"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="8dp"
-                android:onClick="@{(view) -> eventHandler.onRetrySearch(searchViewModel,query)}"
-                android:text="@string/retry" />
-        </LinearLayout>
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            style="@style/Widget.AppCompat.ProgressBar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:visibility="@{searchViewModel.loader ? View.VISIBLE: View.GONE}"
-            tools:visibility="visible" />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

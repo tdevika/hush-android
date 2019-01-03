@@ -7,4 +7,19 @@
     <string name="repo_name">Repository Name &#160;</string>
     <string name="empty_search_result">No results found</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="hint_amount">€ 0.00</string>
+    <string name="submit">Submit</string>
+    <string-array name="categories">
+        <item>Food Drinks</item>
+        <item>Health/medical</item>
+        <item> Clothes shoes</item>
+        <item>Transportation</item>
+        <item>Gifts</item>
+        <item>Utilities</item>
+        <item>Travel</item>
+        <item>Debt</item>
+        <item>Other</item>
+        <item>Housing</item>
+        <item>Investments</item>
+    </string-array>
 </resources>

@@ -1,6 +1,5 @@
 package com.xpns.ui.detail
 
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.xpns.injection.module.BaseActivityModule
 import dagger.Module
 import dagger.Provides

@@ -1,29 +1,21 @@
 package com.xpns.ui.search
 
-import androidx.lifecycle.MutableLiveData
-import com.xpns.data.model.RepositoriesResponse
+import androidx.databinding.ObservableField
 import com.xpns.data.repository.GithubRepository
 import com.xpns.injection.scope.ActivityScope
 import com.xpns.ui.base.BaseViewModel
-import com.xpns.utils.Constants
-import com.xpns.utils.DataWrapper
 import javax.inject.Inject
+
 
 @ActivityScope
 class SearchViewModel @Inject constructor(private val githubRepository: GithubRepository) : BaseViewModel() {
-    var repositoriesLiveData = MutableLiveData<DataWrapper<RepositoriesResponse>>()
+    var amount: ObservableField<String> = ObservableField()
+    var categoryPosition: ObservableField<Int> = ObservableField()
+    var category = arrayOf("Food Drinks", "Health/medical", "Clothes shoes", "Transportation", "Gifts","Utilities","Travel","Debt","Other","Housing","Investments")
 
-    fun searchRepository(query: String) {
-        setErrorMessage(false, Constants.EMPTY_MESSAGE)
-        displayLoader(true)
-        githubRepository.searchRepository(query, repositoriesLiveData)
+    fun onSubmit() {
+        githubRepository.saveExpens(amount.get()!!,category[categoryPosition.get()!!])
     }
-
-    override fun onCleared() {
-        githubRepository.dispose()
-        super.onCleared()
-    }
-
 }
 
 
