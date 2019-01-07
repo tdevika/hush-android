@@ -17,11 +17,6 @@ abstract class ActivityBuilderModule {
     @ContributesAndroidInjector(
             modules = [(SearchActivityModule::class)])
     internal abstract fun bindSearchActivity(): SearchActivity
-
-    @ActivityScope
-    @ContributesAndroidInjector(
-            modules = [(DetailActivityModule::class)])
-    internal abstract fun bindDetailActivity(): DetailActivity
 }
 
 

@@ -18,11 +18,6 @@ abstract class ViewModelModule {
     abstract fun bindSearchViewModel(searchViewModel: SearchViewModel): ViewModel
 
     @Binds
-    @IntoMap
-    @ViewModelScope(DetailViewModel::class)
-    abstract fun bindDetailViewModel(detailViewModel: DetailViewModel): ViewModel
-
-    @Binds
     internal abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 
 }
