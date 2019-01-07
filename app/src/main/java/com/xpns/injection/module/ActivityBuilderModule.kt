@@ -1,8 +1,6 @@
 package com.xpns.injection.module
 
 import com.xpns.injection.scope.ActivityScope
-import com.xpns.ui.detail.DetailActivity
-import com.xpns.ui.detail.DetailActivityModule
 import com.xpns.ui.search.SearchActivity
 import com.xpns.ui.search.SearchActivityModule
 import dagger.Module
