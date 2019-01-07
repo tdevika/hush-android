@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -47,29 +47,55 @@
 
         </LinearLayout>
 
-        <!--<androidx.recyclerview.widget.RecyclerView-->
-        <!--android:id="@+id/rv_category"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/amount_container"/>-->
-        <HorizontalScrollView
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/category_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_category"
+            android:layout_below="@+id/amount_container"
+            android:textSize="16sp" />
+        <com.xpns.utils.CustomChipGroup
+            android:id="@+id/cg_category"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            bind:category="@{viewModel.category}"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category_label"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_details"
+            android:layout_below="@+id/cg_category"
+            android:layout_marginTop="32dp"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/datePicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/amount_container"
+            android:gravity="start"
+            android:focusable="false"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:clipToPadding="false"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:scrollbars="none">
+            android:inputType="date"
+            android:layout_below="@+id/label_details"
+            android:text="@={viewModel.date}"
+            android:onClick="@{(view) -> viewModel.onDatePickerEdittextClicked(view)}"
+            android:textSize="16sp" />
 
-            <com.xpns.utils.CustomChipGroup
-                android:id="@+id/cg_category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                 />
 
-        </HorizontalScrollView>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="start"
+            android:hint="@string/hint_note"
+            android:inputType="text"
+            android:layout_below="@+id/datePicker"
+            android:text="@={viewModel.note}"
+            android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"

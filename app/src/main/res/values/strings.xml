@@ -10,10 +10,13 @@
     <string name="hint_amount">0.00</string>
     <string name="currency">€</string>
     <string name="submit">Submit</string>
+    <string name="label_category">Category</string>
+    <string name="label_details">Details</string>
+    <string name="hint_note">Add a note...</string>
     <string-array name="categories">
-        <item>Food Drinks</item>
-        <item>Health/medical</item>
-        <item> Clothes shoes</item>
+        <item>Food&amp;Drinks</item>
+        <item>Health/Medical</item>
+        <item>Shopping</item>
         <item>Transportation</item>
         <item>Gifts</item>
         <item>Utilities</item>

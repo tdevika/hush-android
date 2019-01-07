@@ -7,3 +7,4 @@ import io.reactivex.schedulers.Schedulers
 fun <T> Single<T>.onBackground(): Single<T> {
     return this.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
 }
+

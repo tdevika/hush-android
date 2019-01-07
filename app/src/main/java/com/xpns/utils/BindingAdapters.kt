@@ -1,10 +1,9 @@
 package com.xpns.utils
 
-import androidx.databinding.BindingAdapter
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
+import androidx.databinding.ObservableField
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.xpns.R
 
 
 object BindingAdapters {
@@ -16,12 +15,19 @@ object BindingAdapters {
         if (circleCrop) {
             Glide.with(context)
                     .load(url)
-                    .apply(RequestOptions().circleCrop().override(context.resources.getDimensionPixelSize(R.dimen.dp56)).placeholder(R.drawable.ic_account))
                     .into(view)
         } else {
             Glide.with(context)
                     .load(url)
                     .into(view)
+        }
+    }
+
+    @BindingAdapter(value = ["bind:category"])
+    @JvmStatic
+    fun bindChipGroupSelection(customChipGroup: CustomChipGroup, category: ObservableField<String>) {
+        customChipGroup.setOnCheckedChangeListener { chipGroup, id ->
+            category.set(customChipGroup.getCheckedChip(chipGroup.checkedChipId))
         }
     }
 }

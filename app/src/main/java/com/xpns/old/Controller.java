@@ -43,7 +43,7 @@
 //        try {
 //            OkHttpClient client = new OkHttpClient();
 //            Request request = new Request.Builder()
-//                    .url(WAURL + "action=saveExpens&itemName=" + itemName + "&brand=" + brand)
+//                    .url(WAURL + "action=saveExpns&itemName=" + itemName + "&brand=" + brand)
 //                    .build();
 //            response = client.newCall(request).execute();
 //            Log.e(TAG, "response from gs" + response.body().string());

@@ -19,7 +19,7 @@
 // */
 //public class InsertData extends AppCompatActivity{
 //
-//    private Button saveExpens;
+//    private Button saveExpns;
 //    String itemName;
 //    String brand;
 //    private EditText uid1ET,uid2,nameET;
@@ -28,11 +28,11 @@
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
 //        setContentView(R.layout.insert_data);
-//        saveExpens=(Button)findViewById(R.id.insert_btn);
+//        saveExpns=(Button)findViewById(R.id.insert_btn);
 //        uid1ET=(EditText)findViewById(R.id.uid);
 //        nameET=(EditText)findViewById(R.id.name);
 //
-//        saveExpens.setOnClickListener(new View.OnClickListener() {
+//        saveExpns.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
 //

@@ -18,7 +18,7 @@
 //public class MainActivity extends AppCompatActivity {
 //
 //
-//    private Button read,readAll,saveExpens,delete,update;
+//    private Button read,readAll,saveExpns,delete,update;
 //
 //
 //
@@ -33,7 +33,7 @@
 //
 //        read=(Button)findViewById(R.id.read_btn);
 //        readAll=(Button)findViewById(R.id.read_all_btn);
-//        saveExpens=(Button)findViewById(R.id.insert_btn);
+//        saveExpns=(Button)findViewById(R.id.insert_btn);
 //        update=(Button)findViewById(R.id.update_btn);
 //        delete=(Button)findViewById(R.id.delete_btn);
 //
@@ -61,7 +61,7 @@
 //        );
 //
 //
-//     saveExpens.setOnClickListener(new View.OnClickListener() {
+//     saveExpns.setOnClickListener(new View.OnClickListener() {
 //         @Override
 //         public void onClick(View view) {
 //
