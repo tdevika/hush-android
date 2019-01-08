@@ -22,7 +22,6 @@ class CustomChipGroup @JvmOverloads constructor(context: Context, attrs: Attribu
     private fun addChip(context: Context) {
         categoryList.forEach {
             val chip = Chip(context)
-            chip.chipBackgroundColor = ContextCompat.getColorStateList(context, R.color.chip_background_color)
             chip.chipIcon = ContextCompat.getDrawable(context, R.drawable.ic_placeholder_circle)
             chip.chipIconTint = ContextCompat.getColorStateList(context, android.R.color.white)
             chip.isClickable = true

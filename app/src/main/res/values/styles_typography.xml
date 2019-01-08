@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <style name="TextAppearance.Xpns.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">101.03sp</item>
+        <item name="android:letterSpacing">-0.15</item>
+    </style>
+</resources>

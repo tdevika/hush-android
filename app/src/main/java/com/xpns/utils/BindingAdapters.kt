@@ -13,7 +13,7 @@ object BindingAdapters {
             if (id == -1) {
                 category.set("")
             } else {
-                category.set(customChipGroup.getCheckedChip(chipGroup.checkedChipId))
+                category.set(customChipGroup.getCheckedChip(chipGroup.checkedChipId-1))
             }
         }
     }
