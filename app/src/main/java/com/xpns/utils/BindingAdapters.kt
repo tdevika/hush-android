@@ -10,7 +10,11 @@ object BindingAdapters {
     @JvmStatic
     fun bindChipGroupSelection(customChipGroup: CustomChipGroup, category: ObservableField<String>) {
         customChipGroup.setOnCheckedChangeListener { chipGroup, id ->
-            category.set(customChipGroup.getCheckedChip(chipGroup.checkedChipId))
+            if (id == -1) {
+                category.set("")
+            } else {
+                category.set(customChipGroup.getCheckedChip(chipGroup.checkedChipId))
+            }
         }
     }
 }

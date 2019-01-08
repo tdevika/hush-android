@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.xpns.ui.search.SearchViewModel" />
+            type="com.xpns.ui.xpns.XpnsViewModel" />
 
     </data>
 

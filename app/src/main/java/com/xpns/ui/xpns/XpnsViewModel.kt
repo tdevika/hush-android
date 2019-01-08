@@ -1,4 +1,4 @@
-package com.xpns.ui.search
+package com.xpns.ui.xpns
 
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 
 @ActivityScope
-class SearchViewModel @Inject constructor(private val githubRepository: GithubRepository) : BaseViewModel() {
+class XpnsViewModel @Inject constructor(private val githubRepository: GithubRepository) : BaseViewModel() {
 
     var amount: ObservableField<String> = ObservableField()
     var note: ObservableField<String> = ObservableField()
@@ -37,6 +37,7 @@ class SearchViewModel @Inject constructor(private val githubRepository: GithubRe
         date.set(formatMMDDYYYY(calendar.time))
     }
 
+    // TODO refactor it to extension function
     fun formatMMDDYYYY(time: Date?): String? {
         val myFormat = "MM/dd/yy"
         val sdf = SimpleDateFormat(myFormat, Locale.US)

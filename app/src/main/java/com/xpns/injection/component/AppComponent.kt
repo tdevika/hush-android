@@ -1,6 +1,6 @@
 package com.xpns.injection.component
 
-import com.xpns.RepoApplication
+import com.xpns.XpnsApplication
 import com.xpns.injection.module.ActivityBuilderModule
 import com.xpns.injection.module.AppModule
 import com.xpns.injection.module.ViewModelModule
@@ -15,7 +15,7 @@ import javax.inject.Singleton
             (ViewModelModule::class),
             (AndroidSupportInjectionModule::class),
             (ActivityBuilderModule::class)])
-interface AppComponent : AndroidInjector<RepoApplication> {
+interface AppComponent : AndroidInjector<XpnsApplication> {
     @Component.Builder
-    abstract class Builder : AndroidInjector.Builder<RepoApplication>()
+    abstract class Builder : AndroidInjector.Builder<XpnsApplication>()
 }
