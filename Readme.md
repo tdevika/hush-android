@@ -50,11 +50,15 @@
                       android:textAppearance="?attr/textAppearanceBody1" />
 
       - Understand which textAppearance will suit best from this guide : https://material.io/design/typography/the-type-system.html#applying-the-type-scale
+      - Added bottom bar and learned that need to set vectorDrawables.useSupportLibrary true inside app build.gradle under defaultConfig to use vector drawable in that app
  - [Referred] : https://github.com/material-components , https://github.com/chrisbanes/tivi , https://github.com/googlesamples/android-DownloadableFonts
 
 10/01/2019
  - [Feature]
-     - Implement App Color Theming as per Material guideline https://material.io/develop/android/theming/color/
+     - Add Theme switcher and Font switcher icon to bottom bar
+     - Move button functionality to fab
+     - Implement Theme switcher and Font switcher functionality
+     - Show Progress and handle error and complete state of the app
  - [Learning]
 
  - [Referred] :
