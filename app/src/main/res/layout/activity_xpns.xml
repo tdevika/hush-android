@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -11,99 +11,117 @@
             type="com.xpns.ui.xpns.XpnsViewModel" />
     </data>
 
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="start"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/amount_container"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/space_24dp"
-            android:layout_marginBottom="@dimen/space_24dp"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:id="@+id/amount_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/space_24dp"
+                android:layout_marginBottom="@dimen/space_24dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:hint="@string/currency"
+                    android:textAppearance="?attr/textAppearanceHeadline3"
+                    android:textSize="36sp" />
+
+                <Space
+                    android:layout_width="@dimen/space_8dp"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:hint="@string/hint_amount"
+                    android:inputType="numberDecimal"
+                    android:text="@={viewModel.amount}"
+                    android:textAppearance="?attr/textAppearanceHeadline3" />
+            </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:hint="@string/currency"
-                android:textAppearance="?attr/textAppearanceHeadline3"
-                android:textSize="36sp" />
+                android:layout_marginBottom="@dimen/space_16dp"
+                android:hint="@string/label_category"
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
 
-            <Space
-                android:layout_width="@dimen/space_8dp"
-                android:layout_height="wrap_content" />
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/amount"
+            <com.xpns.utils.CustomChipGroup
+                android:id="@+id/cg_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
+                android:layout_marginBottom="@dimen/space_24dp"
+                app:category="@{viewModel.category}" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_details"
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/datePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_16dp"
+                android:focusable="false"
                 android:gravity="start"
-                android:hint="@string/hint_amount"
-                android:inputType="numberDecimal"
-                android:text="@={viewModel.amount}"
-                android:textAppearance="?attr/textAppearanceHeadline3" />
+                android:inputType="date"
+                android:onClick="@{(view) -> viewModel.onDatePickerEdittextClicked(view)}"
+                android:text="@={viewModel.date}"
+                android:textAppearance="?attr/textAppearanceBody1" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_32dp"
+                android:gravity="start"
+                android:hint="@string/hint_note"
+                android:inputType="text"
+                android:text="@={viewModel.note}"
+                android:textAppearance="?attr/textAppearanceBody1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="@{() -> viewModel.onSubmit()}"
+                android:text="@string/submit" />
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/label_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_16dp"
-            android:hint="@string/label_category"
-            android:textAppearance="?attr/textAppearanceSubtitle1" />
-
-        <com.xpns.utils.CustomChipGroup
-            android:id="@+id/cg_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_24dp"
-            bind:category="@{viewModel.category}" />
-
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/label_details"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/label_details"
-            android:textAppearance="?attr/textAppearanceSubtitle1" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/datePicker"
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_16dp"
-            android:focusable="false"
-            android:gravity="start"
-            android:inputType="date"
-            android:onClick="@{(view) -> viewModel.onDatePickerEdittextClicked(view)}"
-            android:text="@={viewModel.date}"
-            android:textAppearance="?attr/textAppearanceBody1" />
+            android:layout_gravity="bottom"
+            />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/note"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_32dp"
-            android:gravity="start"
-            android:hint="@string/hint_note"
-            android:inputType="text"
-            android:text="@={viewModel.note}"
-            android:textAppearance="?attr/textAppearanceBody1" />
-
-        <Button
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="@{() -> viewModel.onSubmit()}"
-            android:text="@string/submit" />
-
-    </LinearLayout>
+            app:srcCompat="@drawable/ic_add_24px"
+            app:layout_anchor="@id/bar" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

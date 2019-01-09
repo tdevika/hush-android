@@ -6,7 +6,7 @@ import androidx.databinding.ObservableField
 
 object BindingAdapters {
 
-    @BindingAdapter(value = ["bind:category"])
+    @BindingAdapter(value = ["app:category"])
     @JvmStatic
     fun bindChipGroupSelection(customChipGroup: CustomChipGroup, category: ObservableField<String>) {
         customChipGroup.setOnCheckedChangeListener { chipGroup, id ->
