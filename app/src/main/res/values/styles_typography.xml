@@ -3,67 +3,67 @@
 <resources>
 
     <style name="TextAppearance.Xpns.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 
     <style name="TextAppearance.Xpns.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 
     <style name="TextAppearance.Xpns.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 
     <style name="TextAppearance.Xpns.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 
     <style name="TextAppearance.Xpns.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 
     <style name="TextAppearance.Xpns.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 
     <style name="TextAppearance.Xpns.Body1" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 
     <style name="TextAppearance.Xpns.Body2" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 
     <style name="TextAppearance.Xpns.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 
     <style name="TextAppearance.Xpns.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
-        <item name="fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
         <item name="android:textSize">14.62sp</item>
     </style>
 
     <style name="TextAppearance.Xpns.Button" parent="TextAppearance.MaterialComponents.Button">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 
     <style name="TextAppearance.Xpns.Caption" parent="TextAppearance.MaterialComponents.Caption">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 
     <style name="TextAppearance.Xpns.Overline" parent="TextAppearance.MaterialComponents.Overline">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
     </style>
 </resources>
