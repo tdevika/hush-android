@@ -13,11 +13,17 @@ Roadmap
  - Referred TiVi,Pelvelea apps
  
  09/01/2019
-  - Implement Typography Theming 
+  - Implement Typography Theming (Adding downloadable font feature)
   - Implement native fonts
   - Implement Day Night mode
   - Show Progress and handle error and complete state of the app
   - Look into chip inflation issue
+  
+  10/01/2019
+  
+ - Add new navigation implementation 
+ - Immersive mode
+ - ThemeOverlay
  
  
  
@@ -33,6 +39,32 @@ Roadmap
  ## Shape Theming : https://material.io/develop/android/theming/shape/
  
  ## Typography Theming : https://material.io/develop/android/theming/typography/
+ 
+ - If you want to use a Downloadable Font before Android O, make sure you are using AppCompatTextView or that you are loading the font yourself with ResourcesCompat.getFont().
+ - Sample app to implement downloadable fonts : https://github.com/googlesamples/android-DownloadableFonts
+ - https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts
+ - LL: Theme Attribute Mapping (Including Downloadable Fonts ) is applied to only below items, for TextView and EditTexts wee need to set attr explicitly as shown below 
+        BottomNavigationView
+        Chip
+        FloatingActionButton
+        MaterialButton
+        MaterialCardView
+        TabLayout
+    
+       <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
+                
+       <com.google.android.material.textfield.TextInputEditText
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textAppearance="?attr/textAppearanceBody1" />
+  
+ - Understand which textAppearance will suit best from this guide : https://material.io/design/typography/the-type-system.html#applying-the-type-scale                                                                                                                 
+                                                                                                                           
+                
+                
  
  ###Resource
  - https://material.io/

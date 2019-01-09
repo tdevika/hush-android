@@ -20,6 +20,7 @@ ext {
     def versionRxJava = '2.2.4'
     def versionRxAndroid = '2.1.0'
     def versionGlide = '4.8.0'
+    def versionSupportCompat = '28.0.0'
   
 
     
@@ -34,7 +35,8 @@ ext {
                        cardview           : [group: 'androidx.cardview', name: 'cardview', version: versionAndroidXCardView],
                        constraintLayout   : [group: 'androidx.constraintlayout', name: 'constraintlayout', version: versionAndroidXConstraintLayout],
                        supportannotations : [group: 'androidx.annotation', name: 'annotation', version: versionAndroidXAnnotation],
-                       recyclerview     : [group: 'androidx.recyclerview', name: 'recyclerview', version: versionAndroidXRecyclerView]]
+                       recyclerview     : [group: 'androidx.recyclerview', name: 'recyclerview', version: versionAndroidXRecyclerView],
+                       supportCompat       : [group: 'com.android.support', name: 'support-compat', version: versionSupportCompat]]
 
     def libs = [dagger                   : [group: 'com.google.dagger', name: 'dagger', version: versionDagger],
                 daggerCompiler           : [group: 'com.google.dagger', name: 'dagger-compiler', version: versionDagger],
@@ -61,6 +63,7 @@ ext {
                        [configuration: "implementation", dependency: androidLibs.constraintLayout],
                        [configuration: "implementation", dependency: androidLibs.supportannotations],
                        [configuration: "implementation", dependency: androidLibs.recyclerview],
+                       [configuration: "implementation", dependency: androidLibs.supportCompat],
                        [configuration: "implementation", dependency: libs.dagger],
                        [configuration: "implementation", dependency: libs.daggerAndroidSupport],
                        [configuration: "kapt", dependency: libs.daggerCompiler],

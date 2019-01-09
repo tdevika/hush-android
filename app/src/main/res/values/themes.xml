@@ -15,6 +15,19 @@
 
         <!-- Type styles -->
         <item name="textAppearanceHeadline1">@style/TextAppearance.Xpns.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Xpns.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Xpns.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Xpns.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Xpns.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Xpns.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Xpns.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Xpns.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Xpns.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Xpns.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Xpns.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Xpns.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Xpns.Overline</item>
+
 
     </style>
 </resources>
