@@ -12,21 +12,21 @@
 
     </data>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="start"
+        android:orientation="vertical"
         android:padding="24dp">
 
         <LinearLayout
             android:id="@+id/amount_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -42,43 +42,50 @@
                 android:hint="@string/hint_amount"
                 android:inputType="numberDecimal"
                 android:padding="24dp"
-                android:paddingBottom="16dp"
                 android:text="@={viewModel.amount}"
                 android:textSize="48sp" />
 
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <android.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_16dp" />
+
+        <TextView
             android:id="@+id/category_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/amount_container"
             android:hint="@string/label_category"
             android:textSize="16sp" />
-
+        <android.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_16dp" />
         <com.xpns.utils.CustomChipGroup
             android:id="@+id/cg_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/category_label"
-            android:layout_marginTop="16dp"
+
             bind:category="@{viewModel.category}" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <android.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_32dp" />
+
+        <TextView
             android:id="@+id/label_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/cg_category"
-            android:layout_marginTop="32dp"
             android:hint="@string/label_details"
             android:textSize="16sp" />
+
+        <android.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_8dp" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/datePicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/label_details"
-            android:layout_marginTop="8dp"
             android:focusable="false"
             android:gravity="start"
             android:inputType="date"
@@ -86,25 +93,31 @@
             android:text="@={viewModel.date}"
             android:textSize="16sp" />
 
+        <android.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_16dp" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/note"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/datePicker"
-            android:layout_marginTop="16dp"
             android:gravity="start"
             android:hint="@string/hint_note"
             android:inputType="text"
             android:text="@={viewModel.note}"
             android:textSize="16sp" />
 
-        <com.google.android.material.button.MaterialButton
+        <android.widget.Space
             android:layout_width="match_parent"
+            android:layout_height="@dimen/space_32dp" />
+
+        <Button
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
             android:onClick="@{() -> viewModel.onSubmit()}"
             android:text="@string/submit" />
-    </RelativeLayout>
+
+    </LinearLayout>
 
 </layout>

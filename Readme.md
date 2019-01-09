@@ -10,12 +10,14 @@ Roadmap
 08/01/2019
  - Implement App Color Theming as per Material guideline https://material.io/develop/android/theming/color/
  - Update Submit button UI
+ - Referred TiVi,Pelvelea apps
  
  09/01/2019
   - Implement Typography Theming 
   - Implement native fonts
   - Implement Day Night mode
   - Show Progress and handle error and complete state of the app
+  - Look into chip inflation issue
  
  
  
@@ -34,3 +36,4 @@ Roadmap
  
  ###Resource
  - https://material.io/
+ 

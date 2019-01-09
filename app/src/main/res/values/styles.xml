@@ -1,6 +1,3 @@
 <resources>
 
-    <style name="Widget.Xpns.MyButton" parent="Widget.MaterialComponents.Button">
-        <item name="backgroundTint">?attr/colorSecondary</item>
-    </style>
 </resources>

@@ -2,7 +2,7 @@
 
 <resources>
 
-    <style name="Theme.Xpns" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Xpns" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryVariant</item>
@@ -15,7 +15,6 @@
 
         <!-- Type styles -->
         <item name="textAppearanceHeadline1">@style/TextAppearance.Xpns.Headline1</item>
-        <item name="materialButtonStyle">@style/Widget.Xpns.MyButton</item>
 
     </style>
 </resources>
