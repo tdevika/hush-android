@@ -7,13 +7,14 @@ import androidx.databinding.ObservableField
 import com.xpns.data.repository.GithubRepository
 import com.xpns.injection.scope.ActivityScope
 import com.xpns.ui.base.BaseViewModel
+import com.xpns.ui.themeswitcher.ThemeSwitcherDialogFragment
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 
 
 @ActivityScope
-class XpnsViewModel @Inject constructor(private val githubRepository: GithubRepository) : BaseViewModel() {
+class XpnsViewModel @Inject constructor(private val githubRepository: GithubRepository, private val resourceProvider: ThemeSwitcherDialogFragment) : BaseViewModel() {
 
     var amount: ObservableField<String> = ObservableField()
     var note: ObservableField<String> = ObservableField()
@@ -44,8 +45,9 @@ class XpnsViewModel @Inject constructor(private val githubRepository: GithubRepo
         return sdf.format(time)
     }
 
-    fun onSubmit() {
-        githubRepository.saveExpens(amount.get()!!, category.get()!!,date.get()!!,note.get()!!)
+    fun onSubmit(view:View) {
+        resourceProvider.show((view.context as XpnsActivity).supportFragmentManager, "theme-switcher");
+        //githubRepository.saveExpens(amount.get()!!, category.get()!!,date.get()!!,note.get()!!)
     }
 }
 

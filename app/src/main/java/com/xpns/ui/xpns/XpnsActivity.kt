@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.xpns.R
 import com.xpns.databinding.ActivityXpnsBinding
 import com.xpns.ui.base.BaseActivity
-
+import com.xpns.ui.themeswitcher.ThemeOverlayUtils
 
 class XpnsActivity : BaseActivity<ActivityXpnsBinding, XpnsViewModel>() {
 
@@ -15,6 +15,7 @@ class XpnsActivity : BaseActivity<ActivityXpnsBinding, XpnsViewModel>() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+       ThemeOverlayUtils.applyThemeOverlays(this)
         super.onCreate(savedInstanceState)
         subscribeToModel()
     }
