@@ -1,46 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <array name="mtrl_primary_palettes">
-    <item>@style/ThemeOverlay.PrimaryPalette.Red</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Purple</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Indigo</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Blue</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Green</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Yellow</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Orange</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Brown</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Grey</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.BlueGrey</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Xpns</item>
-  </array>
+    <array name="mtrl_primary_palettes">
+        <item>@style/ThemeOverlay.PrimaryPalette.Red</item>
+        <item>@style/ThemeOverlay.PrimaryPalette.Purple</item>
+        <item>@style/ThemeOverlay.PrimaryPalette.Xpns</item>
+    </array>
 
-  <array name="mtrl_secondary_palettes">
-    <item>@style/ThemeOverlay.SecondaryPalette.Red</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Purple</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Indigo</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Blue</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Green</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Yellow</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Orange</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Brown</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Grey</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.BlueGrey</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Xpns</item>
-  </array>
+    <array name="mtrl_secondary_palettes">
+        <item>@style/ThemeOverlay.SecondaryPalette.Red</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Purple</item>
+        <item>@style/ThemeOverlay.PrimaryPalette.Xpns</item>
+    </array>
 
-  <array name="mtrl_palettes_content_description">
-    <item>@string/mtrl_red</item>
-    <item>@string/mtrl_purple</item>
-    <item>@string/mtrl_indigo</item>
-    <item>@string/mtrl_blue</item>
-    <item>@string/mtrl_green</item>
-    <item>@string/mtrl_yellow</item>
-    <item>@string/mtrl_orange</item>
-    <item>@string/mtrl_brown</item>
-    <item>@string/mtrl_grey</item>
-    <item>@string/mtrl_blue_grey</item>
-      <item>@string/mtrl_xpns</item>
-  </array>
+    <array name="mtrl_palettes_content_description">
+        <item>@string/mtrl_red</item>
+        <item>@string/mtrl_purple</item>
+        <item>@string/mtrl_xpns</item>
+    </array>
 
 </resources>
