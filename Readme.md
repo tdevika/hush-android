@@ -60,7 +60,8 @@
      - Implement Theme switcher and Font switcher functionality
      - Show Progress and handle error and complete state of the app
  - [Learning]
-
+     - **Tried setting custom fonts from manifest and gradle properties but failed (Need to find solution for this)**
+     -
  - [Referred] :
  
 

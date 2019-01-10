@@ -2,7 +2,8 @@
 
 <resources>
 
-    <style name="Theme.Xpns" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+    <style name="Theme.Base" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryVariant</item>
@@ -12,7 +13,9 @@
         <item name="colorSecondary">@color/colorSecondary</item>
         <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
+    </style>
 
+    <style name="Theme.Xpns" parent="Theme.Base">
         <!-- Type styles -->
         <item name="textAppearanceHeadline1">@style/TextAppearance.Xpns.Headline1</item>
         <item name="textAppearanceHeadline2">@style/TextAppearance.Xpns.Headline2</item>
@@ -27,7 +30,22 @@
         <item name="textAppearanceCaption">@style/TextAppearance.Xpns.Caption</item>
         <item name="textAppearanceButton">@style/TextAppearance.Xpns.Button</item>
         <item name="textAppearanceOverline">@style/TextAppearance.Xpns.Overline</item>
+    </style>
 
-
+    <style name="Theme.lobster_two" parent="Theme.Base">
+        <!-- Type styles -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.lobster_two.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.lobster_two.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.lobster_two.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.lobster_two.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.lobster_two.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.lobster_two.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.lobster_two.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.lobster_two.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.lobster_two.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.lobster_two.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.lobster_two.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.lobster_two.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.lobster_two.Overline</item>
     </style>
 </resources>
