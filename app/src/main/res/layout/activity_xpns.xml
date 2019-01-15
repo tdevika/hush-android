@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -11,16 +12,15 @@
             type="com.xpns.ui.xpns.XpnsViewModel" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="24dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="start"
-            android:orientation="vertical"
-            android:padding="24dp">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/amount_container"
@@ -56,25 +56,10 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/label_category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/space_16dp"
-                android:hint="@string/label_category"
-                android:textAppearance="?attr/textAppearanceSubtitle1" />
-
-            <com.xpns.utils.CustomChipGroup
-                android:id="@+id/cg_category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/space_24dp"
-                app:category="@{viewModel.category}" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/label_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_4dp"
                 android:hint="@string/label_details"
                 android:textAppearance="?attr/textAppearanceSubtitle1" />
 
@@ -101,27 +86,42 @@
                 android:text="@={viewModel.note}"
                 android:textAppearance="?attr/textAppearanceBody1" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="@{(view) -> viewModel.onSubmit(view)}"
-                android:text="@string/submit" />
+                android:layout_marginBottom="@dimen/space_16dp"
+                android:hint="@string/label_category"
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.xpns.utils.CustomChipGroup
+                    android:id="@+id/cg_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_16dp"
+                    app:category="@{viewModel.category}" />
+            </ScrollView>
         </LinearLayout>
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:visibility="@{viewModel.loader ? View.VISIBLE: View.GONE}"
+            tools:visibility="visible" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_add_24px"
-            app:layout_anchor="@id/bar" />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/space_32dp"
+            android:onClick="@{() -> viewModel.onSubmitXpns()}"
+            android:text="@string/submit" />
+    </FrameLayout>
 </layout>

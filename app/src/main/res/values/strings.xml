@@ -29,4 +29,5 @@
     <string name="mtrl_red">Red</string>
     <string name="mtrl_purple">Purple</string>
     <string name="mtrl_xpns">Xpns</string>
+    <string name="retry">Retry</string>
 </resources>

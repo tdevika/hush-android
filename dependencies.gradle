@@ -1,7 +1,7 @@
 ext {
 
 
-    minSdkVersion = 19
+    minSdkVersion = 21
     compileSdkVersion = 28
     targetSdkVersion = 28
     // Update to date for 28/12/2018

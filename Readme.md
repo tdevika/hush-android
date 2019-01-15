@@ -5,7 +5,7 @@
  - [ ]Add Screen to list the xpns
  - [ ]Publish to playstore
  - [ ]Create widget to record xpns
- - [ ]Implement Day Night mode
+ - [ ]Implement Day Night(Dark) mode
  - [ ]Implement dynamic selection feature
  - [ ]Show Progress and handle error and complete state of the app
  - [ ]Look into chip inflation issue
@@ -55,13 +55,29 @@
 
 10/01/2019
  - [Feature]
-     - Add Theme switcher and Font switcher icon to bottom bar
-     - Move button functionality to fab
      - Implement Theme switcher and Font switcher functionality
-     - Show Progress and handle error and complete state of the app
  - [Learning]
      - **Tried setting custom fonts from manifest and gradle properties but failed (Need to find solution for this)**
-     -
- - [Referred] :
+     - Implemented color palette , source : https://github.com/material-components
+
+11/01/2019
+- [Feature]
+     - Add Theme switcher and Font switcher icon to bottom bar
+14/01/2019
+ - [Feature]
+      - Show Progress and handle error and complete state of the app
+15/01/2019
+ - [Feature]
+      - Added release/debug unique server endpoints
+      - Day Night mode implementation
+      - Navigation
+      - Xpns List
+ - [Learning]
+      - Changing statusbar color <item name="android:statusBarColor">@android:color/transparent</item>
+      - Changing status bar icon color   <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+      - Added release/debug unique server endpoints
+
+ - [Referred] : https://medium.com/androiddevelopers/appcompat-v23-2-daynight-d10f90c83e94, https://github.com/chrisbanes/tivi
+
  
 

@@ -21,7 +21,11 @@ android {
         vectorDrawables.useSupportLibrary true
     }
     buildTypes {
+        debug {
+            buildConfigField "String", "SERVICE_ENDPOINT", '"https://script.google.com/macros/s/AKfycbyq05vewcIXPEdiInRXJ56jjCue17IhqMkqgmKq3AoM1Ye4xD4y/"'
+        }
         release {
+            buildConfigField "String", "SERVICE_ENDPOINT", '"https://script.google.com/macros/s/AKfycbx8ZOc919VWx5FXYZgVcZ71x7I5qo4mA_CISnhS/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

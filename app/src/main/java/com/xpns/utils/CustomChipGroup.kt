@@ -1,8 +1,8 @@
 package com.xpns.utils
 
 import android.content.Context
-import android.text.TextUtils
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import androidx.core.content.ContextCompat
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
@@ -16,32 +16,18 @@ class CustomChipGroup @JvmOverloads constructor(context: Context, attrs: Attribu
     init {
         isSingleSelection = true
         categoryList.addAll(context.resources.getStringArray(R.array.categories))
-        addChip(context)
+        addChip()
     }
-
-    private fun addChip(context: Context) {
+    private fun addChip() {
+        val inflater = LayoutInflater.from(context)
         categoryList.forEach {
-            val chip = Chip(context)
-            chip.chipIcon = ContextCompat.getDrawable(context, R.drawable.ic_placeholder_circle)
+            val chip = inflater.inflate(R.layout.view_choice_chip, this, false) as Chip
             chip.chipIconTint = ContextCompat.getColorStateList(context, android.R.color.white)
-            chip.isClickable = true
-            chip.isCheckable = true
-            chip.ellipsize = TextUtils.TruncateAt.END_SMALL
             chip.text = it
             addView(chip)
         }
     }
-
-    fun getCheckedChip(checkedChipId: Int): String {
+    fun getCheckedChipValue(checkedChipId: Int): String {
         return categoryList[checkedChipId]
     }
-
-    //    private fun addChip(context: Context) {
-//        val inflater = LayoutInflater.from(context)
-//        categoryList.forEach {
-//            val chip =inflater.inflate(R.layout.view_choice_chip, this@CustomChipGroup, false) as Chip
-//            chip.text = it
-//            addView(chip)
-//        }
-//    }
 }

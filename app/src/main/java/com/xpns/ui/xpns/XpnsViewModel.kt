@@ -4,10 +4,13 @@ import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
 import android.view.View
 import androidx.databinding.ObservableField
+import androidx.lifecycle.MutableLiveData
 import com.xpns.data.repository.GithubRepository
 import com.xpns.injection.scope.ActivityScope
 import com.xpns.ui.base.BaseViewModel
 import com.xpns.ui.themeswitcher.ThemeSwitcherDialogFragment
+import com.xpns.utils.Constants
+import com.xpns.utils.DataWrapper
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -15,7 +18,7 @@ import javax.inject.Inject
 
 @ActivityScope
 class XpnsViewModel @Inject constructor(private val githubRepository: GithubRepository, private val resourceProvider: ThemeSwitcherDialogFragment) : BaseViewModel() {
-
+    var repositoriesLiveData = MutableLiveData<DataWrapper<String>>()
     var amount: ObservableField<String> = ObservableField()
     var note: ObservableField<String> = ObservableField()
     var date: ObservableField<String> = ObservableField()
@@ -45,9 +48,15 @@ class XpnsViewModel @Inject constructor(private val githubRepository: GithubRepo
         return sdf.format(time)
     }
 
-    fun onSubmit(view:View) {
-        resourceProvider.show((view.context as XpnsActivity).supportFragmentManager, "theme-switcher");
-        //githubRepository.saveExpens(amount.get()!!, category.get()!!,date.get()!!,note.get()!!)
+    fun onSubmitXpns() {
+        setErrorMessage(false, Constants.EMPTY_MESSAGE)
+        displayLoader(true)
+        githubRepository.saveExpens(amount.get()!!, category.get()!!,date.get()!!,note.get()!!,repositoriesLiveData)
+    }
+
+    override fun onCleared() {
+        githubRepository.dispose()
+        super.onCleared()
     }
 }
 
