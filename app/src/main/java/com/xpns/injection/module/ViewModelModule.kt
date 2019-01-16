@@ -3,18 +3,25 @@ package com.xpns.injection.module
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.xpns.injection.scope.ViewModelScope
+import com.xpns.ui.home.HomeViewModel
 import com.xpns.ui.xpns.XpnsViewModel
+import com.xpns.utils.ViewModelFactory
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import shekar.com.githubrepositoriessearch.utils.ViewModelFactory
 
 @Module
 abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelScope(XpnsViewModel::class)
-    abstract fun bindSearchViewModel(xpnsViewModel: XpnsViewModel): ViewModel
+    abstract fun bindXpnsModel(xpnsViewModel: XpnsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelScope(HomeViewModel::class)
+    abstract fun bindHomeModel(homeViewModel: HomeViewModel): ViewModel
+
 
     @Binds
     internal abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

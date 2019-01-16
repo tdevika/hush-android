@@ -1,4 +1,4 @@
-package shekar.com.githubrepositoriessearch.utils
+package com.xpns.utils
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

@@ -1,6 +1,8 @@
 package com.xpns.injection.module
 
 import com.xpns.injection.scope.ActivityScope
+import com.xpns.ui.home.HomeActivity
+import com.xpns.ui.home.HomeActivityModule
 import com.xpns.ui.xpns.XpnsActivity
 import com.xpns.ui.xpns.XpnsActivityModule
 import dagger.Module
@@ -14,7 +16,12 @@ abstract class ActivityBuilderModule {
     @ActivityScope
     @ContributesAndroidInjector(
             modules = [(XpnsActivityModule::class)])
-    internal abstract fun bindSearchActivity(): XpnsActivity
+    internal abstract fun bindXpnsActivity(): XpnsActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector(
+            modules = [(HomeActivityModule::class)])
+    internal abstract fun bindHomeActivity(): HomeActivity
 }
 
 

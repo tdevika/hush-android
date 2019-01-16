@@ -5,7 +5,7 @@ import android.app.DatePickerDialog.OnDateSetListener
 import android.view.View
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
-import com.xpns.data.repository.GithubRepository
+import com.xpns.data.repository.XpnsRepository
 import com.xpns.injection.scope.ActivityScope
 import com.xpns.ui.base.BaseViewModel
 import com.xpns.ui.themeswitcher.ThemeSwitcherDialogFragment
@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 
 @ActivityScope
-class XpnsViewModel @Inject constructor(private val githubRepository: GithubRepository, private val resourceProvider: ThemeSwitcherDialogFragment) : BaseViewModel() {
+class XpnsViewModel @Inject constructor(private val xpnsRepository: XpnsRepository, private val resourceProvider: ThemeSwitcherDialogFragment) : BaseViewModel() {
     var repositoriesLiveData = MutableLiveData<DataWrapper<String>>()
     var amount: ObservableField<String> = ObservableField()
     var note: ObservableField<String> = ObservableField()
@@ -51,11 +51,11 @@ class XpnsViewModel @Inject constructor(private val githubRepository: GithubRepo
     fun onSubmitXpns() {
         setErrorMessage(false, Constants.EMPTY_MESSAGE)
         displayLoader(true)
-        githubRepository.saveExpens(amount.get()!!, category.get()!!,date.get()!!,note.get()!!,repositoriesLiveData)
+        xpnsRepository.saveExpens(amount.get()!!, category.get()!!,date.get()!!,note.get()!!,repositoriesLiveData)
     }
 
     override fun onCleared() {
-        githubRepository.dispose()
+        xpnsRepository.dispose()
         super.onCleared()
     }
 }
