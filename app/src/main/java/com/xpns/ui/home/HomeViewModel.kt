@@ -2,6 +2,7 @@ package com.xpns.ui.home
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
+import com.xpns.data.model.XpnsItems
 import com.xpns.data.repository.XpnsRepository
 import com.xpns.injection.scope.ActivityScope
 import com.xpns.ui.base.BaseViewModel
@@ -12,7 +13,7 @@ import javax.inject.Inject
 
 @ActivityScope
 class HomeViewModel @Inject constructor(private val xpnsRepository: XpnsRepository, private val resourceProvider: ThemeSwitcherDialogFragment) : BaseViewModel() {
-    var repositoriesLiveData = MutableLiveData<DataWrapper<String>>()
+    var repositoriesLiveData = MutableLiveData<DataWrapper<XpnsItems>>()
     var amount: ObservableField<String> = ObservableField()
     var note: ObservableField<String> = ObservableField()
     var date: ObservableField<String> = ObservableField()
@@ -20,6 +21,8 @@ class HomeViewModel @Inject constructor(private val xpnsRepository: XpnsReposito
     private val calendar = Calendar.getInstance()
 
     init {
+        displayLoader(true)
+        xpnsRepository.getExpenses(repositoriesLiveData)
     }
 }
 

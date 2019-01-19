@@ -1,10 +1,13 @@
 package com.xpns.ui.home
 
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xpns.R
+import com.xpns.data.model.XpnsItems
 import com.xpns.databinding.ActivityHomeBinding
 import com.xpns.ui.base.BaseActivity
+import com.xpns.utils.DataWrapper
 import javax.inject.Inject
 
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
@@ -36,6 +39,20 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
 
     private fun subscribeToModel() {
         binding.viewModel = viewModel
+        viewModel.repositoriesLiveData.observe(this, subscribersObserver())
         binding.setLifecycleOwner(this)
+    }
+
+    private fun subscribersObserver(): Observer<DataWrapper<XpnsItems>> {
+        return Observer {
+            viewModel.displayLoader(false)
+            it?.let {
+                if (!it.isError) {
+                    homeListAdapter.updateData(it.data?.items!!)
+                } else {
+                    viewModel.setErrorMessage(it.isError, it.errorMessage)
+                }
+            }
+        }
     }
 }
