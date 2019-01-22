@@ -3,7 +3,7 @@ package com.xpns.injection.module
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 import com.xpns.XpnsApplication
-import com.xpns.ui.themeswitcher.ThemeSwitcherDialogFragment
+import com.xpns.utils.themeswitcher.ThemeSwitcherDialogFragment
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named

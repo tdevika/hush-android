@@ -3,6 +3,8 @@ package com.xpns.ui.xpnslist
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xpns.R
 import com.xpns.data.model.XpnsItems
@@ -17,9 +19,6 @@ class XpnsListFragment : BaseFragment<FragmentXpnsListBinding, XpnsListFragmentV
     @Inject
     lateinit var xpnsListAdapter: XpnsListAdapter
 
-    @Inject
-    lateinit var linearLayoutManager: LinearLayoutManager
-
     override fun layoutId() = R.layout.fragment_xpns_list
 
     override fun getViewModelClass() = XpnsListFragmentViewModel::class.java
@@ -31,7 +30,7 @@ class XpnsListFragment : BaseFragment<FragmentXpnsListBinding, XpnsListFragmentV
     }
     private fun initializeUI() {
         with(binding.recyclerView) {
-            layoutManager = linearLayoutManager
+            layoutManager = LinearLayoutManager(activity)
             adapter = xpnsListAdapter
         }
     }

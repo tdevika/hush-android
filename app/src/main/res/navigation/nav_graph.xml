@@ -9,7 +9,17 @@
         android:id="@+id/xpnsListFragment"
         android:name="com.xpns.ui.xpnslist.XpnsListFragment"
         android:label="Xpns List Fragment"
-        tools:layout="@layout/fragment_xpns_list"></fragment>
+        tools:layout="@layout/fragment_xpns_list">
+        <action
+            android:id="@+id/actionXpnsFragment"
+            app:destination="@id/xpnsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/xpnsFragment"
+        android:name="com.xpns.ui.xpns.XpnsFragment"
+        android:label="Xpns Fragment"
+        tools:layout="@layout/fragment_xpns" />
 
 
 </navigation>

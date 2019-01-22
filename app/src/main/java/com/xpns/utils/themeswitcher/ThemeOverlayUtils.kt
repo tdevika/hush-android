@@ -1,10 +1,9 @@
-package com.xpns.ui.themeswitcher
+package com.xpns.utils.themeswitcher
 
 import android.app.Activity
 import androidx.annotation.StyleRes
 import java.util.Arrays
 
-/** Utils for theme overlays.  */
 object ThemeOverlayUtils {
 
     @StyleRes

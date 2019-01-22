@@ -3,8 +3,6 @@ package com.xpns.injection.builder
 import com.xpns.injection.scope.ActivityScope
 import com.xpns.ui.home.HomeActivity
 import com.xpns.ui.home.HomeActivityModule
-import com.xpns.ui.xpns.XpnsActivity
-import com.xpns.ui.xpns.XpnsActivityModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import dagger.android.support.DaggerAppCompatActivity
@@ -12,11 +10,6 @@ import dagger.android.support.DaggerAppCompatActivity
 
 @Module
 abstract class ActivityBuilder {
-
-    @ActivityScope
-    @ContributesAndroidInjector(
-            modules = [(XpnsActivityModule::class)])
-    internal abstract fun bindXpnsActivity(): XpnsActivity
 
     @ActivityScope
     @ContributesAndroidInjector(

@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.xpns.ui.xpns.XpnsViewModel" />
+            type="com.xpns.ui.xpns.XpnsFragmentViewModel" />
     </data>
 
     <FrameLayout
@@ -115,13 +115,5 @@
             android:layout_gravity="center"
             android:visibility="@{viewModel.loader ? View.VISIBLE: View.GONE}"
             tools:visibility="visible" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="@dimen/space_32dp"
-            android:onClick="@{() -> viewModel.onSubmitXpns()}"
-            android:text="@string/submit" />
     </FrameLayout>
 </layout>

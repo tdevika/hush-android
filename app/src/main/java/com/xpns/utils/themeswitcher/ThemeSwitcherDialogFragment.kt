@@ -1,4 +1,4 @@
-package com.xpns.ui.themeswitcher
+package com.xpns.utils.themeswitcher
 
 import android.annotation.SuppressLint
 import android.app.Dialog
