@@ -1,6 +1,6 @@
 e: /Users/shandrashekar/Downloads/Xpns/app/src/main/java/com/xpns/ui/detail/DetailActivity.kt: (14, 37): Unresolved reference: ActivityDetailBinding
-e: /Users/shandrashekar/Downloads/Xpns/app/src/main/java/com/xpns/ui/detail/HomeListAdapter.kt: (18, 23): Unresolved reference: ItemDetailBinding
-e: /Users/shandrashekar/Downloads/Xpns/app/src/main/java/com/xpns/ui/detail/HomeListAdapter.kt: (32, 55): Unresolved reference: ItemDetailBinding
+e: /Users/shandrashekar/Downloads/Xpns/app/src/main/java/com/xpns/ui/detail/XpnsListAdapter.kt: (18, 23): Unresolved reference: ItemDetailBinding
+e: /Users/shandrashekar/Downloads/Xpns/app/src/main/java/com/xpns/ui/detail/XpnsListAdapter.kt: (32, 55): Unresolved reference: ItemDetailBinding
 e: /Users/shandrashekar/Downloads/Xpns/app/src/main/java/com/xpns/ui/search/XpnsActivity.kt: (16, 37): Unresolved reference: ActivitySearchBinding
 e: /Users/shandrashekar/Downloads/Xpns/app/src/main/java/com/xpns/ui/search/SearchAdapter.kt: (21, 23): Unresolved reference: ItemSearchBinding
 e: /Users/shandrashekar/Downloads/Xpns/app/src/main/java/com/xpns/ui/search/SearchAdapter.kt: (35, 55): Unresolved reference: ItemSearchBinding
