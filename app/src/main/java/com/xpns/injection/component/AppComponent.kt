@@ -1,8 +1,9 @@
 package com.xpns.injection.component
 
 import com.xpns.XpnsApplication
-import com.xpns.injection.module.ActivityBuilderModule
+import com.xpns.injection.builder.ActivityBuilder
 import com.xpns.injection.module.AppModule
+import com.xpns.injection.builder.FragmentBuilder
 import com.xpns.injection.module.ViewModelModule
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -14,7 +15,7 @@ import javax.inject.Singleton
         modules = [(AppModule::class),
             (ViewModelModule::class),
             (AndroidSupportInjectionModule::class),
-            (ActivityBuilderModule::class)])
+            (ActivityBuilder::class)])
 interface AppComponent : AndroidInjector<XpnsApplication> {
     @Component.Builder
     abstract class Builder : AndroidInjector.Builder<XpnsApplication>()

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.xpns.R
 import com.xpns.data.model.XpnsItems
 import com.xpns.databinding.ActivityHomeBinding
+import com.xpns.ui.addxpns.DetailFragment
 import com.xpns.ui.base.BaseActivity
 import com.xpns.utils.DataWrapper
 import javax.inject.Inject
@@ -28,6 +29,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
         super.onCreate(savedInstanceState)
         initializeUI()
         subscribeToModel()
+        if (savedInstanceState == null)
+            supportFragmentManager
+                    .beginTransaction()
+                    .add(R.id.container, DetailFragment.newInstance())
+                    .commitAllowingStateLoss()
+
     }
 
     private fun initializeUI() {

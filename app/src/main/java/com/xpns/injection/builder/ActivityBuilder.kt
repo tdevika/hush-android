@@ -1,4 +1,4 @@
-package com.xpns.injection.module
+package com.xpns.injection.builder
 
 import com.xpns.injection.scope.ActivityScope
 import com.xpns.ui.home.HomeActivity
@@ -11,7 +11,7 @@ import dagger.android.support.DaggerAppCompatActivity
 
 
 @Module
-abstract class ActivityBuilderModule {
+abstract class ActivityBuilder {
 
     @ActivityScope
     @ContributesAndroidInjector(
@@ -20,7 +20,7 @@ abstract class ActivityBuilderModule {
 
     @ActivityScope
     @ContributesAndroidInjector(
-            modules = [(HomeActivityModule::class)])
+            modules = [(HomeActivityModule::class), (FragmentBuilder::class)])
     internal abstract fun bindHomeActivity(): HomeActivity
 }
 

@@ -33,6 +33,11 @@
                 android:visibility="@{viewModel.loader ? View.VISIBLE: View.GONE}" />
         </FrameLayout>
 
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bar"
             android:layout_width="match_parent"
