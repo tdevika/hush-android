@@ -11,10 +11,10 @@ import com.xpns.data.model.XpnsItems
 import com.xpns.databinding.FragmentXpnsListBinding
 import com.xpns.ui.base.BaseFragment
 import com.xpns.utils.DataWrapper
+import com.xpns.utils.HomeActivityDelegate
 import javax.inject.Inject
 
-class XpnsListFragment : BaseFragment<FragmentXpnsListBinding, XpnsListFragmentViewModel>() {
-
+class XpnsListFragment : BaseFragment<FragmentXpnsListBinding, XpnsListFragmentViewModel>(), HomeActivityDelegate {
 
     @Inject
     lateinit var xpnsListAdapter: XpnsListAdapter
@@ -53,4 +53,8 @@ class XpnsListFragment : BaseFragment<FragmentXpnsListBinding, XpnsListFragmentV
             }
         }
     }
+
+    override fun onFabClicked() {
+    }
+
 }
