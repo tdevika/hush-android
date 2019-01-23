@@ -8,8 +8,9 @@ import com.xpns.R
 import com.xpns.databinding.FragmentXpnsBinding
 import com.xpns.ui.base.BaseFragment
 import com.xpns.utils.DataWrapper
+import com.xpns.utils.HomeActivityDelegate
 
-class XpnsFragment : BaseFragment<FragmentXpnsBinding, XpnsFragmentViewModel>() {
+class XpnsFragment : BaseFragment<FragmentXpnsBinding, XpnsFragmentViewModel>(), HomeActivityDelegate {
 
     override fun getViewModelClass() = XpnsFragmentViewModel::class.java
 
@@ -40,5 +41,10 @@ class XpnsFragment : BaseFragment<FragmentXpnsBinding, XpnsFragmentViewModel>() 
             }
         }
     }
+
+    override fun onFabClicked() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
 
 }

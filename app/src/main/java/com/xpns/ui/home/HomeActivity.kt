@@ -1,19 +1,20 @@
 package com.xpns.ui.home
 
 import android.content.Context
+import android.graphics.drawable.Animatable
 import android.os.Bundle
 import android.os.PowerManager
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.xpns.R
 import com.xpns.databinding.ActivityHomeBinding
 import com.xpns.ui.base.BaseActivity
-import com.xpns.utils.themeswitcher.ThemeOverlayUtils
 import com.xpns.utils.XpnsPreferences
+import com.xpns.utils.themeswitcher.ThemeOverlayUtils
 import javax.inject.Inject
 
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
+
 
     override fun getViewModelClass() = HomeViewModel::class.java
 
@@ -27,7 +28,19 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         ThemeOverlayUtils.applyThemeOverlays(this)
         super.onCreate(savedInstanceState)
-        binding.fab.setOnClickListener { findNavController(this, R.id.navHostFragment).navigate(R.id.actionXpnsFragment) }
+        var navController = findNavController(this, R.id.navHostFragment)
+        binding.fab.setOnClickListener {
+            when {
+                navController.graph.startDestination == navController.currentDestination?.id -> {
+                    binding.fab.setImageResource(R.drawable.icn_morph)
+                    (binding.fab.drawable as Animatable).start()
+                    findNavController(this, R.id.navHostFragment).navigate(R.id.actionXpnsFragment)}
+                else -> {
+                    binding.fab.setImageResource(R.drawable.icn_morph_reverse)
+                    (binding.fab.drawable as Animatable).start()
+                    findNavController(this, R.id.navHostFragment).navigateUp()}
+            }
+        }
     }
 
     private fun updateNightMode() {
