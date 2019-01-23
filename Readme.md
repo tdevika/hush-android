@@ -12,6 +12,7 @@
  - [ ]Add new navigation implementation
  - [ ]Immersive mode
  - [ ]ThemeOverlay
+ - [ ]Replace Dagger2 with Koin : https://proandroiddev.com/migrating-from-dagger2-to-koin-3b2b3f5285e9
 
 
 08/01/2019
@@ -78,6 +79,21 @@
       - Added release/debug unique server endpoints
 
  - [Referred] : https://medium.com/androiddevelopers/appcompat-v23-2-daynight-d10f90c83e94, https://github.com/chrisbanes/tivi
+
+ 22/01/2019
+  - [Feature]
+       - Dagger2
+  - [Learning]
+       - https://medium.com/@iammert/new-android-injector-with-dagger-2-part-1-8baa60152abe
+       - https://medium.com/google-cloud/playing-with-kotlin-you-know-everything-john-doe-8275a6e98a96
+
+  - [Referred] : https://medium.com/androiddevelopers/appcompat-v23-2-daynight-d10f90c83e94, https://github.com/chrisbanes/tivi
+
+
+
+
+Release checklist
+  - https://www.raywenderlich.com/9043-android-app-bundles-getting-started
 
  
 

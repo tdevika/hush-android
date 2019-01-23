@@ -1,57 +1,54 @@
 package com.xpns.ui.home
 
+import android.content.Context
 import android.os.Bundle
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
+import android.os.PowerManager
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.xpns.R
-import com.xpns.data.model.XpnsItems
 import com.xpns.databinding.ActivityHomeBinding
 import com.xpns.ui.base.BaseActivity
-import com.xpns.utils.DataWrapper
+import com.xpns.utils.themeswitcher.ThemeOverlayUtils
+import com.xpns.utils.XpnsPreferences
 import javax.inject.Inject
 
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
 
-    @Inject
-    lateinit var homeListAdapter: HomeListAdapter
-
-    @Inject
-    lateinit var linearLayoutManager: LinearLayoutManager
-
     override fun getViewModelClass() = HomeViewModel::class.java
 
-    override fun layoutId(): Int {
-        return R.layout.activity_home
-    }
+    override fun layoutId() = R.layout.activity_home
+
+    override fun onSupportNavigateUp() = findNavController(this, R.id.navHostFragment).navigateUp()
+
+    @Inject
+    lateinit var prefs: XpnsPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        ThemeOverlayUtils.applyThemeOverlays(this)
         super.onCreate(savedInstanceState)
-        initializeUI()
-        subscribeToModel()
+        binding.fab.setOnClickListener { findNavController(this, R.id.navHostFragment).navigate(R.id.actionXpnsFragment) }
     }
 
-    private fun initializeUI() {
-        with(binding.recyclerView) {
-            layoutManager = linearLayoutManager
-            adapter = homeListAdapter
+    private fun updateNightMode() {
+        when (prefs.darkModePreference) {
+            XpnsPreferences.DarkMode.ALWAYS -> delegate.setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            else -> updateNightModeForBatterySaver()
         }
     }
 
-    private fun subscribeToModel() {
-        binding.viewModel = viewModel
-        viewModel.repositoriesLiveData.observe(this, subscribersObserver())
-        binding.setLifecycleOwner(this)
-    }
-
-    private fun subscribersObserver(): Observer<DataWrapper<XpnsItems>> {
-        return Observer {
-            viewModel.displayLoader(false)
-            it?.let {
-                if (!it.isError) {
-                    homeListAdapter.updateData(it.data?.items!!)
-                } else {
-                    viewModel.setErrorMessage(it.isError, it.errorMessage)
-                }
+    private fun updateNightModeForBatterySaver() {
+        val darkMode = prefs.darkModePreference
+        val pm = getSystemService(Context.POWER_SERVICE) as PowerManager
+        if (pm.isPowerSaveMode) {
+            if (darkMode == XpnsPreferences.DarkMode.BATTERY_SAVER_ONLY || darkMode == XpnsPreferences.DarkMode.AUTO) {
+                delegate.setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+        } else {
+            if (darkMode == XpnsPreferences.DarkMode.AUTO) {
+                delegate.setLocalNightMode(AppCompatDelegate.MODE_NIGHT_AUTO)
+            } else if (darkMode == XpnsPreferences.DarkMode.BATTERY_SAVER_ONLY) {
+                delegate.setLocalNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             }
         }
     }

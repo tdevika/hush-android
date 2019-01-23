@@ -1,4 +1,4 @@
-package com.xpns.ui.home
+package com.xpns.ui.xpnslist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import com.xpns.R
 import com.xpns.data.model.Xpns
 import com.xpns.databinding.ItemXpnsBinding
 
-class HomeListAdapter(private var xpns: List<Xpns>) : RecyclerView.Adapter<HomeListAdapter.DetailViewHolder>() {
+class XpnsListAdapter(private var xpns: List<Xpns>) : RecyclerView.Adapter<XpnsListAdapter.DetailViewHolder>() {
 
   fun updateData(repositories: List<Xpns>) {
     this.xpns = repositories

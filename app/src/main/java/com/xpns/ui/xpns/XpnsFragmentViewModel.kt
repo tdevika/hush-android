@@ -8,16 +8,13 @@ import androidx.lifecycle.MutableLiveData
 import com.xpns.data.repository.XpnsRepository
 import com.xpns.injection.scope.ActivityScope
 import com.xpns.ui.base.BaseViewModel
-import com.xpns.ui.themeswitcher.ThemeSwitcherDialogFragment
 import com.xpns.utils.Constants
 import com.xpns.utils.DataWrapper
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 
-
-@ActivityScope
-class XpnsViewModel @Inject constructor(private val xpnsRepository: XpnsRepository, private val resourceProvider: ThemeSwitcherDialogFragment) : BaseViewModel() {
+class XpnsFragmentViewModel @Inject constructor(private val xpnsRepository: XpnsRepository) : BaseViewModel() {
     var repositoriesLiveData = MutableLiveData<DataWrapper<String>>()
     var amount: ObservableField<String> = ObservableField()
     var note: ObservableField<String> = ObservableField()
