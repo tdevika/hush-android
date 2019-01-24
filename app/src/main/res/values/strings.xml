@@ -30,4 +30,7 @@
     <string name="mtrl_purple">Purple</string>
     <string name="mtrl_xpns">Xpns</string>
     <string name="retry">Retry</string>
+    <string name="item_name"> %s - € %d</string>
+    <string name="item_date"> %s </string>
+
 </resources>

@@ -16,8 +16,7 @@ class XpnsListAdapter(private var xpns: List<Xpns>) : RecyclerView.Adapter<XpnsL
   }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailViewHolder {
-    val bindings: ItemXpnsBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
-        R.layout.item_xpns, parent, false)
+    val bindings: ItemXpnsBinding = ItemXpnsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     return DetailViewHolder(bindings)
   }
 

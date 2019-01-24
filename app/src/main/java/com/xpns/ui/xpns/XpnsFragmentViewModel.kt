@@ -6,11 +6,10 @@ import android.view.View
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import com.xpns.data.repository.XpnsRepository
-import com.xpns.injection.scope.ActivityScope
 import com.xpns.ui.base.BaseViewModel
 import com.xpns.utils.Constants
 import com.xpns.utils.DataWrapper
-import java.text.SimpleDateFormat
+import com.xpns.utils.DateUtils
 import java.util.*
 import javax.inject.Inject
 
@@ -22,7 +21,7 @@ class XpnsFragmentViewModel @Inject constructor(private val xpnsRepository: Xpns
     var category: ObservableField<String> = ObservableField()
     private val calendar = Calendar.getInstance()
     init {
-        date.set(formatMMDDYYYY(Date()))
+        date.set(DateUtils.formatDate(Date()))
     }
 
     fun onDatePickerEdittextClicked(context: View) {
@@ -35,15 +34,10 @@ class XpnsFragmentViewModel @Inject constructor(private val xpnsRepository: Xpns
         calendar.set(Calendar.YEAR, year)
         calendar.set(Calendar.MONTH, monthOfYear)
         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-        date.set(formatMMDDYYYY(calendar.time))
+        date.set(DateUtils.formatDate((calendar.time)))
     }
 
-    // TODO refactor it to extension function
-    fun formatMMDDYYYY(time: Date?): String? {
-        val myFormat = "MM/dd/yy"
-        val sdf = SimpleDateFormat(myFormat, Locale.US)
-        return sdf.format(time)
-    }
+
 
     fun onSubmitXpns() {
         setErrorMessage(false, Constants.EMPTY_MESSAGE)

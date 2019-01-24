@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <import type="com.xpns.utils.DateUtils"/>
         <import type="android.view.View" />
 
         <variable
@@ -11,18 +12,21 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_item_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground">
+        android:layout_marginStart="@dimen/space_8dp"
+        android:layout_marginTop="@dimen/space_4dp"
+        android:layout_marginEnd="@dimen/space_8dp"
+        android:layout_marginBottom="@dimen/space_4dp"
+        tools:cardCornerRadius="@dimen/space_2dp"
+        tools:cardElevation="@dimen/space_2dp">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/name"
-            android:layout_width="wrap_content"
+            android:padding="@dimen/space_16dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.category??` `}"
+            android:text="@{@string/item_name(viewModel.category,viewModel.amount)}"
             android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
 </layout>
