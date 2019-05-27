@@ -26,7 +26,7 @@
             android:padding="@dimen/space_16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{@string/item_name(viewModel.category,viewModel.amount)}"
+            android:text="@{@string/item_name(DateUtils.parseDate(viewModel.date),viewModel.category,viewModel.amount)}"
             android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
 </layout>

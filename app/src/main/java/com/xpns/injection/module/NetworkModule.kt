@@ -12,8 +12,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 import com.google.gson.GsonBuilder
-import com.google.gson.Gson
-
+import com.xpns.utils.networkutils.KotlinRxJava2CallAdapterFactory
 
 
 @Module
@@ -34,6 +33,7 @@ class NetworkModule {
     internal fun provideRestAdapter(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder().baseUrl(BuildConfig.SERVICE_ENDPOINT)
                 .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
+                .addCallAdapterFactory(KotlinRxJava2CallAdapterFactory())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(okHttpClient)
                 .build()

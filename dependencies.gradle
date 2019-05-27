@@ -16,14 +16,12 @@ ext {
     def versionMaterial  = "1.1.0-alpha02"
     def versionDagger = '2.16'
     def versionRetrofit = '2.5.0'
+    def versionMoshi = '1.8.0'
     def versionOkhttp = '3.12.1'
     def versionRxJava = '2.2.4'
     def versionRxAndroid = '2.1.0'
     def versionGlide = '4.8.0'
     def versionSupportCompat = '28.0.0'
-
-
-    
 
 
     def androidLibs = [kotlin               : [group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk7', version: kotlinVersion],
@@ -45,6 +43,7 @@ ext {
                 daggerAndroidSupport     : [group: 'com.google.dagger', name: 'dagger-android-support', version: versionDagger],
                 daggerAndroidProcessor   : [group: 'com.google.dagger', name: 'dagger-android-processor', version: versionDagger],
                 retrofit2                : [group: 'com.squareup.retrofit2', name: 'retrofit', version: versionRetrofit],
+                moshi                    : [group: 'com.squareup.moshi', name: 'moshi-adapters', version: versionMoshi],
                 converterGson            : [group: 'com.squareup.retrofit2', name: 'converter-gson', version: versionRetrofit],
                 retrofit2RxAdapter       : [group: 'com.squareup.retrofit2', name: 'adapter-rxjava2', version: versionRetrofit],
                 okhttp3                  : [group: 'com.squareup.okhttp3', name: 'okhttp', version: versionOkhttp],
@@ -73,6 +72,7 @@ ext {
                        [configuration: "kapt", dependency: libs.daggerCompiler],
                        [configuration: "kapt", dependency: libs.daggerAndroidProcessor],
                        [configuration: "implementation", dependency: libs.retrofit2],
+                       [configuration: "implementation", dependency: libs.moshi],
                        [configuration: "implementation", dependency: libs.converterGson],
                        [configuration: "implementation", dependency: libs.retrofit2RxAdapter],
                        [configuration: "implementation", dependency: libs.okhttp3],
