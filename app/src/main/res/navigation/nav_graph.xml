@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/xpnsListFragment">
+<navigation android:id="@+id/mobile_navigation"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@+id/xpnsListFragment">
 
     <fragment
         android:id="@+id/xpnsListFragment"
-        android:name="com.xpns.ui.xpnslist.XpnsListFragment"
+        android:name="com.hush.ui.hushlist.HushListFragment"
         android:label="Xpns List Fragment"
-        tools:layout="@layout/fragment_xpns_list">
+        tools:layout="@layout/fragment_hush_list">
         <action
             android:id="@+id/actionXpnsFragment"
-            app:destination="@id/xpnsFragment" />
+            app:destination="@id/xpnsFragment"/>
     </fragment>
 
     <fragment
         android:id="@+id/xpnsFragment"
-        android:name="com.xpns.ui.xpns.XpnsFragment"
+        android:name="com.hush.ui.hush.HushFragment"
         android:label="Xpns Fragment"
-        tools:layout="@layout/fragment_xpns" />
+        tools:layout="@layout/fragment_hush"/>
 
 
 </navigation>
