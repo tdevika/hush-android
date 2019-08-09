@@ -24,8 +24,8 @@ class HushFragment : BaseFragment<FragmentHushBinding, HushFragmentViewModel>(),
     }
 
     private fun subscribeToModel() {
-        binding.viewModel = viewModel
-        viewModel.repositoriesLiveData.observe(this, repositoriesObserver())
+    //    binding.viewModel = viewModel
+      //  viewModel.repositoriesLiveData.observe(this, repositoriesObserver())
         binding.setLifecycleOwner(this)
     }
 

@@ -8,11 +8,11 @@ apply plugin: 'androidx.navigation.safeargs'
 android {
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
-    def  Theme=''+(System.getenv("APP_THEME")?:"lobster_two")+''
+    def Theme = '' + (System.getenv("APP_THEME") ?: "lobster_two") + ''
 
     defaultConfig {
-        manifestPlaceholders = [application_theme:Theme]
-        applicationId "com.xpns"
+        manifestPlaceholders = [application_theme: Theme]
+        applicationId "com.hush"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
@@ -23,10 +23,10 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField "String", "SERVICE_ENDPOINT", '"https://script.google.com/macros/s/AKfycbxBAdew5iu8JW9BLBBCqdj5KEZ-WaPm6S-JrKclTA/"'
+            buildConfigField "String", "SERVICE_ENDPOINT", '"https://hush-243617.appspot.com/"'
         }
         release {
-            buildConfigField "String", "SERVICE_ENDPOINT", '"https://script.google.com/macros/s/AKfycbx8ZOc919VWx5FXYZgVcZ71x7I5qo4mA_CISnhS/"'
+            buildConfigField "String", "SERVICE_ENDPOINT", '"https://hush-243617.appspot.com/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

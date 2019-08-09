@@ -5,7 +5,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hush.R
-import com.hush.data.model.HushItems
+import com.hush.data.model.Portfolio
 import com.hush.databinding.FragmentHushListBinding
 import com.hush.ui.base.BaseFragment
 import com.hush.utils.DataWrapper
@@ -40,16 +40,22 @@ class HushListFragment : BaseFragment<FragmentHushListBinding, HushListFragmentV
         binding.setLifecycleOwner(this)
     }
 
-    private fun subscribersObserver(): Observer<DataWrapper<HushItems>> {
+    private fun subscribersObserver(): Observer<DataWrapper<List<Portfolio>>> {
         return Observer {
             viewModel.displayLoader(false)
             it?.let {
                 if (!it.isError) {
-                    hushListAdapter.updateData(it.data?.items!!)
+                    hushListAdapter.updateData(sortList(it.data!!))
                 } else {
                     viewModel.setErrorMessage(it.isError, it.errorMessage)
                 }
             }
+        }
+    }
+
+    private fun sortList(data: List<Portfolio>): List<Portfolio> {
+        data.forEach {
+            it.avg_cost
         }
     }
 

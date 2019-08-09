@@ -10,7 +10,7 @@
 
         <variable
             name="viewModel"
-            type="com.hush.data.model.Hush"/>
+            type="com.hush.data.model.Portfolio"/>
     </data>
 
     <androidx.cardview.widget.CardView
@@ -24,11 +24,21 @@
         tools:cardElevation="@dimen/space_2dp">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
             android:padding="@dimen/space_16dp"
-            android:text="@{@string/item_name(DateUtils.parseDate(viewModel.date),viewModel.category,viewModel.amount)}"
+            android:text="@{viewModel.symbol}"
+            android:textColor="@color/colorError"
+            android:textSize="16sp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="@dimen/space_16dp"
+            android:text="@{(viewModel.close_price-viewModel.lo_52_wk)}"
+            android:textColor="@color/white"
             android:textSize="16sp"/>
     </androidx.cardview.widget.CardView>
 </layout>

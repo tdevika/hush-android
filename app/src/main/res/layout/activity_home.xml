@@ -23,18 +23,18 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_graph" />
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom" />
+        <!--<com.google.android.material.bottomappbar.BottomAppBar-->
+        <!--android:id="@+id/bar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom" />-->
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_anchor="@id/bar"
-            app:layout_anchorGravity="end"
-            android:src="@drawable/icn_add" />
+        <!--<com.google.android.material.floatingactionbutton.FloatingActionButton-->
+        <!--android:id="@+id/fab"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:layout_anchor="@id/bar"-->
+        <!--app:layout_anchorGravity="end"-->
+        <!--android:src="@drawable/icn_add" />-->
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
