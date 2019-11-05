@@ -29,7 +29,7 @@ class HushListFragment : BaseFragment<FragmentHushListBinding, HushListFragmentV
 
     private fun initializeUI() {
         with(binding.recyclerView) {
-            layoutManager = LinearLayoutManager(activity)
+            layoutManager = LinearLayoutManager(context)
             adapter = hushListAdapter
         }
     }
@@ -54,9 +54,7 @@ class HushListFragment : BaseFragment<FragmentHushListBinding, HushListFragmentV
     }
 
     private fun sortList(data: List<Portfolio>): List<Portfolio> {
-        data.forEach {
-            it.avg_cost
-        }
+      return  data
     }
 
     override fun onFabClicked() {
