@@ -15,7 +15,8 @@ data class Portfolio(
         val symbol: String,
         val lo_52_wk_pct: Int
 ) {
-    fun getDownPct(): Int = (((close_price.toFloat() - lo_52_wk.toFloat()) * 100 )/ (hi_52_wk.toFloat() - lo_52_wk.toFloat())).toInt()
+    fun index52W(): Float = "%.2f".format(((close_price.toFloat() - lo_52_wk.toFloat()) * 100 )/ (hi_52_wk.toFloat() - lo_52_wk.toFloat())).toFloat()
+    fun from52wLow(): Float = "%.2f".format(((close_price.toFloat() / lo_52_wk.toFloat())-1) * 100).toFloat()
 }
 
 data class CorporateAction(

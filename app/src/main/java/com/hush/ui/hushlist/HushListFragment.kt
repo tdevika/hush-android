@@ -54,7 +54,8 @@ class HushListFragment : BaseFragment<FragmentHushListBinding, HushListFragmentV
     }
 
     private fun sortList(data: List<Portfolio>): List<Portfolio> {
-      return  data
+      //return  data.filter { it.index52W()<10 }
+        return  data.filter { it.close_price.toFloat()>0 }
     }
 
     override fun onFabClicked() {
