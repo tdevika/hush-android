@@ -23,10 +23,10 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField "String", "SERVICE_ENDPOINT", '"http://10.0.2.2:8080/"'
+            buildConfigField "String", "SERVICE_ENDPOINT", '"https://hush-259619.appspot.com/"'
         }
         release {
-            buildConfigField "String", "SERVICE_ENDPOINT", '"http://10.0.2.2:8080/"'
+            buildConfigField "String", "SERVICE_ENDPOINT", '"https://hush-259619.appspot.com/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
