@@ -11,30 +11,77 @@
             type="com.hush.ui.home.HomeViewModel" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <fragment
-            android:id="@+id/navHostFragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph" />
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="6dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?android:attr/actionBarTheme" />
 
-        <!--<com.google.android.material.bottomappbar.BottomAppBar-->
-        <!--android:id="@+id/bar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="bottom" />-->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="6dp"
+            android:minHeight="?attr/actionBarSize"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/black" >
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabChats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chats"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabCalls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calls"/>
+        </com.google.android.material.tabs.TabLayout>
 
-        <!--<com.google.android.material.floatingactionbutton.FloatingActionButton-->
-        <!--android:id="@+id/fab"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:layout_anchor="@id/bar"-->
-        <!--app:layout_anchorGravity="end"-->
-        <!--android:src="@drawable/icn_add" />-->
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/navHostFragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph" />
+
+            <!--<com.google.android.material.bottomappbar.BottomAppBar-->
+            <!--android:id="@+id/bar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom" />-->
+
+            <!--<com.google.android.material.floatingactionbutton.FloatingActionButton-->
+            <!--android:id="@+id/fab"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:layout_anchor="@id/bar"-->
+            <!--app:layout_anchorGravity="end"-->
+            <!--android:src="@drawable/icn_add" />-->
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
 </layout>
