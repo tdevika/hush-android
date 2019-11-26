@@ -32,5 +32,9 @@
     <string name="retry">Retry</string>
     <string name="item_name">%s  %s - € %d</string>
     <string name="item_date"> %s </string>
+    <string name="findstocks">FindStocks</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="hushlist">HushList</string>
+    <string name="title"> Stocks Tracking</string>
 
 </resources>

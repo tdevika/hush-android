@@ -11,7 +11,7 @@ class HushListFragmentViewModel @Inject constructor(hushRepository: HushReposito
     var repositoriesLiveData = MutableLiveData<DataWrapper<List<Portfolio>>>()
 
     init {
-        displayLoader(true)
+       // displayLoader(true)
         hushRepository.getPortfolio(repositoriesLiveData)
     }
 }

@@ -8,4 +8,7 @@
     <dimen name="space_16dp">16dp</dimen>
     <dimen name="space_32dp">32dp</dimen>
     <dimen name="space_40dp">40dp</dimen>
+    <dimen name="space_14dp">14dp</dimen>
+    <dimen name="space_1dp">1dp</dimen>
+    <dimen name="space_20dp">20dp</dimen>
 </resources>
