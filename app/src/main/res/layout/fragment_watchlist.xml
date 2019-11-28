@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.hush.ui.portfolio.PortfolioFragmentViewModel" />
+            type="com.hush.ui.watchList.WatchlistFragmentViewModel" />
     </data>
 
     <FrameLayout

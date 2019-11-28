@@ -1,5 +1,6 @@
 package com.hush.ui.findstocks
 
+import com.hush.data.model.Portfolio
 import dagger.Module
 import dagger.Provides
 
@@ -7,6 +8,6 @@ import dagger.Provides
 class FindStocksFragmentModule {
     @Provides
     fun findStocksListAdapter(): FindStocksAdapter {
-        return FindStocksAdapter(emptyList())
+        return FindStocksAdapter(arrayListOf())
     }
 }

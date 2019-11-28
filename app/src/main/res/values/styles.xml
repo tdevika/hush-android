@@ -19,9 +19,4 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
-    <style name="Widget.MaterialComponents.Chip.Choice" parent="Base.Widget.MaterialComponents.Chip">
-        <item name="android:checkable">true</item>
-        <item name="closeIconVisible">false</item>
-        <item name="chipIcon">@drawable/ic_placeholder_circle</item>
-    </style>
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Xpns</string>
+    <string name="app_name">Hush</string>
     <string name="title_activity_detail_view">Detail View</string>
     <string name="hint_amount">0.00</string>
     <string name="currency">€</string>
@@ -7,19 +7,6 @@
     <string name="label_category">Category</string>
     <string name="label_details">Details</string>
     <string name="hint_note">Add a note...</string>
-    <string-array name="categories">
-        <item>Food&amp;Drinks</item>
-        <item>Health/Medical</item>
-        <item>Shopping</item>
-        <item>Transportation</item>
-        <item>Gifts</item>
-        <item>Utilities</item>
-        <item>Travel</item>
-        <item>Debt</item>
-        <item>Other</item>
-        <item>Housing</item>
-        <item>Investments</item>
-    </string-array>
 
     <string name="mtrl_theme_switcher_title">Theme Switcher</string>
     <string name="mtrl_theme_switcher_save">Save</string>
@@ -32,9 +19,9 @@
     <string name="retry">Retry</string>
     <string name="item_name">%s  %s - € %d</string>
     <string name="item_date"> %s </string>
-    <string name="findstocks">FindStocks</string>
+    <string name="find_stocks">Stocks</string>
+    <string name="watchlist">WatchList</string>
     <string name="portfolio">Portfolio</string>
-    <string name="hushlist">HushList</string>
     <string name="title"> Stocks Tracking</string>
 
 </resources>

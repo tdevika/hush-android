@@ -2,7 +2,7 @@
 <layout>
 
     <data>
-
+        <import type="android.view.View"/>
         <variable
             name="viewModel"
             type="com.hush.ui.findstocks.FindStocksFragmentViewModel" />
@@ -26,6 +26,7 @@
             android:layout_width="@dimen/space_40dp"
             android:layout_height="@dimen/space_40dp"
             android:layout_gravity="center"
-/>
+            android:visibility="@{viewModel.loader ? View.VISIBLE: View.GONE}"/>
+
     </FrameLayout>
 </layout>

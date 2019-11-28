@@ -7,7 +7,7 @@ import com.hush.ui.findstocks.FindStocksFragmentViewModel
 import com.hush.ui.home.HomeViewModel
 import com.hush.ui.hush.HushFragmentViewModel
 import com.hush.ui.hushlist.HushListFragmentViewModel
-import com.hush.ui.portfolio.PortfolioFragmentViewModel
+import com.hush.ui.watchList.WatchlistFragmentViewModel
 import com.hush.utils.ViewModelFactory
 import dagger.Binds
 import dagger.Module
@@ -34,8 +34,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelScope(PortfolioFragmentViewModel::class)
-    abstract fun bindPortfolioFragmentViewModel(portfolioFragmentViewModel: PortfolioFragmentViewModel): ViewModel
+    @ViewModelScope(WatchlistFragmentViewModel::class)
+    abstract fun bindWatchListFragmentViewModel(watchlistFragmentViewModel: WatchlistFragmentViewModel): ViewModel
 
     @Binds
     @IntoMap

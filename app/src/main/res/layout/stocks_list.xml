@@ -11,7 +11,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="80dp"
         tools:cardCornerRadius="@dimen/space_2dp"
         tools:cardElevation="@dimen/space_2dp">
 
@@ -21,14 +21,15 @@
             android:padding="@dimen/space_2dp">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/symbol"
+                android:id="@+id/security"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:text="@{viewModel.symbol}"
+                android:text="@{viewModel.security}"
                 android:textColor="@{viewModel.from52wLow()&lt;10 ? @android:color/holo_red_light : @color/black }"
+                android:textSize="@dimen/space_16dp"
                 android:textStyle="bold"
-                android:textSize="@dimen/space_20dp" />
+                />
 
             <TextView
                 android:id="@+id/closed_price"
@@ -36,52 +37,38 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="@{``+viewModel.close_price}"
-                android:textStyle="bold"
                 android:textColor="@{viewModel.from52wLow()&lt;10 ? @android:color/holo_red_light : @color/black }"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/closed_price_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@+id/closed_price"
-                android:text="₹"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="@dimen/space_20dp" />
+                android:textSize="@dimen/space_16dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/high"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
                 android:layout_below="@+id/closed_price"
-                android:textStyle="bold"
+                android:layout_alignParentEnd="true"
                 android:text="@{``+viewModel.hi_52_wk}"
-                android:textColor="@{viewModel.from52wLow()&lt;10 ? @android:color/holo_red_light : @color/blue }"
-                android:textSize="@dimen/space_16dp"
-                />
+                android:textColor="@{viewModel.from52wLow()&lt;10 ? @android:color/holo_red_light : @color/green }"
+                android:textSize="@dimen/space_14dp" />
 
             <TextView
                 android:id="@+id/high_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/closed_price"
                 android:layout_toLeftOf="@+id/high"
-                android:layout_below="@id/closed_price_textView"
-                android:text="High :"
-                android:textSize="@dimen/space_16dp" />
+                android:text="H:"
+                android:textSize="@dimen/space_14dp" />
 
             <TextView
                 android:id="@+id/low"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/high"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:text="@{``+viewModel.lo_52_wk}"
-                android:textStyle="bold"
-                android:textColor="@{viewModel.from52wLow()&lt;10 ? @android:color/holo_red_light : @color/blue }"
-                android:textSize="@dimen/space_16dp"
-                />
+                android:textColor="@{viewModel.from52wLow()&lt;10 ? @android:color/holo_red_light : @color/green }"
+                android:textSize="@dimen/space_14dp" />
 
             <TextView
                 android:id="@+id/low_textView"
@@ -89,18 +76,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/high_textView"
                 android:layout_toLeftOf="@+id/low"
-                android:text="Low :"
-                android:textSize="@dimen/space_16dp" />
-
-            <TextView
-                android:id="@+id/security"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/symbol"
-                android:text="@{viewModel.security}"
-                android:textAllCaps="false"
-                android:textSize="@dimen/space_14dp"
-                 />
+                android:text="L:"
+                android:textSize="@dimen/space_14dp" />
 
             <TextView
                 android:id="@+id/index"
@@ -110,8 +87,7 @@
                 android:layout_marginTop="@dimen/space_2dp"
                 android:text="@{viewModel.index}"
                 android:textAllCaps="false"
-                android:textSize="@dimen/space_16dp" />
-
+                android:textSize="@dimen/space_14dp" />
 
 
         </RelativeLayout>

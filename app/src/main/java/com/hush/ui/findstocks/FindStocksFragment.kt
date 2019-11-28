@@ -1,7 +1,11 @@
 package com.hush.ui.findstocks
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,8 +30,8 @@ class FindStocksFragment : BaseFragment<FragmentStocksListBinding, FindStocksFra
     }
 
     private fun subscribeToModel() {
-        binding.viewModel=viewModel
-        viewModel.repositoryLiveData.observe(this,subscribersObserver())
+        binding.viewModel = viewModel
+        viewModel.repositoryLiveData.observe(this, subscribersObserver())
         binding.setLifecycleOwner(this)
 
 
@@ -39,8 +43,9 @@ class FindStocksFragment : BaseFragment<FragmentStocksListBinding, FindStocksFra
             /*if(binding.progressBar.visibility == View.INVISIBLE){
                 View.GONE
             }*/
+            viewModel.displayLoader(false)
             it?.let {
-                if(!it.isError){
+                if (!it.isError) {
                     findStocksAdapter.updateData(sortList(it.data!!))
                 }
             }
@@ -48,8 +53,8 @@ class FindStocksFragment : BaseFragment<FragmentStocksListBinding, FindStocksFra
 
     }
 
-    private fun sortList(data: List<Portfolio>): List<Portfolio> {
-        return data.filter { it.close_price.toFloat() >0 }
+    private fun sortList(data: List<Portfolio>): ArrayList<Portfolio> {
+        return data.filter { !it.close_price.isNullOrBlank() } as ArrayList<Portfolio>
 
     }
 
@@ -57,7 +62,31 @@ class FindStocksFragment : BaseFragment<FragmentStocksListBinding, FindStocksFra
         with(binding.recyclerView) {
             layoutManager = LinearLayoutManager(context)
             adapter = findStocksAdapter
-            addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))
+            addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_menu, menu)
+        val searchItem: MenuItem = menu.findItem(R.id.search_item)
+        val searchView: SearchView = searchItem.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                findStocksAdapter.filter.filter(query)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+
+        })
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item!!.itemId == R.id.search_item) {
+
+        }
+        return true
     }
 }

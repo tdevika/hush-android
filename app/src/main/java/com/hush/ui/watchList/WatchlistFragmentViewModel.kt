@@ -1,10 +1,10 @@
-package com.hush.ui.portfolio
+package com.hush.ui.watchList
 
 import com.hush.data.repository.HushRepository
 import com.hush.ui.base.BaseViewModel
 import javax.inject.Inject
 
-class PortfolioFragmentViewModel @Inject constructor(private val hushRepository: HushRepository) : BaseViewModel() {
+class WatchlistFragmentViewModel @Inject constructor(private val hushRepository: HushRepository) : BaseViewModel() {
 //    var repositoriesLiveData = MutableLiveData<DataWrapper<String>>()
 //    var amount: ObservableField<String> = ObservableField()
 //    var note: ObservableField<String> = ObservableField()

@@ -6,8 +6,8 @@ import com.hush.ui.hush.HushFragment
 import com.hush.ui.hush.HushFragmentModule
 import com.hush.ui.hushlist.HushListFragment
 import com.hush.ui.hushlist.HushListFragmentModule
-import com.hush.ui.portfolio.PortfolioFragment
-import com.hush.ui.portfolio.PortfolioFragmentModule
+import com.hush.ui.watchList.WatchlistFragment
+import com.hush.ui.watchList.WatchlistFragmentModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -25,12 +25,10 @@ abstract class FragmentBuilder {
     internal abstract fun bindHushFragmentModule(): HushFragment
 
     @ContributesAndroidInjector(
-        modules = [(PortfolioFragmentModule::class)]
+        modules = [(WatchlistFragmentModule::class)]
     )
-    internal abstract fun bindHPortfolioFragmentModule(): PortfolioFragment
+    internal abstract fun bindHPortfolioFragmentModule(): WatchlistFragment
 
-    @ContributesAndroidInjector(
-        modules = [(FindStocksFragmentModule::class)]
-    )
+    @ContributesAndroidInjector(modules = [(FindStocksFragmentModule::class)])
     internal abstract fun bindFindStocksFragmentModule(): FindStocksFragment
 }
