@@ -10,4 +10,6 @@ interface ApiService {
     @GET("get-portfolio")
     fun getPortfolio(): Single<List<Portfolio>>
 
+    @GET("get-bhav")
+    fun getStockList(): Single<List<Portfolio>>
 }

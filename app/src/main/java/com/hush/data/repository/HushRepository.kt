@@ -11,17 +11,38 @@ import javax.inject.Singleton
 
 
 @Singleton
-class HushRepository @Inject constructor(private val apiService: ApiService,
-                                         private val disposableProvider: CompositeDisposableProvider) : BaseRepository(disposableProvider) {
+class HushRepository @Inject constructor(
+    private val apiService: ApiService,
+    private val disposableProvider: CompositeDisposableProvider
+) : BaseRepository(disposableProvider) {
 
 
     fun getPortfolio(repositoriesLiveData: MutableLiveData<DataWrapper<List<Portfolio>>>) {
         disposableProvider.get().add(apiService.getPortfolio()
+            .onBackground()
+            .subscribe({ response ->
+                repositoriesLiveData.postValue(DataWrapper(data = response))
+            }, {
+                repositoriesLiveData.postValue(
+                    DataWrapper(
+                        isError = true,
+                        errorMessage = it.message!!
+                    )
+                )
+            })
+        )
+    }
+
+    fun getStockList(repositoryLiveData: MutableLiveData<DataWrapper<List<Portfolio>>>) {
+        disposableProvider.get().add(
+            apiService.getStockList()
                 .onBackground()
                 .subscribe({ response ->
-                    repositoriesLiveData.postValue(DataWrapper(data = response))
+                    repositoryLiveData.postValue(DataWrapper(data = response))
                 }, {
-                    repositoriesLiveData.postValue(DataWrapper(isError = true, errorMessage = it.message!!))
-                }))
+                    repositoryLiveData.postValue(DataWrapper(isError = true, errorMessage =it.message!!))
+                })
+        )
+
     }
 }

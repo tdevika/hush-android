@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hush.data.model.Portfolio" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        tools:cardCornerRadius="@dimen/space_2dp"
+        tools:cardElevation="@dimen/space_2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/space_2dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/security"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@{viewModel.security}"
+                android:textColor="@{viewModel.from52wLow()&lt;10 ? @android:color/holo_red_light : @color/black }"
+                android:textSize="@dimen/space_16dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/closed_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@{``+viewModel.close_price}"
+                android:textColor="@{viewModel.from52wLow()&lt;10 ? @android:color/holo_red_light : @color/black }"
+                android:textSize="@dimen/space_16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/closed_price"
+                android:layout_alignParentEnd="true"
+                android:text="@{``+viewModel.hi_52_wk}"
+                android:textColor="@{viewModel.from52wLow()&lt;10 ? @android:color/holo_red_light : @color/green }"
+                android:textSize="@dimen/space_14dp" />
+
+            <TextView
+                android:id="@+id/high_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/closed_price"
+                android:layout_toLeftOf="@+id/high"
+                android:text="H:"
+                android:textSize="@dimen/space_14dp" />
+
+            <TextView
+                android:id="@+id/low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/high"
+                android:layout_alignParentEnd="true"
+                android:text="@{``+viewModel.lo_52_wk}"
+                android:textColor="@{viewModel.from52wLow()&lt;10 ? @android:color/holo_red_light : @color/green }"
+                android:textSize="@dimen/space_14dp" />
+
+            <TextView
+                android:id="@+id/low_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/high_textView"
+                android:layout_toLeftOf="@+id/low"
+                android:text="L:"
+                android:textSize="@dimen/space_14dp" />
+
+            <TextView
+                android:id="@+id/index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/security"
+                android:layout_marginTop="@dimen/space_2dp"
+                android:text="@{viewModel.index}"
+                android:textAllCaps="false"
+                android:textSize="@dimen/space_14dp" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
