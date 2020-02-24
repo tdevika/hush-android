@@ -37,7 +37,7 @@ class HushListFragment : BaseFragment<FragmentHushListBinding, HushListFragmentV
     private fun subscribeToModel() {
         binding.viewModel = viewModel
         viewModel.repositoriesLiveData.observe(this, subscribersObserver())
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
     }
 
     private fun subscribersObserver(): Observer<DataWrapper<List<Portfolio>>> {
@@ -45,7 +45,7 @@ class HushListFragment : BaseFragment<FragmentHushListBinding, HushListFragmentV
             viewModel.displayLoader(false)
             it?.let {
                 if (!it.isError) {
-                    hushListAdapter.updateData(sortLists(it.data!!))
+                    hushListAdapter.updateData(sortList(it.data!!))
                 } else {
                     viewModel.setErrorMessage(it.isError, it.errorMessage)
                 }
@@ -53,9 +53,9 @@ class HushListFragment : BaseFragment<FragmentHushListBinding, HushListFragmentV
         }
     }
 
-    private fun sortLists(data: List<Portfolio>): List<Portfolio> {
+    private fun sortList(data: List<Portfolio>): List<Portfolio> {
       //return  data.filter { it.index52W()<10 }
-        return  data.filter { !it.close_price.isNullOrBlank() }
+        return  data.filter { if (it.close_price.isNotBlank()) it.close_price.toFloat()>0 else false }
     }
 
     override fun onFabClicked() {
