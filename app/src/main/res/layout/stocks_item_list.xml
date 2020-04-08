@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/space_8dp"
+    android:layout_marginTop="@dimen/space_4dp"
+    android:layout_marginEnd="@dimen/space_8dp"
+    android:layout_marginBottom="@dimen/space_4dp"
+    tools:cardCornerRadius="@dimen/space_2dp"
+    tools:cardElevation="@dimen/space_2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/symbol"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/space_6dp"
+            android:layout_marginTop="@dimen/space_4dp"
+            android:padding="@dimen/space_2dp"
+            android:textSize="@dimen/space_18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/space_4dp"
+            android:layout_marginRight="@dimen/space_4dp"
+            android:textSize="@dimen/space_15sp" />
+
+        <TextView
+            android:id="@+id/security"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/symbol"
+            android:layout_marginLeft="@dimen/space_6dp"
+            android:layout_marginTop="@dimen/space_2dp"
+            android:layout_marginBottom="@dimen/space_6dp"
+            android:textSize="@dimen/space_12sp" />
+
+        <TextView
+            android:id="@+id/high_low_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/index"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/space_6dp"
+            android:layout_marginRight="@dimen/space_6dp"
+            android:layout_marginBottom="@dimen/space_2dp"
+            android:text="Day(Hi/Lo)"
+            android:textSize="@dimen/space_15sp" />
+
+
+        <TextView
+            android:id="@+id/close_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/security"
+            android:layout_marginLeft="@dimen/space_6dp"
+            android:layout_marginTop="@dimen/space_4dp"
+            android:layout_marginBottom="@dimen/space_4dp"
+            android:textSize="@dimen/space_24sp" />
+
+        <TextView
+            android:id="@+id/high_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/high_low_text"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/space_2dp"
+            android:layout_marginRight="@dimen/space_6dp"
+            android:textSize="@dimen/space_15sp" />
+
+        <TextView
+            android:id="@+id/low_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/high_value"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/space_2dp"
+            android:layout_marginRight="@dimen/space_6dp"
+            android:textSize="@dimen/space_15sp" />
+
+        <TextView
+            android:id="@+id/price_difference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/high_low_text"
+            android:layout_marginTop="@dimen/space_2dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/space_16sp" />
+
+        <TextView
+            android:id="@+id/price_difference_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price_difference"
+            android:layout_marginTop="@dimen/space_2dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/space_16sp" />
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/price_difference_percentage"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/price_difference"
+            android:layout_marginBottom="@dimen/space_4dp"
+            />
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
