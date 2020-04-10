@@ -14,11 +14,11 @@ interface ApiService {
     suspend fun getAllStocksList(): List<Stocks>
 
     @GET("get-watchlist")
-    suspend fun getWatchList(): List<Stocks>
+    suspend fun getWatchList(): List<Stocks>?
 
     @PUT("add-watchlist-item")
     suspend fun addToWatchList(@Body stocks: Stocks)
 
-    @DELETE("delete-watchlist-item/{symbol}")
+    @DELETE("delete-from-watchlist")
     suspend fun deleteWatchList(stocks: Stocks)
 }

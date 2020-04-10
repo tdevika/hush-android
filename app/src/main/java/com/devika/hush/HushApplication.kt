@@ -13,6 +13,10 @@ class HushApplication @Inject constructor(): Application() {
         intializeComponent()
     }
 
+    init {
+
+    }
+
     private fun intializeComponent(): AppComponent {
         return DaggerAppComponent.factory().create(applicationContext)
     }

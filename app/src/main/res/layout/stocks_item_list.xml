@@ -46,7 +46,7 @@
             android:textSize="@dimen/space_12sp" />
 
         <TextView
-            android:id="@+id/high_low_text"
+            android:id="@+id/highLowText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/index"
@@ -59,7 +59,7 @@
 
 
         <TextView
-            android:id="@+id/close_price"
+            android:id="@+id/closePrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/security"
@@ -69,39 +69,39 @@
             android:textSize="@dimen/space_24sp" />
 
         <TextView
-            android:id="@+id/high_value"
+            android:id="@+id/highValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/high_low_text"
+            android:layout_below="@+id/highLowText"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="@dimen/space_2dp"
             android:layout_marginRight="@dimen/space_6dp"
             android:textSize="@dimen/space_15sp" />
 
         <TextView
-            android:id="@+id/low_value"
+            android:id="@+id/lowValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/high_value"
+            android:layout_below="@+id/highValue"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="@dimen/space_2dp"
             android:layout_marginRight="@dimen/space_6dp"
             android:textSize="@dimen/space_15sp" />
 
         <TextView
-            android:id="@+id/price_difference"
+            android:id="@+id/dayChange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/high_low_text"
+            android:layout_below="@id/highLowText"
             android:layout_marginTop="@dimen/space_2dp"
             android:layout_centerHorizontal="true"
             android:textSize="@dimen/space_16sp" />
 
         <TextView
-            android:id="@+id/price_difference_percentage"
+            android:id="@+id/dayChangePercentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/price_difference"
+            android:layout_below="@id/dayChange"
             android:layout_marginTop="@dimen/space_2dp"
             android:layout_centerHorizontal="true"
             android:textSize="@dimen/space_16sp" />
@@ -109,9 +109,9 @@
             android:id="@+id/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/price_difference_percentage"
+            android:layout_toLeftOf="@id/dayChangePercentage"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/price_difference"
+            android:layout_below="@+id/dayChange"
             android:layout_marginBottom="@dimen/space_4dp"
             />
 

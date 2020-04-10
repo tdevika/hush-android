@@ -8,13 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.devika.hush.R
 import com.devika.hush.data.model.Stocks
-import kotlinx.android.synthetic.main.portfolio_item_list.view.close_price
-import kotlinx.android.synthetic.main.portfolio_item_list.view.high_value
-import kotlinx.android.synthetic.main.portfolio_item_list.view.low_value
 import kotlinx.android.synthetic.main.portfolio_item_list.view.symbol
 import kotlinx.android.synthetic.main.stocks_item_list.view.*
 import javax.inject.Inject
@@ -96,15 +94,15 @@ class StocksListAdapter @Inject constructor() :
         private fun View.setUI(stocks: Stocks) {
             security.text = stocks.security
             symbol.text = stocks.symbol
-            close_price.text = stocks.closePrice
+            closePrice.text = stocks.closePrice
             index.text = stocks.index
-            high_value.text = stocks.hi52Wk
-            low_value.text = stocks.lo52Wk
-            price_difference.text = stocks.dayChange().toString()
+            highValue.text = stocks.hi52Wk
+            lowValue.text = stocks.lo52Wk
+            dayChange.text = "${stocks.dayChange().toString()}  "
             if (stocks.dayChange() < 0) {
-                price_difference.setTextColor(Color.RED)
+                dayChange.setTextColor(Color.RED)
             } else {
-                price_difference.setTextColor(
+                dayChange.setTextColor(
                     ResourcesCompat.getColor(
                         resources,
                         R.color.colorPrimary,
@@ -112,13 +110,13 @@ class StocksListAdapter @Inject constructor() :
                     )
                 )
             }
-            price_difference_percentage.text = "${stocks.dayChangePercentage()}%"
+            dayChangePercentage.text = "${stocks.dayChangePercentage()}%"
 
             if (stocks.dayChange() < 0) {
-                price_difference_percentage.setTextColor(Color.RED)
+                dayChangePercentage.setTextColor(Color.RED)
                 icon.setImageResource(R.drawable.ic_arrow_drop_down)
             } else {
-                price_difference_percentage.setTextColor(
+                dayChangePercentage.setTextColor(
                     ResourcesCompat.getColor(
                         resources,
                         R.color.colorPrimary,
@@ -140,12 +138,13 @@ class StocksListAdapter @Inject constructor() :
                     .setNegativeButton("Cancel") { dialogInterface: DialogInterface, i: Int -> }
                     .show()
             } else {
-                AlertDialog.Builder(context)
+                /*AlertDialog.Builder(context)
                     //.setTitle("Add to WatchList")
                     .setMessage("Already Added to WatchList")
                     .setPositiveButton("Ok") { a: DialogInterface, b: Int ->
                     }
-                    .show()
+                    .show()*/
+                Toast.makeText(context,"Already Added to WatchList",Toast.LENGTH_LONG).show()
             }
         }
 

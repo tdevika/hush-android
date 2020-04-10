@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     private fun setViewPager() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(PortfolioFragment(), "PORTFOLIO")
-        adapter.addFragment(WatchListFragment(), "WISHLIST")
+        adapter.addFragment(WatchListFragment(), "WATCHLIST")
         adapter.addFragment(StocksFragment(), "STOCKS")
         viewpager.setPageTransformer(true, depthPageTransformer)
         viewpager.adapter = adapter

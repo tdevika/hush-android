@@ -5,6 +5,8 @@ import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.devika.hush.R
 import com.devika.hush.data.model.Stocks
@@ -13,9 +15,10 @@ import kotlinx.android.synthetic.main.watchlist_item_list.view.*
 import javax.inject.Inject
 
 class WatchListAdapter @Inject constructor() :
-    RecyclerView.Adapter<WatchListAdapter.WatchListViewHolder>() {
+    RecyclerView.Adapter<WatchListAdapter.WatchListViewHolder>(), Filterable {
 
-    var stocks: List<Stocks> = emptyList()
+    var stocks: ArrayList<Stocks> = arrayListOf()
+    var searchList: ArrayList<Stocks> = arrayListOf()
     lateinit var longPress: (Stocks) -> Unit
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WatchListViewHolder {
@@ -25,20 +28,50 @@ class WatchListAdapter @Inject constructor() :
     }
 
     override fun getItemCount(): Int {
-        return stocks.size
+        return searchList.size
     }
 
     override fun onBindViewHolder(holder: WatchListViewHolder, position: Int) {
-        var stocks = stocks[position]
-        holder.setData(stocks)
+        var stocks = searchList[position]
+        stocks?.let { holder.setData(it) }
+    }
+
+    override fun getFilter(): Filter = searchingStocks()
+
+    private fun searchingStocks(): Filter {
+        return object : Filter() {
+            val filterResults = FilterResults()
+            override fun performFiltering(p0: CharSequence?): FilterResults {
+                val filterList: ArrayList<Stocks> = arrayListOf()
+                if (p0.isNullOrEmpty()) {
+                    filterList.addAll(stocks)
+                } else {
+                    for (stock in stocks) {
+                        if (stock.symbol.toLowerCase().startsWith(p0.toString().toLowerCase())) {
+                            filterList.add(stock)
+                        }
+                    }
+                }
+                filterResults.values = filterList
+                return filterResults
+            }
+
+            override fun publishResults(p0: CharSequence?, p1: FilterResults?) {
+                searchList.clear()
+                searchList.addAll(filterResults.values as Collection<Stocks>)
+                notifyDataSetChanged()
+            }
+
+        }
     }
 
     fun updateData(
-        stocks: List<Stocks>,
+        stocks: ArrayList<Stocks>,
         longPress: (Stocks) -> Unit
     ) {
         this.stocks = stocks
         this.longPress = longPress
+        this.searchList.addAll(stocks)
         notifyDataSetChanged()
     }
 
@@ -56,7 +89,7 @@ class WatchListAdapter @Inject constructor() :
 
         private fun View.setUI(stocks: Stocks) {
             symbol.text = stocks.symbol
-            price.text = stocks.closePrice
+            closePrice.text = stocks.price
             date.text = stocks.date
         }
 
@@ -71,5 +104,6 @@ class WatchListAdapter @Inject constructor() :
             .setNegativeButton("Cancel") { dialogInterface: DialogInterface, i: Int -> }
             .show()
     }
+
 
 }

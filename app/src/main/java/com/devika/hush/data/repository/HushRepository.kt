@@ -23,7 +23,7 @@ class HushRepository @Inject constructor(
         return apiService.getAllStocksList()
     }
 
-    suspend fun getWatchList(): List<Stocks> {
+    suspend fun getWatchList(): List<Stocks>? {
         return apiService.getWatchList()
     }
 

@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -52,6 +53,19 @@ class WatchListFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.search_menu, menu)
+        val menuItem = menu.findItem(R.id.search)
+        val searchView = menuItem.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                watchListAdapter.filter.filter(newText)
+                return false
+            }
+
+        })
     }
 
     private fun initUI() {
@@ -64,8 +78,15 @@ class WatchListFragment : Fragment() {
             ViewModelProvider(this, watchListViewModelFactory).get(WatchListViewModel::class.java)
 
         watchListViewModel.stocks.observe(viewLifecycleOwner, Observer {
-            progress_bar.visibility=View.INVISIBLE
-            it?.let { watchListAdapter.updateData(it,longPress) }
+            if (it.isNullOrEmpty()) {
+                watchListStatusText.visibility = View.VISIBLE
+                progress_bar.visibility = View.INVISIBLE
+
+            } else {
+                progress_bar.visibility = View.INVISIBLE
+                watchListStatusText.visibility = View.INVISIBLE
+                watchListAdapter.updateData(it as ArrayList<Stocks>, longPress)
+            }
         })
     }
 
@@ -76,9 +97,9 @@ class WatchListFragment : Fragment() {
         }
     }
 
-    private val longPress=fun(stocks: Stocks){
-         watchListViewModel.deleteWatchList(stocks)
-        stocks.isStockAddedToWatchList=false
+    private val longPress = fun(stocks: Stocks) {
+        watchListViewModel.deleteWatchList(stocks)
+        stocks.isStockAddedToWatchList = false
     }
 
 

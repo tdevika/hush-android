@@ -11,8 +11,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class WatchListViewModel @Inject constructor(val hushRepository: HushRepository) : ViewModel() {
-    private val _watchList = MutableLiveData<List<Stocks>>()
-    val stocks: LiveData<List<Stocks>> = _watchList
+    private val _watchList = MutableLiveData<List<Stocks>?>()
+    val stocks: LiveData<List<Stocks>?> = _watchList
 
 
     init {

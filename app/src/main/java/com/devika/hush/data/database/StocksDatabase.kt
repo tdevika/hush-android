@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.devika.hush.data.model.Stocks
 
-@Database(entities = [Stocks::class], version = 5, exportSchema = false)
+@Database(entities = [Stocks::class], version = 7, exportSchema = false)
 abstract class StocksDatabase : RoomDatabase() {
     abstract fun stocksDao(): StocksDao
 

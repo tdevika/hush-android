@@ -76,16 +76,16 @@ class PortfolioListAdapter @Inject constructor() :
         }
 
         private fun View.setUI(stocks: Stocks) {
-
+            var formate = DecimalFormat("00.00")
             symbol.text = stocks.symbol
-            close_price.text = "Ltp: ${stocks.closePrice}"
+            closePrice.text = "Ltp: ${stocks.closePrice}"
             sector.text = stocks.sector
             average.text = "Avg: ${stocks.avgCost}"
-            high_value.text = "H: ${stocks.hi52Wk}"
-            low_value.text = "L: ${stocks.lo52Wk}"
+            highValue.text = "H: ${stocks.hi52Wk}"
+            lowValue.text = "L: ${stocks.lo52Wk}"
             quantity.text = "Qty: ${stocks.quantity}"
 
-            dayChangePercentage.text = stocks.dayChangePercentage().toString() + "%"
+            dayChangePercentage.text = formate.format(stocks.dayChangePercentage()) + "%"
 
             if (stocks.dayChange() < 0) {
                 dayChangePercentage.setTextColor(Color.RED)
@@ -98,14 +98,14 @@ class PortfolioListAdapter @Inject constructor() :
                         null
                     )
                 )
-               // icon.setImageResource(R.drawable.ic_arrow_drop_up)
+                // icon.setImageResource(R.drawable.ic_arrow_drop_up)
             }
-            net_change_percentage.text = stocks.netChangePercentage().toString()+"%"
+            netChangePercentage.text = formate.format(stocks.netChangePercentage()) + "%"
 
             if (stocks.netChangePercentage() < 0) {
-                net_change_percentage.setTextColor(Color.RED)
+                netChangePercentage.setTextColor(Color.RED)
             } else {
-                net_change_percentage.setTextColor(
+                netChangePercentage.setTextColor(
                     ResourcesCompat.getColor(
                         resources,
                         R.color.colorPrimary,

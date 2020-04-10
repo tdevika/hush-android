@@ -27,21 +27,20 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/price"
+            android:id="@+id/closePrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/space_4dp"
-            android:layout_marginRight="@dimen/space_4dp"
             android:textSize="@dimen/space_15sp" />
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/symbol"
-            android:layout_marginLeft="@dimen/space_6dp"
-            android:layout_marginTop="@dimen/space_2dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/space_4dp"
             android:layout_marginBottom="@dimen/space_6dp"
+            android:layout_marginRight="@dimen/space_8dp"
             android:textSize="@dimen/space_12sp" />
 
     </RelativeLayout>

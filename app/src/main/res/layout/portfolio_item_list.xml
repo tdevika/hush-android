@@ -59,7 +59,7 @@
             android:textSize="@dimen/space_15sp" />
 
         <TextView
-            android:id="@+id/close_price"
+            android:id="@+id/closePrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/average"
@@ -67,7 +67,7 @@
             android:layout_marginTop="@dimen/space_2dp"
             android:textSize="@dimen/space_16sp" />
         <TextView
-            android:id="@+id/high_value"
+            android:id="@+id/highValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/quantity"
@@ -77,10 +77,10 @@
             android:textSize="@dimen/space_15sp" />
 
         <TextView
-            android:id="@+id/low_value"
+            android:id="@+id/lowValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/high_value"
+            android:layout_below="@+id/highValue"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="@dimen/space_2dp"
             android:layout_marginRight="@dimen/space_6dp"
@@ -95,7 +95,7 @@
             android:gravity="center"
             android:textSize="@dimen/space_16sp" />
         <TextView
-            android:id="@+id/net_change_percentage"
+            android:id="@+id/netChangePercentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/dayChangePercentage"
@@ -121,7 +121,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/average"
             android:text="N: "
-            android:layout_toLeftOf="@id/net_change_percentage"
+            android:layout_toLeftOf="@id/netChangePercentage"
             android:textSize="@dimen/space_16sp"
             android:layout_marginTop="@dimen/space_2dp"
             />

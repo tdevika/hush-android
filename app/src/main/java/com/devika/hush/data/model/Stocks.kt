@@ -4,7 +4,6 @@ package com.devika.hush.data.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import java.text.DecimalFormat
 
 @Entity(tableName = "stocks")
 data class Stocks(
@@ -25,10 +24,11 @@ data class Stocks(
     val sector: String,
     @PrimaryKey val security: String,
     val symbol: String,
-    val date: String? =null
+    val date: String? = null,
+    val price: String? = null,
+    var isStockAddedToWatchList: Boolean = true
 
 ) {
-    var isStockAddedToWatchList:Boolean=false
 
     fun dayChange(): Double {
         return if (closePrice.isNotEmpty()) "%.2f".format(closePrice.toFloat() - prevClosePrice.toFloat()).toDouble() else 00.00
@@ -36,11 +36,12 @@ data class Stocks(
     }
 
     fun dayChangePercentage(): Float {
-        return if(closePrice.isNotEmpty() && prevClosePrice.isNotEmpty()) "%.2f".format(((closePrice.toFloat() - prevClosePrice.toFloat()) / closePrice.toFloat()) * 100)
+        return if (closePrice.isNotEmpty() && prevClosePrice.isNotEmpty()) "%.2f".format(((closePrice.toFloat() - prevClosePrice.toFloat()) / closePrice.toFloat()) * 100)
             .toFloat() else 0.0f
     }
+
     fun netChangePercentage(): Float {
-        return if(closePrice.isNotEmpty() && avgCost.isNotEmpty()) "%.2f".format(((closePrice.toFloat() - avgCost.toFloat()) / avgCost.toFloat()) * 100)
+        return if (closePrice.isNotEmpty() && avgCost.isNotEmpty()) "%.2f".format(((closePrice.toFloat() - avgCost.toFloat()) / avgCost.toFloat()) * 100)
             .toFloat() else 0.0f
     }
 
