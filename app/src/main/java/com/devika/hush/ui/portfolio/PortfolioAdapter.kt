@@ -7,40 +7,46 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.core.content.res.ResourcesCompat
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.devika.hush.R
-import com.devika.hush.data.model.Stocks
+import com.devika.hush.data.model.Portfolio
 import kotlinx.android.synthetic.main.portfolio_item_list.view.*
 import java.text.DecimalFormat
 import javax.inject.Inject
 
-class PortfolioListAdapter @Inject constructor() :
-    RecyclerView.Adapter<PortfolioListAdapter.PortfolioViewHolder>(), Filterable {
 
-    private var portfolioList: ArrayList<Stocks> = arrayListOf()
-    private var searchPortfolioList: ArrayList<Stocks> = arrayListOf()
+class PortfolioAdapter @Inject constructor() :
+    ListAdapter<Portfolio, PortfolioAdapter.PortfolioViewHolder>(DIFF_CALLBACK), Filterable {
+
+    private var portfolioList: ArrayList<Portfolio> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PortfolioViewHolder {
-        var binding =
+        val view =
             LayoutInflater.from(parent.context).inflate(R.layout.portfolio_item_list, parent, false)
-        return PortfolioViewHolder(binding)
-    }
-
-    override fun getItemCount(): Int {
-        return searchPortfolioList.size
+        return PortfolioViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: PortfolioViewHolder, position: Int) {
-        val stocks = searchPortfolioList[position]
+        val stocks = getItem(position)
         holder.setData(stocks)
+    }
+
+    override fun submitList(list: MutableList<Portfolio>?) {
+        if (portfolioList.isEmpty()) {
+            this.portfolioList.addAll(list as ArrayList<Portfolio>)
+        }
+        super.submitList(list)
     }
 
     override fun getFilter() = object : Filter() {
         val filterResults = FilterResults()
 
         override fun performFiltering(charSequence: CharSequence?): FilterResults {
-            val filterList = ArrayList<Stocks>()
+            val filterList = ArrayList<Portfolio>()
             if (charSequence.toString().isEmpty()) {
+                submitList(null)
                 filterList.addAll(portfolioList)
             } else {
                 for (item in portfolioList) {
@@ -55,28 +61,21 @@ class PortfolioListAdapter @Inject constructor() :
         }
 
         override fun publishResults(p0: CharSequence?, p1: FilterResults?) {
-            searchPortfolioList.clear()
-            searchPortfolioList.addAll(filterResults.values as Collection<Stocks>)
+            submitList(filterResults.values as MutableList<Portfolio>?)
             notifyDataSetChanged()
         }
-
     }
 
-    fun updateData(portfolioList: ArrayList<Stocks>) {
-        this.portfolioList = portfolioList
-        this.searchPortfolioList.addAll(portfolioList)
-        notifyDataSetChanged()
-    }
-
-    inner class PortfolioViewHolder(val binding: View) : RecyclerView.ViewHolder(binding.rootView) {
-        fun setData(stocks: Stocks) {
+    inner class PortfolioViewHolder(private val binding: View) :
+        RecyclerView.ViewHolder(binding.rootView) {
+        fun setData(stocks: Portfolio) {
             with(binding) {
                 setUI(stocks)
             }
         }
 
-        private fun View.setUI(stocks: Stocks) {
-            var formate = DecimalFormat("00.00")
+        private fun View.setUI(stocks: Portfolio) {
+            val formate = DecimalFormat("00.00")
             symbol.text = stocks.symbol
             closePrice.text = "Ltp: ${stocks.closePrice}"
             sector.text = stocks.sector
@@ -114,8 +113,18 @@ class PortfolioListAdapter @Inject constructor() :
                 )
             }
         }
+    }
+}
 
+private val DIFF_CALLBACK: DiffUtil.ItemCallback<Portfolio> =
+    object : DiffUtil.ItemCallback<Portfolio>() {
+
+        override fun areItemsTheSame(oldItem: Portfolio, newItem: Portfolio): Boolean =
+            oldItem.symbol == newItem.symbol
+
+        override fun areContentsTheSame(oldItem: Portfolio, newItem: Portfolio): Boolean =
+            oldItem == newItem
     }
 
 
-}
+

@@ -89,7 +89,7 @@ class WatchListAdapter @Inject constructor() :
 
         private fun View.setUI(stocks: Stocks) {
             symbol.text = stocks.symbol
-            closePrice.text = stocks.price
+            closePrice.text = stocks.closePrice
             date.text = stocks.date
         }
 

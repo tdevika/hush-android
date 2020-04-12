@@ -1,24 +1,22 @@
 package com.devika.hush.data.services
 
+import com.devika.hush.data.model.Portfolio
 import com.devika.hush.data.model.Stocks
-import retrofit2.http.Body
-import retrofit2.http.DELETE
-import retrofit2.http.GET
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 interface ApiService {
     @GET("get-portfolio")
-    suspend fun getPortfolioList(): List<Stocks>
+    suspend fun getPortfolio(): List<Portfolio>
 
     @GET("get-bhav")
-    suspend fun getAllStocksList(): List<Stocks>
+    suspend fun getStocks(): List<Stocks>
 
     @GET("get-watchlist")
     suspend fun getWatchList(): List<Stocks>?
 
-    @PUT("add-watchlist-item")
+    @PUT("add-to-watchlist")
     suspend fun addToWatchList(@Body stocks: Stocks)
 
     @DELETE("delete-from-watchlist")
-    suspend fun deleteWatchList(stocks: Stocks)
+    suspend fun deleteWatchList(@Query("symbol") symbol: String)
 }

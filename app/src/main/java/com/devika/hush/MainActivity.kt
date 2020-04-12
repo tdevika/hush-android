@@ -3,7 +3,8 @@ package com.devika.hush
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.*
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import com.devika.hush.ui.portfolio.PortfolioFragment
 import com.devika.hush.ui.stocks.StocksFragment
 import com.devika.hush.ui.watchlist.WatchListFragment
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         adapter.addFragment(WatchListFragment(), "WATCHLIST")
         adapter.addFragment(StocksFragment(), "STOCKS")
         viewpager.setPageTransformer(true, depthPageTransformer)
+        viewpager.offscreenPageLimit = 3
         viewpager.adapter = adapter
         tabLayout.setupWithViewPager(viewpager)
     }

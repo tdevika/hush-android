@@ -25,7 +25,7 @@ class WatchListViewModel @Inject constructor(val hushRepository: HushRepository)
         }
     }
 
-    fun deleteWatchList(stocks: Stocks) {
-        //viewModelScope.launch(Dispatchers.IO) { hushRepository.deleteWatchList(stocks) }
+    fun deleteWatchList(symbol: String) {
+        viewModelScope.launch(Dispatchers.IO) { hushRepository.deleteWatchList(symbol) }
     }
 }

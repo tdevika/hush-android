@@ -3,6 +3,7 @@ package com.devika.hush.ui.portfolio
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -11,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devika.hush.HushApplication
 import com.devika.hush.R
-import com.devika.hush.data.model.Stocks
+import com.devika.hush.data.model.Portfolio
 import com.devika.hush.utilities.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_portfolio.*
 import javax.inject.Inject
@@ -22,7 +23,7 @@ import javax.inject.Inject
 class PortfolioFragment : Fragment() {
 
     @Inject
-    lateinit var portfolioListAdapter: PortfolioListAdapter
+    lateinit var portfolioAdapter: PortfolioAdapter
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
@@ -59,7 +60,7 @@ class PortfolioFragment : Fragment() {
             }
 
             override fun onQueryTextChange(p0: String?): Boolean {
-                portfolioListAdapter.filter.filter(p0)
+                portfolioAdapter.filter.filter(p0)
                 return false
             }
 
@@ -76,9 +77,10 @@ class PortfolioFragment : Fragment() {
         portfolioViewModel =
             ViewModelProvider(this, viewModelFactory).get(PortfolioViewModel::class.java)
         portfolioViewModel.portfolioData.observe(viewLifecycleOwner, Observer {
+            Log.d("-----P","------")
             progress_bar.visibility = View.INVISIBLE
             it?.let {
-                portfolioListAdapter.updateData(it as ArrayList<Stocks>)
+                portfolioAdapter.submitList(it as ArrayList<Portfolio>)
             }
         })
     }
@@ -86,7 +88,7 @@ class PortfolioFragment : Fragment() {
     private fun initRecyclerView() {
         with(recycler) {
             layoutManager = LinearLayoutManager(activity)
-            adapter = portfolioListAdapter
+            adapter = portfolioAdapter
         }
 
     }

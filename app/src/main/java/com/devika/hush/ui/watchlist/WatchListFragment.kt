@@ -80,11 +80,11 @@ class WatchListFragment : Fragment() {
         watchListViewModel.stocks.observe(viewLifecycleOwner, Observer {
             if (it.isNullOrEmpty()) {
                 watchListStatusText.visibility = View.VISIBLE
-                progress_bar.visibility = View.INVISIBLE
+                progress_bar.visibility = View.GONE
 
             } else {
-                progress_bar.visibility = View.INVISIBLE
-                watchListStatusText.visibility = View.INVISIBLE
+                progress_bar.visibility = View.GONE
+                watchListStatusText.visibility = View.GONE
                 watchListAdapter.updateData(it as ArrayList<Stocks>, longPress)
             }
         })
@@ -98,7 +98,7 @@ class WatchListFragment : Fragment() {
     }
 
     private val longPress = fun(stocks: Stocks) {
-        watchListViewModel.deleteWatchList(stocks)
+        watchListViewModel.deleteWatchList(stocks.symbol)
         stocks.isStockAddedToWatchList = false
     }
 

@@ -2,6 +2,7 @@ package com.devika.hush.ui.stocks
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -17,8 +18,7 @@ import javax.inject.Inject
 
 class StocksFragment : Fragment() {
 
-    @Inject
-    lateinit var stocksListAdapter: StocksListAdapter
+    lateinit var stocksAdapter: StocksAdapter
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -50,15 +50,15 @@ class StocksFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.search_menu, menu)
         menu.findItem(R.id.filter).isVisible = false
-        val menuItem= menu.findItem(R.id.search)
+        val menuItem = menu.findItem(R.id.search)
         val searchView = menuItem.actionView as SearchView
-            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                stocksListAdapter.filter.filter(newText)
+                stocksAdapter.filter.filter(newText)
                 return false
             }
 
@@ -74,20 +74,22 @@ class StocksFragment : Fragment() {
     private fun initViewModel() {
         stocksViewModel = ViewModelProvider(this, viewModelFactory).get(StocksViewModel::class.java)
         stocksViewModel.stockList.observe(viewLifecycleOwner, Observer {
-                progress_bar.visibility=View.INVISIBLE
-                it?.let { stocksListAdapter.updateData(it as ArrayList<Stocks>, longPress) }
+            Log.d("-----S", "------")
+            progress_bar.visibility = View.INVISIBLE
+            it?.let { stocksAdapter.submitList(it as ArrayList<Stocks>) }
         })
     }
 
     private fun initRecyclerView() {
+        stocksAdapter = StocksAdapter(arrayListOf(), longPress)
         with(recycler) {
             layoutManager = LinearLayoutManager(activity)
-            adapter = stocksListAdapter
+            adapter = stocksAdapter
         }
     }
 
     private val longPress = fun(stocks: Stocks) {
-       stocksViewModel.addToWatchList(stocks)
-        stocks.isStockAddedToWatchList=true
+        stocksViewModel.addToWatchList(stocks)
+        stocks.isStockAddedToWatchList = true
     }
 }

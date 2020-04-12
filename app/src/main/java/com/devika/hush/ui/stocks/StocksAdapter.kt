@@ -10,33 +10,30 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.devika.hush.R
 import com.devika.hush.data.model.Stocks
 import kotlinx.android.synthetic.main.portfolio_item_list.view.symbol
 import kotlinx.android.synthetic.main.stocks_item_list.view.*
-import javax.inject.Inject
 
-class StocksListAdapter @Inject constructor() :
-    RecyclerView.Adapter<StocksListAdapter.StocksViewHolder>(), Filterable {
+class StocksAdapter(
+    val stockList: ArrayList<Stocks>,
+    val longPress: (Stocks) -> Unit
+) :
+    ListAdapter<Stocks, StocksAdapter.StocksViewHolder>(DIFF_CALLBACK), Filterable {
 
-    private var stockList: ArrayList<Stocks> = arrayListOf()
-    private var searchList: ArrayList<Stocks> = arrayListOf()
-    private lateinit var longPressHandler: (Stocks) -> Unit
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StocksViewHolder {
-        val binding =
+        val view =
             LayoutInflater.from(parent.context).inflate(R.layout.stocks_item_list, parent, false)
-        return StocksViewHolder(binding)
+        return StocksViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: StocksViewHolder, position: Int) {
-        val stocks = searchList[position]
+        val stocks = getItem(position)
         holder.setData(stocks)
-    }
-
-    override fun getItemCount(): Int {
-        return searchList.size
     }
 
     override fun getFilter() = object : Filter() {
@@ -44,6 +41,7 @@ class StocksListAdapter @Inject constructor() :
         override fun performFiltering(charSequence: CharSequence?): FilterResults {
             val searchFilterList = ArrayList<Stocks>()
             if (charSequence.toString().isEmpty()) {
+                submitList(null)
                 searchFilterList.addAll(stockList)
             } else {
                 for (stock in stockList) {
@@ -58,22 +56,15 @@ class StocksListAdapter @Inject constructor() :
         }
 
         override fun publishResults(p0: CharSequence?, p1: FilterResults?) {
-            searchList.clear()
-            searchList.addAll(filterResult.values as Collection<Stocks>)
-            notifyDataSetChanged()
+            submitList(filterResult.values as MutableList<Stocks>?)
         }
-
     }
 
-
-    fun updateData(
-        stocksList: ArrayList<Stocks>,
-        longPress: (Stocks) -> Unit
-    ) {
-        this.longPressHandler = longPress
-        this.searchList.addAll(stocksList)
-        this.stockList = stocksList
-        notifyDataSetChanged()
+    override fun submitList(list: MutableList<Stocks>?) {
+        if (stockList.isEmpty()) {
+            this.stockList.addAll(list as ArrayList<Stocks>)
+        }
+        super.submitList(list)
     }
 
     inner class StocksViewHolder(private val binding: View) :
@@ -133,22 +124,24 @@ class StocksListAdapter @Inject constructor() :
                     //.setTitle("Add to WatchList")
                     .setMessage("Add to WatchList")
                     .setPositiveButton("Ok") { a: DialogInterface, b: Int ->
-                        longPressHandler(stocks)
+                        longPress(stocks)
                     }
                     .setNegativeButton("Cancel") { dialogInterface: DialogInterface, i: Int -> }
                     .show()
             } else {
-                /*AlertDialog.Builder(context)
-                    //.setTitle("Add to WatchList")
-                    .setMessage("Already Added to WatchList")
-                    .setPositiveButton("Ok") { a: DialogInterface, b: Int ->
-                    }
-                    .show()*/
-                Toast.makeText(context,"Already Added to WatchList",Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Already Added to WatchList", Toast.LENGTH_LONG).show()
             }
         }
+    }
+}
+
+private val DIFF_CALLBACK: DiffUtil.ItemCallback<Stocks> =
+    object : DiffUtil.ItemCallback<Stocks>() {
+
+        override fun areItemsTheSame(oldItem: Stocks, newItem: Stocks): Boolean =
+            oldItem.symbol == newItem.symbol
+
+        override fun areContentsTheSame(oldItem: Stocks, newItem: Stocks): Boolean =
+            oldItem == newItem
 
     }
-
-
-}
