@@ -28,31 +28,17 @@ class HushRepository @Inject constructor(
     suspend fun deleteWatchList(symbol: String) = apiService.deleteWatchList(symbol)
 
     suspend fun initDB() {
-        val time = measureTimeMillis {
-            setPortfolioToDB()
-        }
-        println("----Completed Portfolio in $time ms")
-        val timeStocks = measureTimeMillis {
-            setStocksToDB()
-        }
-        println("----Completed Stocks in $timeStocks ms")
+        setPortfolioToDB()
+        setStocksToDB()
     }
 
     private suspend fun setPortfolioToDB() {
-        coroutineScope {
-            val deferredPortfolio: Deferred<List<Portfolio>> =
-                async(Dispatchers.IO) { apiService.getPortfolio() }
-            val portfolio = deferredPortfolio.await()
-            hushDao.setPortfolio(portfolio)
-        }
+        val portfolio = apiService.getPortfolio()
+        hushDao.setPortfolio(portfolio)
     }
 
     private suspend fun setStocksToDB() {
-        coroutineScope {
-            val deferredStocks: Deferred<List<Stocks>> =
-                async(Dispatchers.IO) { apiService.getStocks() }
-            val stocks = deferredStocks.await()
-            hushDao.setStocks(stocks)
-        }
+        val stocks = apiService.getStocks()
+        hushDao.setStocks(stocks)
     }
 }

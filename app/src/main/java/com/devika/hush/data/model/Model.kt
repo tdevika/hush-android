@@ -7,22 +7,17 @@ import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "portfolio")
 data class Portfolio(
-    @SerializedName("avg_cost")
+    @PrimaryKey val security: String,
     val avgCost: String,
-    @SerializedName("close_price")
     val closePrice: String,
     val eps: String,
-    @SerializedName("hi_52_wk")
     val hi52Wk: String,
     val index: String,
-    @SerializedName("lo_52_wk")
     val lo52Wk: String,
     val pe: String,
-    @SerializedName("prev_close_price")
     val prevClosePrice: String,
     val quantity: String,
     val sector: String,
-    @PrimaryKey val security: String,
     val symbol: String
 
 ) {
@@ -45,16 +40,12 @@ data class Portfolio(
 
 @Entity(tableName = "stocks")
 data class Stocks(
-    @SerializedName("close_price")
+    @PrimaryKey val security: String,
     val closePrice: String,
-    @SerializedName("hi_52_wk")
     val hi52Wk: String,
     val index: String,
-    @SerializedName("lo_52_wk")
     val lo52Wk: String,
-    @SerializedName("prev_close_price")
     val prevClosePrice: String,
-    @PrimaryKey val security: String,
     val symbol: String,
     val date: String? = null,
     var isStockAddedToWatchList: Boolean = true
