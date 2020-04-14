@@ -1,4 +1,4 @@
-package com.devika.hush.utilities
+package com.devika.hush.utils
 
 object Constants{
     const val DB_NAME: String = "hush_database"

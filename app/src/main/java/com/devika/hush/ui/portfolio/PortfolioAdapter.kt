@@ -75,7 +75,7 @@ class PortfolioAdapter @Inject constructor() :
         }
 
         private fun View.setUI(stocks: Portfolio) {
-            val formate = DecimalFormat("00.00")
+            val format = DecimalFormat("00.00")
             symbol.text = stocks.symbol
             closePrice.text = "Ltp: ${stocks.closePrice}"
             sector.text = stocks.sector
@@ -84,7 +84,7 @@ class PortfolioAdapter @Inject constructor() :
             lowValue.text = "L: ${stocks.lo52Wk}"
             quantity.text = "Qty: ${stocks.quantity}"
 
-            dayChangePercentage.text = formate.format(stocks.dayChangePercentage()) + "%"
+            dayChangePercentage.text = format.format(stocks.dayChangePercentage()) + "%"
 
             if (stocks.dayChange() < 0) {
                 dayChangePercentage.setTextColor(Color.RED)
@@ -99,7 +99,7 @@ class PortfolioAdapter @Inject constructor() :
                 )
                 // icon.setImageResource(R.drawable.ic_arrow_drop_up)
             }
-            netChangePercentage.text = formate.format(stocks.netChangePercentage()) + "%"
+            netChangePercentage.text = format.format(stocks.netChangePercentage()) + "%"
 
             if (stocks.netChangePercentage() < 0) {
                 netChangePercentage.setTextColor(Color.RED)

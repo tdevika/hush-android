@@ -1,7 +1,7 @@
 package com.devika.hush.injection.module
 
 import com.devika.hush.data.services.ApiService
-import com.devika.hush.utilities.Constants
+import com.devika.hush.utils.Constants
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides

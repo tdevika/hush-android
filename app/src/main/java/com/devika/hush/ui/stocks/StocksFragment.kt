@@ -2,7 +2,6 @@ package com.devika.hush.ui.stocks
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -11,17 +10,21 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devika.hush.HushApplication
 import com.devika.hush.R
-import com.devika.hush.data.model.Stocks
+import com.devika.hush.data.model.Stock
+import com.devika.hush.data.model.WatchList
+import com.devika.hush.utils.DateUtils
+import com.devika.hush.utils.ViewModelFactory
 import com.devika.hush.utilities.HushViewModelFactory
 import kotlinx.android.synthetic.main.fragment_stocks.*
+import java.util.*
 import javax.inject.Inject
 
 class StocksFragment : Fragment() {
 
-    lateinit var stocksAdapter: StocksAdapter
-
     @Inject
     lateinit var hushViewModelFactory: HushViewModelFactory
+
+    private lateinit var stocksAdapter: StocksAdapter
 
     private lateinit var stocksViewModel: StocksViewModel
 
@@ -61,9 +64,7 @@ class StocksFragment : Fragment() {
                 stocksAdapter.filter.filter(newText)
                 return false
             }
-
         })
-
     }
 
     private fun initUI() {
@@ -74,22 +75,27 @@ class StocksFragment : Fragment() {
     private fun initViewModel() {
         stocksViewModel = ViewModelProvider(this, hushViewModelFactory).get(StocksViewModel::class.java)
         stocksViewModel.stockList.observe(viewLifecycleOwner, Observer {
-            Log.d("-----S", "------")
             progress_bar.visibility = View.INVISIBLE
-            it?.let { stocksAdapter.submitList(it as ArrayList<Stocks>) }
+            it?.let { stocksAdapter.submitList(it as ArrayList<Stock>) }
         })
     }
 
     private fun initRecyclerView() {
-        stocksAdapter = StocksAdapter(arrayListOf(), longPress)
+        stocksAdapter = StocksAdapter(arrayListOf(), longPressListener)
         with(recycler) {
             layoutManager = LinearLayoutManager(activity)
             adapter = stocksAdapter
         }
     }
 
-    private val longPress = fun(stocks: Stocks) {
-        stocksViewModel.addToWatchList(stocks)
-        stocks.isStockAddedToWatchList = true
+    private val longPressListener = fun(stock: Stock) {
+        stocksViewModel.addToWatchList(
+            WatchList(
+                stock.symbol,
+                stock.closePrice,
+                DateUtils.getCurrentDate()
+            )
+        );
+        stock.isStockAddedToWatchList = true
     }
 }

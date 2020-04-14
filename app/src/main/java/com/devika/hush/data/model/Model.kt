@@ -1,13 +1,15 @@
 package com.devika.hush.data.model
 
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
+import androidx.room.Relation
 
 @Entity(tableName = "portfolio")
 data class Portfolio(
-    @PrimaryKey val security: String,
+    @PrimaryKey val symbol: String,
+    val security: String,
     val avgCost: String,
     val closePrice: String,
     val eps: String,
@@ -17,8 +19,7 @@ data class Portfolio(
     val pe: String,
     val prevClosePrice: String,
     val quantity: String,
-    val sector: String,
-    val symbol: String
+    val sector: String
 
 ) {
 
@@ -38,17 +39,16 @@ data class Portfolio(
 
 }
 
-@Entity(tableName = "stocks")
-data class Stocks(
-    @PrimaryKey val security: String,
+@Entity(tableName = "stock")
+data class Stock(
+    @PrimaryKey val symbol: String,
+    val security: String,
     val closePrice: String,
     val hi52Wk: String,
     val index: String,
     val lo52Wk: String,
     val prevClosePrice: String,
-    val symbol: String,
-    val date: String? = null,
-    var isStockAddedToWatchList: Boolean = true
+    var isStockAddedToWatchList:Boolean
 ) {
 
     fun dayChange(): Double {
@@ -61,6 +61,25 @@ data class Stocks(
             .toFloat() else 0.0f
     }
 }
+
+@Entity
+data class WatchList(
+    @PrimaryKey val symbol: String,
+    val price: String,
+    val date: String
+)
+
+data class DetailWatchList(
+    @Embedded val watchList: WatchList,
+    @Relation(
+        parentColumn = "symbol",
+        entityColumn = "symbol"
+    )
+    val stock: Stock
+)
+
+
+
 
 
 
