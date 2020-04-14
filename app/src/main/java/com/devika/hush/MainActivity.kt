@@ -9,6 +9,7 @@ import com.devika.hush.ui.portfolio.PortfolioFragment
 import com.devika.hush.ui.stocks.StocksFragment
 import com.devika.hush.ui.watchlist.WatchListFragment
 import com.devika.hush.utils.DepthPageTransformer
+import com.devika.hush.utils.ViewPagerAdapter
 import kotlinx.android.synthetic.main.app_bar_main_layout.*
 import javax.inject.Inject
 
@@ -32,7 +33,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setViewPager() {
-        val adapter = ViewPagerAdapter(supportFragmentManager)
+        val adapter =
+            ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(PortfolioFragment(), "PORTFOLIO")
         adapter.addFragment(WatchListFragment(), "WATCHLIST")
         adapter.addFragment(StocksFragment(), "STOCKS")

@@ -1,4 +1,4 @@
-package com.devika.hush
+package com.devika.hush.utils
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
