@@ -1,24 +1,32 @@
 package com.devika.hush.data.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
+import com.devika.hush.data.model.DetailWatchList
 import com.devika.hush.data.model.Portfolio
-import com.devika.hush.data.model.Stocks
+import com.devika.hush.data.model.Stock
+import com.devika.hush.data.model.WatchList
 
 @Dao
 interface HushDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun setPortfolio(stocks: List<Portfolio>)
 
-    @Query("SELECT * FROM portfolio ")
+    @Query("SELECT * FROM portfolio")
     fun getPortfolio(): LiveData<List<Portfolio>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun setStocks(stocks: List<Stocks>)
+    suspend fun setStocks(stocks: List<Stock>)
 
-    @Query("SELECT * FROM stocks ")
-    fun getStocks(): LiveData<List<Stocks>>
+    @Query("SELECT * FROM stock")
+    fun getStocks(): LiveData<List<Stock>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun setWatchList(stocks: List<WatchList>)
+
+    @Transaction
+    @Query("SELECT * FROM watchlist")
+    fun getWatchList(): LiveData<List<DetailWatchList>>
+
+
 }

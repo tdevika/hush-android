@@ -6,7 +6,7 @@ import com.devika.hush.injection.scope.ViewModelScope
 import com.devika.hush.ui.portfolio.PortfolioViewModel
 import com.devika.hush.ui.stocks.StocksViewModel
 import com.devika.hush.ui.watchlist.WatchListViewModel
-import com.devika.hush.utilities.ViewModelFactory
+import com.devika.hush.utils.ViewModelFactory
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

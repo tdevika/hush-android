@@ -3,7 +3,6 @@ package com.devika.hush.ui.portfolio
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -13,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.devika.hush.HushApplication
 import com.devika.hush.R
 import com.devika.hush.data.model.Portfolio
-import com.devika.hush.utilities.ViewModelFactory
+import com.devika.hush.utils.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_portfolio.*
 import javax.inject.Inject
 
@@ -77,7 +76,6 @@ class PortfolioFragment : Fragment() {
         portfolioViewModel =
             ViewModelProvider(this, viewModelFactory).get(PortfolioViewModel::class.java)
         portfolioViewModel.portfolioData.observe(viewLifecycleOwner, Observer {
-            Log.d("-----P","------")
             progress_bar.visibility = View.INVISIBLE
             it?.let {
                 portfolioAdapter.submitList(it as ArrayList<Portfolio>)

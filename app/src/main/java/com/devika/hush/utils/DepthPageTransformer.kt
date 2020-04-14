@@ -1,4 +1,4 @@
-package com.devika.hush.utilities
+package com.devika.hush.utils
 
 import android.view.View
 import androidx.viewpager.widget.ViewPager

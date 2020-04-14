@@ -14,15 +14,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.devika.hush.R
-import com.devika.hush.data.model.Stocks
+import com.devika.hush.data.model.Stock
 import kotlinx.android.synthetic.main.portfolio_item_list.view.symbol
 import kotlinx.android.synthetic.main.stocks_item_list.view.*
 
 class StocksAdapter(
-    val stockList: ArrayList<Stocks>,
-    val longPress: (Stocks) -> Unit
+    val stockList: ArrayList<Stock>,
+    val longPress: (Stock) -> Unit
 ) :
-    ListAdapter<Stocks, StocksAdapter.StocksViewHolder>(DIFF_CALLBACK), Filterable {
+    ListAdapter<Stock, StocksAdapter.StocksViewHolder>(DIFF_CALLBACK), Filterable {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StocksViewHolder {
@@ -39,7 +39,7 @@ class StocksAdapter(
     override fun getFilter() = object : Filter() {
         var filterResult = FilterResults()
         override fun performFiltering(charSequence: CharSequence?): FilterResults {
-            val searchFilterList = ArrayList<Stocks>()
+            val searchFilterList = ArrayList<Stock>()
             if (charSequence.toString().isEmpty()) {
                 submitList(null)
                 searchFilterList.addAll(stockList)
@@ -56,13 +56,13 @@ class StocksAdapter(
         }
 
         override fun publishResults(p0: CharSequence?, p1: FilterResults?) {
-            submitList(filterResult.values as MutableList<Stocks>?)
+            submitList(filterResult.values as MutableList<Stock>?)
         }
     }
 
-    override fun submitList(list: MutableList<Stocks>?) {
+    override fun submitList(list: MutableList<Stock>?) {
         if (stockList.isEmpty()) {
-            this.stockList.addAll(list as ArrayList<Stocks>)
+            this.stockList.addAll(list as ArrayList<Stock>)
         }
         super.submitList(list)
     }
@@ -71,26 +71,26 @@ class StocksAdapter(
         RecyclerView.ViewHolder(binding.rootView) {
 
         fun setData(
-            stocks: Stocks
+            stock: Stock
         ) {
             with(binding) {
                 setOnLongClickListener() {
-                    showDialog(stocks)
+                    showDialog(stock)
                     true
                 }
-                setUI(stocks)
+                setUI(stock)
             }
         }
 
-        private fun View.setUI(stocks: Stocks) {
-            security.text = stocks.security
-            symbol.text = stocks.symbol
-            closePrice.text = stocks.closePrice
-            index.text = stocks.index
-            highValue.text = stocks.hi52Wk
-            lowValue.text = stocks.lo52Wk
-            dayChange.text = "${stocks.dayChange().toString()}  "
-            if (stocks.dayChange() < 0) {
+        private fun View.setUI(stock: Stock) {
+            security.text = stock.security
+            symbol.text = stock.symbol
+            closePrice.text = stock.closePrice
+            index.text = stock.index
+            highValue.text = stock.hi52Wk
+            lowValue.text = stock.lo52Wk
+            dayChange.text = "${stock.dayChange().toString()}  "
+            if (stock.dayChange() < 0) {
                 dayChange.setTextColor(Color.RED)
             } else {
                 dayChange.setTextColor(
@@ -101,9 +101,9 @@ class StocksAdapter(
                     )
                 )
             }
-            dayChangePercentage.text = "${stocks.dayChangePercentage()}%"
+            dayChangePercentage.text = "${stock.dayChangePercentage()}%"
 
-            if (stocks.dayChange() < 0) {
+            if (stock.dayChange() < 0) {
                 dayChangePercentage.setTextColor(Color.RED)
                 icon.setImageResource(R.drawable.ic_arrow_drop_down)
             } else {
@@ -118,13 +118,14 @@ class StocksAdapter(
             }
         }
 
-        private fun View.showDialog(stocks: Stocks) {
-            if (!stocks.isStockAddedToWatchList) {
+        private fun View.showDialog(stock: Stock) {
+
+            if (!stock.isStockAddedToWatchList) {
                 AlertDialog.Builder(context)
                     //.setTitle("Add to WatchList")
                     .setMessage("Add to WatchList")
                     .setPositiveButton("Ok") { a: DialogInterface, b: Int ->
-                        longPress(stocks)
+                        longPress(stock)
                     }
                     .setNegativeButton("Cancel") { dialogInterface: DialogInterface, i: Int -> }
                     .show()
@@ -135,13 +136,13 @@ class StocksAdapter(
     }
 }
 
-private val DIFF_CALLBACK: DiffUtil.ItemCallback<Stocks> =
-    object : DiffUtil.ItemCallback<Stocks>() {
+private val DIFF_CALLBACK: DiffUtil.ItemCallback<Stock> =
+    object : DiffUtil.ItemCallback<Stock>() {
 
-        override fun areItemsTheSame(oldItem: Stocks, newItem: Stocks): Boolean =
+        override fun areItemsTheSame(oldItem: Stock, newItem: Stock): Boolean =
             oldItem.symbol == newItem.symbol
 
-        override fun areContentsTheSame(oldItem: Stocks, newItem: Stocks): Boolean =
+        override fun areContentsTheSame(oldItem: Stock, newItem: Stock): Boolean =
             oldItem == newItem
 
     }

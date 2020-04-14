@@ -1,11 +1,12 @@
 package com.devika.hush.injection.module
 
 import android.app.Application
+import android.content.Context
 import androidx.room.Room
 import com.devika.hush.HushApplication
 import com.devika.hush.data.database.HushDao
 import com.devika.hush.data.database.HushDatabase
-import com.devika.hush.utilities.Constants
+import com.devika.hush.utils.Constants
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -35,5 +36,5 @@ class AppModule {
 @Module
 abstract class AppModuleBinds {
     @Binds
-    abstract fun provideApplication(application: HushApplication): Application
+    abstract fun provideApplication(application: HushApplication): Context
 }
