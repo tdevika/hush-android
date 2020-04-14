@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.devika.hush.HushApplication
 import com.devika.hush.R
 import com.devika.hush.data.model.Stocks
-import com.devika.hush.utilities.ViewModelFactory
+import com.devika.hush.utilities.HushViewModelFactory
 import kotlinx.android.synthetic.main.fragment_wish_list.*
 import javax.inject.Inject
 
@@ -25,7 +25,7 @@ class WatchListFragment : Fragment() {
     @Inject
     lateinit var watchListAdapter: WatchListAdapter
     @Inject
-    lateinit var watchListViewModelFactory: ViewModelFactory
+    lateinit var hushViewModelFactory: HushViewModelFactory
 
     private lateinit var watchListViewModel: WatchListViewModel
 
@@ -75,7 +75,7 @@ class WatchListFragment : Fragment() {
 
     private fun initViewModel() {
         watchListViewModel =
-            ViewModelProvider(this, watchListViewModelFactory).get(WatchListViewModel::class.java)
+            ViewModelProvider(this, hushViewModelFactory).get(WatchListViewModel::class.java)
 
         watchListViewModel.stocks.observe(viewLifecycleOwner, Observer {
             if (it.isNullOrEmpty()) {

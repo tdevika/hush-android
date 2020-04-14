@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.devika.hush.HushApplication
 import com.devika.hush.R
 import com.devika.hush.data.model.Stocks
-import com.devika.hush.utilities.ViewModelFactory
+import com.devika.hush.utilities.HushViewModelFactory
 import kotlinx.android.synthetic.main.fragment_stocks.*
 import javax.inject.Inject
 
@@ -21,7 +21,7 @@ class StocksFragment : Fragment() {
     lateinit var stocksAdapter: StocksAdapter
 
     @Inject
-    lateinit var viewModelFactory: ViewModelFactory
+    lateinit var hushViewModelFactory: HushViewModelFactory
 
     private lateinit var stocksViewModel: StocksViewModel
 
@@ -72,7 +72,7 @@ class StocksFragment : Fragment() {
     }
 
     private fun initViewModel() {
-        stocksViewModel = ViewModelProvider(this, viewModelFactory).get(StocksViewModel::class.java)
+        stocksViewModel = ViewModelProvider(this, hushViewModelFactory).get(StocksViewModel::class.java)
         stocksViewModel.stockList.observe(viewLifecycleOwner, Observer {
             Log.d("-----S", "------")
             progress_bar.visibility = View.INVISIBLE

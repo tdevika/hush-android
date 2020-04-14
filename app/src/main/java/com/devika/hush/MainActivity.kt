@@ -9,6 +9,7 @@ import com.devika.hush.ui.portfolio.PortfolioFragment
 import com.devika.hush.ui.stocks.StocksFragment
 import com.devika.hush.ui.watchlist.WatchListFragment
 import com.devika.hush.utilities.DepthPageTransformer
+import com.devika.hush.utilities.ViewPagerAdapter
 import kotlinx.android.synthetic.main.app_bar_main_layout.*
 import javax.inject.Inject
 

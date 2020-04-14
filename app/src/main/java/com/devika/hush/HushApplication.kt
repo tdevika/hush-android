@@ -19,15 +19,15 @@ class HushApplication : Application() {
         initializeComponent()
     }
 
-    private fun initializeComponent(): AppComponent {
-        return DaggerAppComponent.factory().create(this)
-    }
-
     override fun onCreate() {
         super.onCreate()
         appComponent.inject(this)
         CoroutineScope(Dispatchers.IO).launch {
             hushRepository.initDB()
         }
+    }
+
+    private fun initializeComponent(): AppComponent {
+        return DaggerAppComponent.factory().create(this)
     }
 }

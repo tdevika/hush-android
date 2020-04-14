@@ -15,3 +15,5 @@
 - Viewpager pager 2
 - Analytics
 - Light / Dark / System theme 
+- Follow io19 app and update the app architecture 
+- Update search
