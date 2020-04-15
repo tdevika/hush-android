@@ -27,6 +27,4 @@ interface HushDao {
     @Transaction
     @Query("SELECT * FROM watchlist")
     fun getWatchList(): LiveData<List<DetailWatchList>>
-
-
 }

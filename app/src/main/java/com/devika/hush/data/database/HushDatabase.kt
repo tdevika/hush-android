@@ -5,14 +5,14 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.devika.hush.data.model.Portfolio
-import com.devika.hush.data.model.Stocks
-import com.devika.hush.utilities.Constants
+import com.devika.hush.data.model.Stock
+import com.devika.hush.utils.Constants
 
 @Database(
     entities = [
-        Stocks::class,
+        Stock::class,
         Portfolio::class],
-    version = 8,
+    version = 1,
     exportSchema = false
 )
 abstract class HushDatabase : RoomDatabase() {

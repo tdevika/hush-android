@@ -27,8 +27,6 @@ class HushRepository @Inject constructor(
 
     suspend fun deleteWatchList(symbol: String) {
         apiService.deleteWatchList(symbol)
-
-
     }
 
     suspend fun initDB() {

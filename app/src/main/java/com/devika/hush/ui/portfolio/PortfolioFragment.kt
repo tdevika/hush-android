@@ -1,6 +1,5 @@
 package com.devika.hush.ui.portfolio
 
-
 import android.content.Context
 import android.os.Bundle
 import android.view.*
@@ -16,9 +15,6 @@ import com.devika.hush.utils.HushViewModelFactory
 import kotlinx.android.synthetic.main.fragment_portfolio.*
 import javax.inject.Inject
 
-/**
- * A simple [Fragment] subclass.
- */
 class PortfolioFragment : Fragment() {
 
     @Inject
