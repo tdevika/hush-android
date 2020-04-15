@@ -13,20 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.devika.hush.HushApplication
 import com.devika.hush.R
 import com.devika.hush.data.model.DetailWatchList
-import com.devika.hush.utils.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_watch_list.*
-import com.devika.hush.data.model.Stocks
-import com.devika.hush.utilities.HushViewModelFactory
-import kotlinx.android.synthetic.main.fragment_wish_list.*
+import com.devika.hush.utils.HushViewModelFactory
 import javax.inject.Inject
 
-/**
- * A simple [Fragment] subclass.
- */
 class WatchListFragment : Fragment() {
-
-    @Inject
-    lateinit var watchListViewModelFactory: ViewModelFactory
 
     lateinit var watchListAdapter: WatchListAdapter
     @Inject

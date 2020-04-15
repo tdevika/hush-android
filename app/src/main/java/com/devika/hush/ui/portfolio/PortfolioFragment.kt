@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.devika.hush.HushApplication
 import com.devika.hush.R
 import com.devika.hush.data.model.Portfolio
-import com.devika.hush.utilities.HushViewModelFactory
+import com.devika.hush.utils.HushViewModelFactory
 import kotlinx.android.synthetic.main.fragment_portfolio.*
 import javax.inject.Inject
 

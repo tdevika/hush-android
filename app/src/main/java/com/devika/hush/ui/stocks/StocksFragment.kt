@@ -14,7 +14,7 @@ import com.devika.hush.data.model.Stock
 import com.devika.hush.data.model.WatchList
 import com.devika.hush.utils.DateUtils
 import com.devika.hush.utils.ViewModelFactory
-import com.devika.hush.utilities.HushViewModelFactory
+import com.devika.hush.utils.HushViewModelFactory
 import kotlinx.android.synthetic.main.fragment_stocks.*
 import java.util.*
 import javax.inject.Inject

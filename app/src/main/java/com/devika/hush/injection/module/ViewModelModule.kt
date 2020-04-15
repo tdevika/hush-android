@@ -1,7 +1,7 @@
 package com.devika.hush.injection.module
 
 import androidx.lifecycle.ViewModelProvider
-import com.devika.hush.utilities.HushViewModelFactory
+import com.devika.hush.utils.HushViewModelFactory
 import dagger.Binds
 import dagger.Module
 
