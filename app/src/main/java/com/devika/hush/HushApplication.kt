@@ -8,6 +8,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 class HushApplication : Application() {
@@ -24,6 +25,12 @@ class HushApplication : Application() {
         appComponent.inject(this)
         CoroutineScope(Dispatchers.IO).launch {
             hushRepository.initDB()
+        }
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        } else {
+            //TODO: Plant CrashlyticsTree
+            // Timber.plant(CrashlyticsTree())
         }
     }
 

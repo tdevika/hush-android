@@ -6,12 +6,15 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.devika.hush.data.model.Portfolio
 import com.devika.hush.data.model.Stock
+import com.devika.hush.data.model.WatchList
 import com.devika.hush.utils.Constants
 
 @Database(
     entities = [
         Stock::class,
-        Portfolio::class],
+        Portfolio::class,
+        WatchList::class
+    ],
     version = 1,
     exportSchema = false
 )
