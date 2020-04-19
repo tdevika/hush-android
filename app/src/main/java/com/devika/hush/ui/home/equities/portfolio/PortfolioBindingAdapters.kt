@@ -1,4 +1,4 @@
-package com.devika.hush.ui.portfolio
+package com.devika.hush.ui.home.equities.portfolio
 
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter

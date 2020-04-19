@@ -1,4 +1,4 @@
-package com.devika.hush.ui.watchlist
+package com.devika.hush.ui.home.equities.watchlist
 
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.devika.hush.R
 import com.devika.hush.data.model.DetailWatchList
-import com.devika.hush.data.model.WatchList
 import kotlinx.android.synthetic.main.item_portfolio.view.symbol
 import kotlinx.android.synthetic.main.watchlist_item_list.view.*
 import kotlinx.android.synthetic.main.watchlist_item_list.view.closePrice

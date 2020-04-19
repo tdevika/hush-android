@@ -22,31 +22,31 @@ class HushRepository @Inject constructor(
 
     suspend fun addToWatchList(watchList: WatchList) {
         apiService.addToWatchList(watchList)
-        setWatchListToDB()
     }
 
     suspend fun deleteWatchList(symbol: String) {
         apiService.deleteWatchList(symbol)
     }
 
-    suspend fun initDB() {
-        setPortfolioToDB()
-        setStocksToDB()
-        setWatchListToDB()
+    suspend fun refreshCacheWithRemoteData() {
+        refreshCacheWithRemoteStocks()
+        refreshCacheWithRemotePortfolio()
+        refreshCacheWithRemoteWatchList()
     }
 
-    private suspend fun setWatchListToDB() {
+    private suspend fun refreshCacheWithRemoteWatchList() {
         val watchList = apiService.getWatchList()
         hushDao.setWatchList(watchList)
     }
 
-    private suspend fun setPortfolioToDB() {
+    private suspend fun refreshCacheWithRemotePortfolio() {
         val portfolio = apiService.getPortfolio()
         hushDao.setPortfolio(portfolio)
     }
 
-    private suspend fun setStocksToDB() {
+    private suspend fun refreshCacheWithRemoteStocks() {
         val stocks = apiService.getStocks()
         hushDao.setStocks(stocks)
     }
+
 }

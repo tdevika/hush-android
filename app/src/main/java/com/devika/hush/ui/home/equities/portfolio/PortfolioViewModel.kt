@@ -1,7 +1,7 @@
-package com.devika.hush.ui.portfolio
+package com.devika.hush.ui.home.equities.portfolio
 
 import androidx.lifecycle.*
-import com.devika.hush.base.BaseViewModel
+import com.devika.hush.ui.base.BaseViewModel
 import com.devika.hush.data.model.Portfolio
 import com.devika.hush.utils.result.Results
 import kotlinx.coroutines.launch

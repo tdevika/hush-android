@@ -6,6 +6,6 @@
 
     <activity
         android:id="@+id/home"
-        android:name="com.devika.hush.MainActivity"
+        android:name="com.devika.hush.ui.home.HomeActivity"
         android:label="HUSH" />
 </navigation>

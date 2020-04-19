@@ -5,6 +5,8 @@
 - watch list feature
 - sorting
 - code formatting
+- Add animated vector draeble for tab icons
+- Update MainActivity to have bottom tab
 
 
 

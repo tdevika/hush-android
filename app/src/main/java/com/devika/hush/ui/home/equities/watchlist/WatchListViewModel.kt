@@ -1,4 +1,4 @@
-package com.devika.hush.ui.watchlist
+package com.devika.hush.ui.home.equities.watchlist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

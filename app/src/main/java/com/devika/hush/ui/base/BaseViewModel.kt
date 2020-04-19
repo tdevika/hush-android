@@ -1,4 +1,4 @@
-package com.devika.hush.base
+package com.devika.hush.ui.base
 
 import androidx.lifecycle.ViewModel
 

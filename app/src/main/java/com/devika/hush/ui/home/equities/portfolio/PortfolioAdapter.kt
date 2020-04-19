@@ -1,4 +1,4 @@
-package com.devika.hush.ui.portfolio
+package com.devika.hush.ui.home.equities.portfolio
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

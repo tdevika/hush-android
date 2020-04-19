@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/equitiesFragment"
+    app:startDestination="@id/equitiesFragment">
+    <fragment
+        android:id="@+id/equitiesFragment"
+        android:name="com.devika.hush.ui.home.equities.EquitiesFragment"
+        android:label="@string/title_equities" />
+</navigation>

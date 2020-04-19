@@ -1,4 +1,4 @@
-package com.devika.hush.ui.portfolio
+package com.devika.hush.ui.home.equities.portfolio
 
 import androidx.lifecycle.LiveData
 import com.devika.hush.data.model.Portfolio
@@ -13,5 +13,5 @@ open class PortfolioUseCase @Inject constructor(
     @DefaultDispatcher defaultDispatcher: CoroutineDispatcher
 ) : UseCase<Unit, LiveData<List<Portfolio>>>(defaultDispatcher) {
 
-    override fun execute(parameters: Unit): LiveData<List<Portfolio>> = hushRepository.getPortfolio()
+    override suspend fun execute(parameters: Unit): LiveData<List<Portfolio>> = hushRepository.getPortfolio()
 }

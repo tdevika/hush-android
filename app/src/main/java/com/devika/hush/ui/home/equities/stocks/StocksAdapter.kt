@@ -1,4 +1,4 @@
-package com.devika.hush.ui.stocks
+package com.devika.hush.ui.home.equities.stocks
 
 import android.app.AlertDialog
 import android.content.DialogInterface

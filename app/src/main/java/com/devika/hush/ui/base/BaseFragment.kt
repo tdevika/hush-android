@@ -1,4 +1,4 @@
-package com.devika.hush.base
+package com.devika.hush.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

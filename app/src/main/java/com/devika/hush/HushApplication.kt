@@ -13,24 +13,14 @@ import javax.inject.Inject
 
 class HushApplication : Application() {
 
-    @Inject
-    lateinit var hushRepository: HushRepository
-
     val appComponent: AppComponent by lazy {
         initializeComponent()
     }
 
     override fun onCreate() {
         super.onCreate()
-        appComponent.inject(this)
-        CoroutineScope(Dispatchers.IO).launch {
-            hushRepository.initDB()
-        }
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
-        } else {
-            //TODO: Plant CrashlyticsTree
-            // Timber.plant(CrashlyticsTree())
         }
     }
 

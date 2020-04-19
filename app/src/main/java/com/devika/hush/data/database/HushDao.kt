@@ -10,19 +10,19 @@ import com.devika.hush.data.model.WatchList
 @Dao
 interface HushDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun setPortfolio(stocks: List<Portfolio>)
+    fun setPortfolio(stocks: List<Portfolio>)
 
     @Query("SELECT * FROM portfolio")
     fun getPortfolio(): LiveData<List<Portfolio>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun setStocks(stocks: List<Stock>)
+    fun setStocks(stocks: List<Stock>)
 
     @Query("SELECT * FROM stock")
     fun getStocks(): LiveData<List<Stock>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun setWatchList(stocks: List<WatchList>)
+    fun setWatchList(stocks: List<WatchList>)
 
     @Transaction
     @Query("SELECT * FROM watchlist")

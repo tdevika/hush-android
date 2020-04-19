@@ -7,13 +7,13 @@
 
         <variable
             name="viewModel"
-            type="com.devika.hush.ui.portfolio.PortfolioViewModel" />
+            type="com.devika.hush.ui.home.equities.portfolio.PortfolioViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.portfolio.PortfolioFragment">
+        tools:context=".ui.home.equities.portfolio.PortfolioFragment">
 
         <ProgressBar
             android:id="@+id/progressBar"
