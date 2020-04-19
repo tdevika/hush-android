@@ -17,5 +17,4 @@ class InfoFragment : BaseFragment<FragmentExploreBinding, InfoViewModel>() {
     override fun layoutId() = R.layout.fragment_info
 
     override fun getViewModelClass() = InfoViewModel::class.java
-
 }

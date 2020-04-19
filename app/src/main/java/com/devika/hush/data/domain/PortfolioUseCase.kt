@@ -1,4 +1,4 @@
-package com.devika.hush.ui.home.equities.portfolio
+package com.devika.hush.data.domain
 
 import androidx.lifecycle.LiveData
 import com.devika.hush.data.model.Portfolio

@@ -7,7 +7,6 @@ import com.devika.hush.HushApplication
 import com.devika.hush.R
 import com.devika.hush.databinding.FragmentEquitiesBinding
 import com.devika.hush.ui.base.BaseFragment
-import com.devika.hush.databinding.FragmentPortfolioBinding
 
 class EquitiesFragment : BaseFragment<FragmentEquitiesBinding, EquitiesViewModel>() {
 
