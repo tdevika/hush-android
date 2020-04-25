@@ -1,24 +1,22 @@
 package com.devika.hush.ui.home.equities.portfolio
 
-import androidx.lifecycle.*
-import com.devika.hush.data.domain.PortfolioUseCase
+import androidx.lifecycle.viewModelScope
+import com.devika.hush.data.domain.onError
+import com.devika.hush.data.domain.onSuccess
 import com.devika.hush.ui.base.BaseViewModel
-import com.devika.hush.data.model.Portfolio
-import com.devika.hush.utils.result.Results
+import com.devika.hush.ui.base.UiState
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class PortfolioViewModel @Inject constructor(
-    portfolioUseCase: PortfolioUseCase
-) : BaseViewModel() {
-    var portfolioResults: LiveData<List<Portfolio>> = MutableLiveData()
-
+    private val portfolioUseCase: PortfolioUseCase
+) : BaseViewModel<UiState>() {
     init {
         viewModelScope.launch {
-            processSearchResult(portfolioUseCase(Unit))
+            portfolioUseCase.execute(Unit).run {
+                onSuccess { uiState.value = UiState.Success(it) }
+                onError { uiState.value = UiState.Error(it.message) }
+            }
         }
-    }
-    private fun processSearchResult(result: Results<LiveData<List<Portfolio>>>) {
-        portfolioResults = (result as? Results.Success)?.data ?: liveData { emptyArray<Portfolio>() }
     }
 }

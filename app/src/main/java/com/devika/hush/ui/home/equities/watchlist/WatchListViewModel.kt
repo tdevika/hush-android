@@ -9,7 +9,6 @@ import javax.inject.Inject
 
 class WatchListViewModel @Inject constructor(private val hushRepository: HushRepository) :
     ViewModel() {
-    val watchList = hushRepository.getWatchList()
 
     fun deleteWatchList(symbol: String) {
         viewModelScope.launch(Dispatchers.IO) { hushRepository.deleteWatchList(symbol) }

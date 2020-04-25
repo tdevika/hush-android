@@ -19,11 +19,8 @@ import javax.inject.Inject
 
 class WatchListFragment : Fragment() {
 
-    lateinit var watchListAdapter: WatchListAdapter
     @Inject
     lateinit var hushViewModelFactory: HushViewModelFactory
-
-    private lateinit var watchListViewModel: WatchListViewModel
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -40,64 +37,4 @@ class WatchListFragment : Fragment() {
         setHasOptionsMenu(true)
         return root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        initUI()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.search_menu, menu)
-        val menuItem = menu.findItem(R.id.search)
-        val searchView = menuItem.actionView as SearchView
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                watchListAdapter.filter.filter(newText)
-                return false
-            }
-
-        })
-    }
-
-    private fun initUI() {
-        initViewModel()
-        initRecyclerView()
-    }
-
-    private fun initViewModel() {
-        watchListViewModel =
-            ViewModelProvider(this, hushViewModelFactory).get(WatchListViewModel::class.java)
-
-        watchListViewModel.watchList.observe(viewLifecycleOwner, Observer {
-            if (it.isNullOrEmpty()) {
-                watchListStatusText.visibility = View.VISIBLE
-                progress_bar.visibility = View.GONE
-
-            } else {
-                progress_bar.visibility = View.GONE
-                watchListStatusText.visibility = View.GONE
-                watchListAdapter.submitList(it as ArrayList<DetailWatchList> )
-            }
-        })
-    }
-
-    private fun initRecyclerView() {
-        watchListAdapter = WatchListAdapter(arrayListOf(),longPress)
-        with(recycler) {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = watchListAdapter
-        }
-    }
-
-    private val longPress = fun(detailWatchList: DetailWatchList) {
-        watchListViewModel.deleteWatchList(detailWatchList.watchList.symbol)
-        //detailWatchList.isStockAddedToWatchList = false
-    }
-
-
 }

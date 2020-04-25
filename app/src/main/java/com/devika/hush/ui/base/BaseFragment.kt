@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.devika.hush.utils.HushViewModelFactory
 import javax.inject.Inject
 
-abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel> : Fragment() {
+abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel<UiState>> : Fragment() {
 
     internal lateinit var binding: B
     internal lateinit var viewModel: VM

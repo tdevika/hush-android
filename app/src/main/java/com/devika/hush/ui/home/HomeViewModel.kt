@@ -1,17 +1,17 @@
 package com.devika.hush.ui.home
 
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.devika.hush.data.domain.EquitiesUseCase
-import com.devika.hush.ui.base.BaseViewModel
+import com.devika.hush.data.domain.RefreshCacheUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(
-    equitiesUseCase: EquitiesUseCase
-) : BaseViewModel() {
+    private val refreshCacheUseCase: RefreshCacheUseCase
+) : ViewModel() {
     init {
         viewModelScope.launch {
-            equitiesUseCase(Unit)
+            refreshCacheUseCase.execute(Unit)
         }
     }
 }

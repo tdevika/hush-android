@@ -11,7 +11,7 @@ import com.devika.hush.databinding.ItemPortfolioBinding
 import java.util.concurrent.Executors
 
 class PortfolioAdapter : ListAdapter<Portfolio, PortfolioViewHolder>(
-    AsyncDifferConfig.Builder<Portfolio>(PortfolioDiff)
+    AsyncDifferConfig.Builder(PortfolioDiff)
         .setBackgroundThreadExecutor(Executors.newSingleThreadExecutor())
         .build()
 ) {

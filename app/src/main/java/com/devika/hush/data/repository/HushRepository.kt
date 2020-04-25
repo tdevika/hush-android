@@ -1,12 +1,12 @@
 package com.devika.hush.data.repository
 
-import androidx.lifecycle.LiveData
 import com.devika.hush.data.database.HushDao
 import com.devika.hush.data.model.DetailWatchList
 import com.devika.hush.data.model.Portfolio
 import com.devika.hush.data.model.Stock
 import com.devika.hush.data.model.WatchList
 import com.devika.hush.data.services.ApiService
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class HushRepository @Inject constructor(
@@ -14,11 +14,11 @@ class HushRepository @Inject constructor(
     private val hushDao: HushDao
 ) {
 
-    fun getPortfolio(): LiveData<List<Portfolio>> = hushDao.getPortfolio()
+    suspend fun getPortfolio(): List<Portfolio> = hushDao.getPortfolio()
 
-    fun getStocksList(): LiveData<List<Stock>> = hushDao.getStocks()
+    suspend fun getStocks(): List<Stock> = hushDao.getStocks()
 
-    fun getWatchList(): LiveData<List<DetailWatchList>> = hushDao.getWatchList()
+    suspend fun getWatchList(): List<DetailWatchList> = hushDao.getWatchList()
 
     suspend fun addToWatchList(watchList: WatchList) {
         apiService.addToWatchList(watchList)

@@ -37,11 +37,6 @@ abstract class FragmentModule {
 
     @Binds
     @IntoMap
-    @ViewModelScope(ExploreViewModel::class)
-    abstract fun bindExploreViewModel(exploreViewModel: ExploreViewModel): ViewModel
-
-    @Binds
-    @IntoMap
     @ViewModelScope(InfoViewModel::class)
     abstract fun bindInfoViewModel(infoViewModel: InfoViewModel): ViewModel
 }
