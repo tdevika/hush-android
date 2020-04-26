@@ -28,8 +28,6 @@
 - Follow io19 app and update the app architecture 
 - Update search
 
-
-
 -------------------------------------
 Explain 
     - FragmentModule : IntoMap
