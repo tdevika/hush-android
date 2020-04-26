@@ -69,6 +69,7 @@ data class WatchList(
     val date: String
 )
 
+//TODO: Remove this and perform query to get required field
 data class DetailWatchList(
     @Embedded val watchList: WatchList,
     @Relation(

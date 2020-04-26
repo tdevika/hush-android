@@ -8,26 +8,23 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 class HushApplication : Application() {
-
-    @Inject
-    lateinit var hushRepository: HushRepository
 
     val appComponent: AppComponent by lazy {
         initializeComponent()
     }
 
-    private fun initializeComponent(): AppComponent {
-        return DaggerAppComponent.factory().create(this)
-    }
-
     override fun onCreate() {
         super.onCreate()
-        appComponent.inject(this)
-        CoroutineScope(Dispatchers.IO).launch {
-            hushRepository.initDB()
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
         }
+    }
+
+    private fun initializeComponent(): AppComponent {
+        return DaggerAppComponent.factory().create(this)
     }
 }
