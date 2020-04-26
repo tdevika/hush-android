@@ -24,7 +24,6 @@ class StocksAdapter(
 ) :
     ListAdapter<Stock, StocksAdapter.StocksViewHolder>(DIFF_CALLBACK), Filterable {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StocksViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.stocks_item_list, parent, false)
@@ -89,7 +88,7 @@ class StocksAdapter(
             index.text = stock.index
             highValue.text = stock.hi52Wk
             lowValue.text = stock.lo52Wk
-            dayChange.text = "${stock.dayChange().toString()}  "
+            dayChange.text = "${stock.dayChange()}  "
             if (stock.dayChange() < 0) {
                 dayChange.setTextColor(Color.RED)
             } else {
@@ -122,7 +121,7 @@ class StocksAdapter(
 
             if (!stock.isStockAddedToWatchList) {
                 AlertDialog.Builder(context)
-                    //.setTitle("Add to WatchList")
+                    // .setTitle("Add to WatchList")
                     .setMessage("Add to WatchList")
                     .setPositiveButton("Ok") { a: DialogInterface, b: Int ->
                         longPress(stock)
@@ -144,5 +143,4 @@ private val DIFF_CALLBACK: DiffUtil.ItemCallback<Stock> =
 
         override fun areContentsTheSame(oldItem: Stock, newItem: Stock): Boolean =
             oldItem == newItem
-
     }

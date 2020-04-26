@@ -25,7 +25,7 @@ class WatchListAdapter(
     var detailWatchList: ArrayList<DetailWatchList>,
     var longPress: (DetailWatchList) -> Unit
 ) :
-    ListAdapter<DetailWatchList,WatchListAdapter.WatchListViewHolder>(DIFF_CALLBACK), Filterable {
+    ListAdapter<DetailWatchList, WatchListAdapter.WatchListViewHolder>(DIFF_CALLBACK), Filterable {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WatchListViewHolder {
         val binding =
@@ -40,7 +40,7 @@ class WatchListAdapter(
 
     override fun submitList(list: MutableList<DetailWatchList>?) {
         super.submitList(list)
-        if(detailWatchList.isEmpty()){
+        if (detailWatchList.isEmpty()) {
             detailWatchList.addAll(list as ArrayList)
         }
     }
@@ -69,9 +69,7 @@ class WatchListAdapter(
             override fun publishResults(p0: CharSequence?, p1: FilterResults?) {
 
                 submitList((filterResults.values as MutableList<DetailWatchList>?))
-
             }
-
         }
     }
 
@@ -85,7 +83,6 @@ class WatchListAdapter(
                     true
                 }
             }
-
         }
 
         private fun View.setUI(detailWatchList: DetailWatchList) {
@@ -95,7 +92,7 @@ class WatchListAdapter(
             highValue.text = detailWatchList.stock.hi52Wk
             lowValue.text = detailWatchList.stock.lo52Wk
             closePrice.text = detailWatchList.stock.closePrice
-            dayChange.text = "${detailWatchList.stock.dayChange().toString()}  "
+            dayChange.text = "${detailWatchList.stock.dayChange()}  "
             if (detailWatchList.stock.dayChange() < 0) {
                 dayChange.setTextColor(Color.RED)
             } else {
@@ -125,7 +122,6 @@ class WatchListAdapter(
         }
     }
 
-
     private fun View.setAlertDialog(detailWatchList: DetailWatchList): AlertDialog? {
         return AlertDialog.Builder(context)
             .setTitle("Delete From WatchList")
@@ -135,8 +131,6 @@ class WatchListAdapter(
             .setNegativeButton("Cancel") { dialogInterface: DialogInterface, i: Int -> }
             .show()
     }
-
-
 }
 
 val DIFF_CALLBACK: DiffUtil.ItemCallback<DetailWatchList> =
@@ -148,6 +142,4 @@ val DIFF_CALLBACK: DiffUtil.ItemCallback<DetailWatchList> =
             oldItem: DetailWatchList,
             newItem: DetailWatchList
         ): Boolean = oldItem == newItem
-
-
     }

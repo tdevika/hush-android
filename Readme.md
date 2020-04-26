@@ -1,5 +1,9 @@
 # Hush
 
+### 26/04/2020
+   - Integrate ktlint : https://www.youtube.com/watch?v=YmZIkUGnCco
+   - Integrate detekt  
+    
 ### TODO
 - Loading/Error/Data state
 - watch list feature

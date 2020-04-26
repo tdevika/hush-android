@@ -9,7 +9,6 @@ import com.devika.hush.data.model.Portfolio
 import com.devika.hush.ui.base.UiState
 import com.devika.hush.ui.base.getList
 
-
 @BindingAdapter(value = ["setState"])
 fun setData(
     recyclerView: RecyclerView,

@@ -41,6 +41,3 @@ object PortfolioDiff : DiffUtil.ItemCallback<Portfolio>() {
     override fun areContentsTheSame(oldItem: Portfolio, newItem: Portfolio): Boolean =
         oldItem == newItem
 }
-
-
-

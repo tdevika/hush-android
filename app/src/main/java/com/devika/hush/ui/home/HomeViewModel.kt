@@ -3,8 +3,8 @@ package com.devika.hush.ui.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.devika.hush.data.domain.RefreshCacheUseCase
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 class HomeViewModel @Inject constructor(
     private val refreshCacheUseCase: RefreshCacheUseCase

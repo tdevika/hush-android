@@ -16,5 +16,4 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding, ExploreViewModel>()
     override fun layoutId() = R.layout.fragment_explore
 
     override fun getViewModelClass() = ExploreViewModel::class.java
-
 }
