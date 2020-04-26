@@ -73,7 +73,7 @@ class StocksAdapter(
             stock: Stock
         ) {
             with(binding) {
-                setOnLongClickListener() {
+                setOnLongClickListener {
                     showDialog(stock)
                     true
                 }

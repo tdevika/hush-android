@@ -34,7 +34,7 @@ class WatchListAdapter(
     }
 
     override fun onBindViewHolder(holder: WatchListViewHolder, position: Int) {
-        var stocks = getItem(position)
+        val stocks = getItem(position)
         stocks?.let { holder.setData(it) }
     }
 
@@ -78,7 +78,7 @@ class WatchListAdapter(
         fun setData(stock: DetailWatchList) {
             with(view) {
                 setUI(stock)
-                setOnLongClickListener() {
+                setOnLongClickListener {
                     setAlertDialog(stock)
                     true
                 }
