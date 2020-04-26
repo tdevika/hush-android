@@ -17,7 +17,6 @@
 - Update MainActivity to have bottom tab
 - Fix navigation xml issue
 
-
 ----------------------------------------------
 - Dagger android usage 
 - Lint
