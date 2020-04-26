@@ -4,7 +4,8 @@
 - Loading/Error/Data state
 - watch list feature
 - sorting
-- code formatting
+- Code formatting
+    - Ktlint integration
 - Add animated vector draeble for tab icons
 - Update MainActivity to have bottom tab
 - Fix navigation xml issue

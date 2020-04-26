@@ -12,29 +12,32 @@ import com.devika.hush.HushApplication
 import com.devika.hush.R
 import com.devika.hush.data.model.Stock
 import com.devika.hush.data.model.WatchList
+import com.devika.hush.databinding.FragmentStocksBinding
+import com.devika.hush.ui.base.BaseFragment
 import com.devika.hush.utils.DateUtils
 import com.devika.hush.utils.HushViewModelFactory
 import kotlinx.android.synthetic.main.fragment_stocks.*
 import java.util.*
 import javax.inject.Inject
 
-class StocksFragment : Fragment() {
+class StocksFragment : BaseFragment<FragmentStocksBinding, StocksViewModel>() {
 
-    @Inject
-    lateinit var hushViewModelFactory: HushViewModelFactory
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         (context.applicationContext as HushApplication).appComponent.inject(this)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val root = inflater.inflate(R.layout.fragment_stocks, container, false)
-        setHasOptionsMenu(true)
-        return root
+    override fun getViewModelClass(): Class<StocksViewModel> = StocksViewModel::class.java
+
+    override fun layoutId(): Int = R.layout.fragment_stocks
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        subscribeToModel()
+    }
+
+    private fun subscribeToModel() {
+        binding.viewModel = viewModel
     }
 }
