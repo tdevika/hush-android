@@ -6,7 +6,7 @@
         - Refactor > Remove unused resource 
         - Analyze -> Run inspection by name > Kotlin | Redundant constructs | Unused symbol
    - Integrate Circle CI : https://www.youtube.com/channel/UCVysWoMPvvHQMEJvRkslbAQ/videos
-        - efwe
+        
     
 ### TODO
 - Loading/Error/Data state
