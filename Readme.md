@@ -58,6 +58,7 @@ Learning
           emit(Result.error(ioException))
       }
   }
+  
 - https://www.youtube.com/watch?v=Qxj2eBmXLHg
     - Databinding vs ViewBinding vs Kotlin synthetic
     - View model vs saved state 
