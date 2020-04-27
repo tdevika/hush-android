@@ -12,6 +12,5 @@ open class PortfolioUseCase @Inject constructor(
     private val hushRepository: HushRepository,
     @DefaultDispatcher defaultDispatcher: CoroutineDispatcher
 ) : SuspendUseCase<Any, List<Portfolio>>(defaultDispatcher) {
-    public override suspend fun execute(parameters: Any): Result<List<Portfolio>> =
-        Result.Success(hushRepository.getPortfolio())
+    public override suspend fun execute(parameters: Any) = hushRepository.getPortfolio()
 }

@@ -13,7 +13,7 @@ class PortfolioViewModel @Inject constructor(
 ) : BaseViewModel<UiState>() {
     init {
         viewModelScope.launch {
-            portfolioUseCase.execute(Unit).run {
+            portfolioUseCase(Unit).run {
                 onSuccess { uiState.value = UiState.Success(it) }
                 onError { uiState.value = UiState.Error(it.message) }
             }

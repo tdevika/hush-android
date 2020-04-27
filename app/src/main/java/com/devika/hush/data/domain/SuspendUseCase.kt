@@ -8,8 +8,9 @@ abstract class SuspendUseCase<in P, R>(private val coroutineDispatcher: Coroutin
 
     suspend operator fun invoke(parameters: P): Result<R> {
         return try {
+            Result.Loading
             withContext(coroutineDispatcher) {
-                execute(parameters)
+                Result.Success(execute(parameters))
             }
         } catch (e: Exception) {
             Timber.d(e)
@@ -18,5 +19,5 @@ abstract class SuspendUseCase<in P, R>(private val coroutineDispatcher: Coroutin
     }
 
     @Throws(RuntimeException::class)
-    protected abstract suspend fun execute(parameters: P): Result<R>
+    protected abstract suspend fun execute(parameters: P): R
 }
