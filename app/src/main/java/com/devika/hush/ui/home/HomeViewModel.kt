@@ -11,7 +11,7 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
     init {
         viewModelScope.launch {
-            refreshCacheUseCase.execute(Unit)
+            refreshCacheUseCase(Unit)
         }
     }
 }
