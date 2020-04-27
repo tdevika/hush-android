@@ -6,9 +6,7 @@ buildscript {
 
         // App version
         versionName = '1.0.0' // X.Y.Z; X = Major, Y = minor, Z = Patch level
-        versionCodeBase = 10000 // XYZZM; M = Module (tv, mobile)
-        versionCodeTv = versionCodeBase + 2 // Not used at the moment
-        versionCodeMobile = versionCodeBase + 3 // Leave some space for future-proofing
+        versionCode = 100 // XYZ; M = Module (tv, mobile)
 
         // SDK and tools
         compileSdkVersion = 29

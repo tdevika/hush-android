@@ -5,7 +5,11 @@
         - Integrate ktlint : https://www.youtube.com/watch?v=YmZIkUGnCco
         - Refactor > Remove unused resource 
         - Analyze -> Run inspection by name > Kotlin | Redundant constructs | Unused symbol
+        - Add pre-commit hook for ktlint : https://www.youtube.com/watch?v=eysVDO2_X0s
    - Integrate Circle CI : https://www.youtube.com/channel/UCVysWoMPvvHQMEJvRkslbAQ/videos
+
+### 27/04/2020
+    - Version code cleanup
     
 ### TODO
 - Loading/Error/Data state
