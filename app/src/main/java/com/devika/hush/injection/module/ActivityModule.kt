@@ -13,5 +13,4 @@ abstract class ActivityModule {
     @IntoMap
     @ViewModelScope(HomeViewModel::class)
     abstract fun bindHomeModel(homeViewModel: HomeViewModel): ViewModel
-
 }

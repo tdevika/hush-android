@@ -11,7 +11,7 @@ android {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionName rootProject.versionName
-        versionCode rootProject.versionCodeMobile
+        versionCode rootProject.versionCode
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -78,4 +78,11 @@ dependencies {
 
     // Timber
     api "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    // Local unit tests
+    testImplementation "junit:junit:$rootProject.junitVersion"
+
+    // Instrumentation tests
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.testExtVersion"
+    androidTestImplementation "androidx.test:rules:$rootProject.rulesVersion"
 }

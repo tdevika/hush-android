@@ -12,7 +12,7 @@ class FailedAddDataException : Error() {
     }
 }
 
-class FailedRemoveDataException: Error() {
+class FailedRemoveDataException : Error() {
     override fun getLocalizedMessage(): String {
         return "Failed remove data"
     }

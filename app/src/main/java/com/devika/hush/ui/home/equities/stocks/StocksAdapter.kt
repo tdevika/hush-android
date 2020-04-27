@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.devika.hush.data.model.Stock
 import com.devika.hush.databinding.StocksItemListBinding
 
-class StocksAdapter :
-    ListAdapter<Stock, StocksAdapter.StocksViewHolder>(DIFF_CALLBACK) {
+class StocksAdapter : ListAdapter<Stock, StocksAdapter.StocksViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StocksViewHolder =
         StocksViewHolder(

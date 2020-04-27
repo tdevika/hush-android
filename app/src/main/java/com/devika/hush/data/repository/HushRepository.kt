@@ -6,7 +6,6 @@ import com.devika.hush.data.model.Portfolio
 import com.devika.hush.data.model.Stock
 import com.devika.hush.data.model.WatchList
 import com.devika.hush.data.services.ApiService
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class HushRepository @Inject constructor(
@@ -48,5 +47,4 @@ class HushRepository @Inject constructor(
         val stocks = apiService.getStocks()
         hushDao.setStocks(stocks)
     }
-
 }

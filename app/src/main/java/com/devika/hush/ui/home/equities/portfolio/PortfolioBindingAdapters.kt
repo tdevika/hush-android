@@ -9,17 +9,17 @@ import com.devika.hush.data.model.Portfolio
 import com.devika.hush.ui.base.UiState
 import com.devika.hush.ui.base.getList
 
-
 @BindingAdapter(value = ["setState"])
 fun setData(
     recyclerView: RecyclerView,
     uiState: UiState?
 ) = uiState?.let {
+    if (recyclerView.adapter == null) {
+        recyclerView.adapter = PortfolioAdapter()
+    }
     when (uiState) {
         is UiState.Success -> {
-            if (recyclerView.adapter == null) {
-                recyclerView.adapter = PortfolioAdapter()
-            }
+
             recyclerView.isVisible = true
             (recyclerView.adapter as PortfolioAdapter).submitList(uiState.value.getList<Portfolio>())
         }

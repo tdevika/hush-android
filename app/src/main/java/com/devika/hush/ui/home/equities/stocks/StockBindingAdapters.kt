@@ -10,12 +10,12 @@ import com.devika.hush.ui.base.getList
 
 @BindingAdapter(value = ["setData"])
 fun setData(recycler: RecyclerView, uiState: UiState) {
+    if (recycler.adapter == null) {
+        recycler.adapter = StocksAdapter()
+    }
     uiState.let {
         when (uiState) {
             is UiState.Success -> {
-                if (recycler.adapter == null) {
-                    recycler.adapter = StocksAdapter()
-                }
                 recycler.isVisible = true
                 (recycler.adapter as StocksAdapter).submitList(uiState.value.getList())
             }

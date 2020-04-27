@@ -1,6 +1,5 @@
 package com.devika.hush.ui.base
 
-
 sealed class UiState {
     object Loading : UiState()
     data class Success(val value: Any) : UiState()

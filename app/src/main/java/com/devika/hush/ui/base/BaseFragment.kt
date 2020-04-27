@@ -42,5 +42,4 @@ abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel<UiState>> : 
 
     @LayoutRes
     protected abstract fun layoutId(): Int
-
 }
