@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.View
 import com.devika.hush.HushApplication
 import com.devika.hush.R
-import com.devika.hush.ui.base.BaseFragment
 import com.devika.hush.databinding.FragmentPortfolioBinding
+import com.devika.hush.ui.base.BaseFragment
 
 class PortfolioFragment : BaseFragment<FragmentPortfolioBinding, PortfolioViewModel>() {
 

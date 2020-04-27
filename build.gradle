@@ -2,13 +2,11 @@
 
 buildscript {
     ext {
-        kotlinVersion = '1.3.70'
+        kotlinVersion = '1.3.71'
 
         // App version
         versionName = '1.0.0' // X.Y.Z; X = Major, Y = minor, Z = Patch level
-        versionCodeBase = 10000 // XYZZM; M = Module (tv, mobile)
-        versionCodeTv = versionCodeBase + 2 // Not used at the moment
-        versionCodeMobile = versionCodeBase + 3 // Leave some space for future-proofing
+        versionCode = 100 // XYZ; M = Module (tv, mobile)
 
         // SDK and tools
         compileSdkVersion = 29
@@ -36,6 +34,9 @@ buildscript {
         timberVersion = "4.7.1"
         gsonVersion = "2.8.6"
         okhttpVersion = "4.1.0"
+        junitVersion = '4.12'
+        rulesVersion = '1.1.1'
+        testExtVersion = '1.1.0'
 
     }
 
@@ -52,7 +53,9 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
+plugins {
+    id "org.jlleitschuh.gradle.ktlint" version "9.2.1"
+}
 allprojects {
     repositories {
         google()
@@ -60,6 +63,9 @@ allprojects {
         maven {
             url "https://maven.google.com"
         }
+    }
+    apply {
+        plugin("org.jlleitschuh.gradle.ktlint")
     }
 }
 

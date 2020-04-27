@@ -1,5 +1,16 @@
 # Hush
 
+### 26/04/2020
+   - Code cleanup
+        - Integrate ktlint : https://www.youtube.com/watch?v=YmZIkUGnCco
+        - Refactor > Remove unused resource 
+        - Analyze -> Run inspection by name > Kotlin | Redundant constructs | Unused symbol
+        - Add pre-commit hook for ktlint : https://www.youtube.com/watch?v=eysVDO2_X0s
+   - Integrate Circle CI : https://www.youtube.com/channel/UCVysWoMPvvHQMEJvRkslbAQ/videos
+
+### 27/04/2020
+    - Version code cleanup
+    
 ### TODO
 - Loading/Error/Data state
 - watch list feature
@@ -8,7 +19,6 @@
 - Add animated vector draeble for tab icons
 - Update MainActivity to have bottom tab
 - Fix navigation xml issue
-
 
 ----------------------------------------------
 - Dagger android usage 
@@ -20,8 +30,6 @@
 - Light / Dark / System theme 
 - Follow io19 app and update the app architecture 
 - Update search
-
-
 
 -------------------------------------
 Explain 
@@ -54,6 +62,7 @@ Learning
           emit(Result.error(ioException))
       }
   }
+  
 - https://www.youtube.com/watch?v=Qxj2eBmXLHg
     - Databinding vs ViewBinding vs Kotlin synthetic
     - View model vs saved state 

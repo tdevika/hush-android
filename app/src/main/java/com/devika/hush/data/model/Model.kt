@@ -1,6 +1,5 @@
 package com.devika.hush.data.model
 
-
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -36,7 +35,6 @@ data class Portfolio(
         return if (closePrice.isNotEmpty() && avgCost.isNotEmpty()) "%.2f".format(((closePrice.toFloat() - avgCost.toFloat()) / avgCost.toFloat()) * 100)
             .toFloat() else 0.0f
     }
-
 }
 
 @Entity(tableName = "stock")
@@ -48,12 +46,11 @@ data class Stock(
     val index: String,
     val lo52Wk: String,
     val prevClosePrice: String,
-    var isStockAddedToWatchList:Boolean
+    var isStockAddedToWatchList: Boolean
 ) {
 
     fun dayChange(): Double {
         return if (closePrice.isNotEmpty()) "%.2f".format(closePrice.toFloat() - prevClosePrice.toFloat()).toDouble() else 00.00
-
     }
 
     fun dayChangePercentage(): Float {
@@ -69,7 +66,7 @@ data class WatchList(
     val date: String
 )
 
-//TODO: Remove this and perform query to get required field
+// TODO: Remove this and perform query to get required field
 data class DetailWatchList(
     @Embedded val watchList: WatchList,
     @Relation(
@@ -78,15 +75,3 @@ data class DetailWatchList(
     )
     val stock: Stock
 )
-
-
-
-
-
-
-
-
-
-
-
-

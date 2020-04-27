@@ -5,7 +5,6 @@ import com.devika.hush.HushApplication
 import com.devika.hush.R
 import com.devika.hush.databinding.FragmentExploreBinding
 import com.devika.hush.ui.base.BaseFragment
-import com.devika.hush.ui.home.explore.ExploreViewModel
 
 class InfoFragment : BaseFragment<FragmentExploreBinding, InfoViewModel>() {
 

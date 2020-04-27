@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.equities.watchlist.WatchListFragment">
     <TextView
-        android:id="@+id/watchListStatusText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="WatchList is Empty"
@@ -14,7 +13,6 @@
         android:textAlignment="center"
         android:layout_margin="@dimen/space_12dp"/>
     <ProgressBar
-        android:id="@+id/progress_bar"
         style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_70dp"
@@ -22,7 +20,6 @@
         android:visibility="visible"
         android:indeterminateDrawable="@drawable/progress_bar" />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </FrameLayout>
