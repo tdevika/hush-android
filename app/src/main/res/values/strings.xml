@@ -5,4 +5,7 @@
     <string name="title_equities">Equities</string>
     <string name="title_explore">Explore</string>
     <string name="title_info">Info</string>
+    <string name="day_hi_lo_text">Day(Hi/Lo)</string>
+    <string name="day_change_percentage_text">D:</string>
+    <string name="net_change_percentage_text">N:</string>
 </resources>

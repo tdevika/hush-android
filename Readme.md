@@ -19,6 +19,7 @@
 - Add animated vector draeble for tab icons
 - Update MainActivity to have bottom tab
 - Fix navigation xml issue
+- 2020-04-27 20:00:36.340 14324-14324/com.devika.hush E/RecyclerView: No adapter attached; skipping layout
 
 ----------------------------------------------
 - Dagger android usage 
