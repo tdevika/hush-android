@@ -4,4 +4,15 @@
     <color name="colorPrimaryDark">#004a00</color>
     <color name="colorAccent">#53a743</color>
     <color name="black">#000000</color>
+    <color name="colorPrimaryVariant">#00675b</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#b2dfdb</color>
+    <color name="colorSecondaryVariant">#82ada9</color>
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorOnBackground">#000000</color>
+    <color name="colorSurface">#000000</color>
+    <color name="colorOnSurface">#fff</color>
+    <color name="colorError">#C51162</color>
+    <color name="colorOnError">#fff</color>
 </resources>

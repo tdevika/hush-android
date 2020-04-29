@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <style name="TextAppearance.Hush.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:textSize">14.62sp</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+    <style name="TextAppearance.Hush.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+
+
+
+
+
+    <!--Theme lobster_two-->
+
+    <style name="TextAppearance.lobster_two.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/lobster_two</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/lobster_two</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/lobster_two</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/lobster_two</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/lobster_two</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/lobster_two</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/lobster_two</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/lobster_two</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/lobster_two</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:textSize">14.62sp</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/lobster_two</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/lobster_two</item>
+    </style>
+
+    <style name="TextAppearance.lobster_two.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/muli</item>
+    </style>
+</resources>

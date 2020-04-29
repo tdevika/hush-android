@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="Theme.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryVariant</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorAccent">@color/colorSecondary</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="Theme.Hush" parent="Theme.Base">
+        <!-- Type styles -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Hush.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Hush.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Hush.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Hush.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Hush.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Hush.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Hush.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Hush.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Hush.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Hush.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Hush.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Hush.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Hush.Overline</item>
+    </style>
+
+    <style name="Theme.lobster_two" parent="Theme.Base">
+        <!-- Type styles -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.lobster_two.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.lobster_two.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.lobster_two.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.lobster_two.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.lobster_two.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.lobster_two.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.lobster_two.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.lobster_two.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.lobster_two.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.lobster_two.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.lobster_two.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.lobster_two.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.lobster_two.Overline</item>
+    </style>
+</resources>
