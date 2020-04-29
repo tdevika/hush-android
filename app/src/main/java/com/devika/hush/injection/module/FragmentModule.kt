@@ -6,6 +6,7 @@ import com.devika.hush.ui.home.equities.EquitiesViewModel
 import com.devika.hush.ui.home.equities.portfolio.PortfolioViewModel
 import com.devika.hush.ui.home.equities.stocks.StocksViewModel
 import com.devika.hush.ui.home.equities.watchlist.WatchListViewModel
+import com.devika.hush.ui.home.explore.ExploreViewModel
 import com.devika.hush.ui.home.info.InfoViewModel
 import dagger.Binds
 import dagger.Module
@@ -38,4 +39,9 @@ abstract class FragmentModule {
     @IntoMap
     @ViewModelScope(InfoViewModel::class)
     abstract fun bindInfoViewModel(infoViewModel: InfoViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelScope(ExploreViewModel::class)
+    abstract fun bindExploreViewModel(exploreViewModel: ExploreViewModel): ViewModel
 }

@@ -27,13 +27,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:textColor="@color/black"
             app:setErrorState="@{viewModel.uiState()}" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="LinearLayoutManager"
-            app:setState="@{viewModel.uiState()}" />
+            app:setPortfolio="@{viewModel.uiState()}" />
 
     </FrameLayout>
 </layout>

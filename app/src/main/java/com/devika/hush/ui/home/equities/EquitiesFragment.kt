@@ -1,4 +1,4 @@
-package com.devika.hush.ui.home.equities
+ package com.devika.hush.ui.home.equities
 
 import android.content.Context
 import android.os.Bundle
@@ -12,8 +12,9 @@ import com.devika.hush.ui.base.BaseFragment
 import com.devika.hush.ui.home.equities.portfolio.PortfolioFragment
 import com.devika.hush.ui.home.equities.stocks.StocksFragment
 import com.devika.hush.ui.home.equities.watchlist.WatchListFragment
+import com.google.android.material.tabs.TabLayoutMediator
 
-class EquitiesFragment : BaseFragment<FragmentEquitiesBinding, EquitiesViewModel>() {
+ class EquitiesFragment : BaseFragment<FragmentEquitiesBinding, EquitiesViewModel>() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -27,6 +28,13 @@ class EquitiesFragment : BaseFragment<FragmentEquitiesBinding, EquitiesViewModel
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.pager.adapter = DemoCollectionAdapter(this)
+        TabLayoutMediator(binding.tabLayout, binding.pager) { tab, position ->
+            when(position){
+                0 -> {tab.text = "PORTFOLIO"}
+                1 -> {tab.text = "WATCHLIST"}
+                2 -> {tab.text = "STOCKS"}
+            }
+        }.attach()
     }
 }
 
