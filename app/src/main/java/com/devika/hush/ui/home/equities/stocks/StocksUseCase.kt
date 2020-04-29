@@ -11,6 +11,5 @@ open class StocksUseCase @Inject constructor(
     private val hushRepository: HushRepository,
     @DefaultDispatcher defaultDispatcher: CoroutineDispatcher
 ) : SuspendUseCase<Any, List<Stock>>(defaultDispatcher) {
-    public override suspend fun execute(parameters: Any): List<Stock> =
-       hushRepository.getStocks()
+    public override suspend fun execute(parameters: Any): List<Stock> = hushRepository.getStocks()
 }

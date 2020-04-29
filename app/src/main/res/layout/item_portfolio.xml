@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.devika.hush.R"/>
+
+        <import type="com.devika.hush.R" />
+
         <variable
             name="portfolio"
             type="com.devika.hush.data.model.Portfolio" />
@@ -24,44 +26,41 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/symbol"
-                app:text="@{portfolio.symbol}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="@dimen/space_6dp"
                 android:layout_marginTop="@dimen/space_4dp"
                 android:padding="@dimen/space_2dp"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
                 android:textColor="@color/black"
-                android:textSize="@dimen/space_16sp"
-                android:textStyle="bold"
-                />
+                app:text="@{portfolio.symbol}" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/sector"
-                app:text="@{portfolio.sector}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
                 android:layout_marginTop="@dimen/space_4dp"
                 android:layout_marginEnd="@dimen/space_4dp"
-                android:textSize="@dimen/space_14sp" />
+                app:text="@{portfolio.sector}" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/average"
-                android:text="@{`Avg: ` + portfolio.avgCost}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/symbol"
                 android:layout_marginStart="@dimen/space_6dp"
                 android:layout_marginTop="@dimen/space_12dp"
                 android:layout_marginBottom="@dimen/space_6dp"
+                android:text="@{`Avg: ` + portfolio.avgCost}"
                 android:textSize="@dimen/space_16sp" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/quantity"
-                app:text="@{`Qty: ` + portfolio.quantity}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/sector"
@@ -69,64 +68,65 @@
                 android:layout_marginTop="@dimen/space_6dp"
                 android:layout_marginEnd="@dimen/space_6dp"
                 android:layout_marginBottom="@dimen/space_2dp"
-                android:textSize="@dimen/space_15sp" />
+                android:textSize="@dimen/space_15sp"
+                app:text="@{`Qty: ` + portfolio.quantity}" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/closePrice"
-                app:text="@{`Ltp: `+ portfolio.closePrice}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/average"
                 android:layout_marginStart="@dimen/space_6dp"
                 android:layout_marginTop="@dimen/space_2dp"
-                android:textSize="@dimen/space_16sp" />
+                android:textSize="@dimen/space_16sp"
+                app:text="@{`Ltp: `+ portfolio.closePrice}" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/highValue"
-                app:text="@{`H: `+ portfolio.hi52Wk}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/quantity"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="@dimen/space_4dp"
                 android:layout_marginEnd="@dimen/space_6dp"
-                android:textSize="@dimen/space_15sp" />
+                android:textSize="@dimen/space_15sp"
+                app:text="@{`H: `+ portfolio.hi52Wk}" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/lowValue"
-                app:text="@{ `L: `+ portfolio.lo52Wk}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/highValue"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="@dimen/space_2dp"
                 android:layout_marginEnd="@dimen/space_6dp"
-                android:textSize="@dimen/space_15sp" />
+                android:textSize="@dimen/space_15sp"
+                app:text="@{ `L: `+ portfolio.lo52Wk}" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/dayChangePercentage"
-                android:text="@{portfolio.dayChangePercentage()+`%`}"
-                android:textColor="@{portfolio.dayChangePercentage() &lt; 0 ? @color/red : @color/green}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/symbol"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/space_12dp"
                 android:gravity="center"
+                android:text="@{portfolio.dayChangePercentage()+`%`}"
+                android:textColor="@{portfolio.dayChangePercentage() &lt; 0 ? @color/red : @color/green}"
                 android:textSize="@dimen/space_16sp" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/netChangePercentage"
-                android:text="@{portfolio.netChangePercentage() + `%`}"
-                android:textColor="@{portfolio.netChangePercentage() &lt; 0 ? @color/red : @color/green}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dayChangePercentage"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/space_8dp"
+                android:text="@{portfolio.netChangePercentage() + `%`}"
+                android:textColor="@{portfolio.netChangePercentage() &lt; 0 ? @color/red : @color/green}"
                 android:textSize="@dimen/space_16sp" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/day_change_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
                 android:text="@string/day_change_percentage_text"
                 android:textSize="@dimen/space_16sp" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/net_change_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -146,7 +146,8 @@
                 android:layout_marginTop="@dimen/space_2dp"
                 android:layout_toStartOf="@id/netChangePercentage"
                 android:text="@string/net_change_percentage_text"
-                android:textSize="@dimen/space_16sp" />
+                android:textSize="@dimen/space_16sp"
+                app:fontFamily="@font/nunito_extralight" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </layout>

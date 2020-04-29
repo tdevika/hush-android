@@ -22,7 +22,8 @@ data class Portfolio(
 
 ) {
 
-    fun dayChangePercentage() = "%.2f".format(((closePrice - prevClosePrice) / closePrice) * 100).toFloat()
+    fun dayChangePercentage() =
+        "%.2f".format(((closePrice - prevClosePrice) / closePrice) * 100).toFloat()
 
     fun netChangePercentage() = "%.2f".format(((closePrice - avgCost) / avgCost) * 100).toFloat()
 }
@@ -36,11 +37,12 @@ data class Stock(
     val index: String,
     val lo52Wk: Float,
     val prevClosePrice: Float
-    ) {
+) {
 
     fun dayChange() = "%.2f".format(closePrice - prevClosePrice).toFloat()
 
-    fun dayChangePercentage() = "%.2f".format(((closePrice - prevClosePrice) / closePrice) * 100).toFloat()
+    fun dayChangePercentage() =
+        "%.2f".format(((closePrice - prevClosePrice) / closePrice) * 100).toFloat()
 }
 
 @Entity

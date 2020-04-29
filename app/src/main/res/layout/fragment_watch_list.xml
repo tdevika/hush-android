@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.home.equities.watchlist.WatchListFragment">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"

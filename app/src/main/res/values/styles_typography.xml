@@ -2,139 +2,487 @@
 
 <resources>
 
-    <style name="TextAppearance.Hush.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+    <style name="TextAppearance.Muli.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
-    <style name="TextAppearance.Hush.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+    <style name="TextAppearance.Muli.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
-    <style name="TextAppearance.Hush.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+    <style name="TextAppearance.Muli.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
-    <style name="TextAppearance.Hush.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+    <style name="TextAppearance.Muli.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
-    <style name="TextAppearance.Hush.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+    <style name="TextAppearance.Muli.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
-    <style name="TextAppearance.Hush.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+    <style name="TextAppearance.Muli.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
-    <style name="TextAppearance.Hush.Body1" parent="TextAppearance.MaterialComponents.Body1">
+    <style name="TextAppearance.Muli.Body1" parent="TextAppearance.MaterialComponents.Body1">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
-    <style name="TextAppearance.Hush.Body2" parent="TextAppearance.MaterialComponents.Body2">
+    <style name="TextAppearance.Muli.Body2" parent="TextAppearance.MaterialComponents.Body2">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
-    <style name="TextAppearance.Hush.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+    <style name="TextAppearance.Muli.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
-    <style name="TextAppearance.Hush.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+    <style name="TextAppearance.Muli.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="fontFamily">@font/muli</item>
         <item name="android:textSize">14.62sp</item>
     </style>
 
-    <style name="TextAppearance.Hush.Button" parent="TextAppearance.MaterialComponents.Button">
+    <style name="TextAppearance.Muli.Button" parent="TextAppearance.MaterialComponents.Button">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
-    <style name="TextAppearance.Hush.Caption" parent="TextAppearance.MaterialComponents.Caption">
+    <style name="TextAppearance.Muli.Caption" parent="TextAppearance.MaterialComponents.Caption">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
-    <style name="TextAppearance.Hush.Overline" parent="TextAppearance.MaterialComponents.Overline">
+    <style name="TextAppearance.Muli.Overline" parent="TextAppearance.MaterialComponents.Overline">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
     </style>
 
 
+    <!--Theme Montserrat-->
 
-
-
-    <!--Theme lobster_two-->
-
-    <style name="TextAppearance.lobster_two.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Body1" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Body2" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
-        <item name="fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/montserrat</item>
         <item name="android:textSize">14.62sp</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Button" parent="TextAppearance.MaterialComponents.Button">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Caption" parent="TextAppearance.MaterialComponents.Caption">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/lobster_two</item>
+    <style name="TextAppearance.Montserrat.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-    <style name="TextAppearance.lobster_two.Overline" parent="TextAppearance.MaterialComponents.Overline">
-        <item name="fontFamily">@font/lobster_two</item>
-        <item name="android:fontFamily">@font/muli</item>
+    <style name="TextAppearance.Montserrat.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+    <!--Theme Nunito-->
+
+    <style name="TextAppearance.Nunito.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:textSize">14.62sp</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Nunito.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/nunito_extralight</item>
+        <item name="android:fontFamily">@font/nunito_extralight</item>
+    </style>
+
+
+
+    <!--Theme Biryani-->
+
+    <style name="TextAppearance.Biryani.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:textSize">14.62sp</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+    <style name="TextAppearance.Biryani.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/biryani_extralight</item>
+        <item name="android:fontFamily">@font/biryani_extralight</item>
+    </style>
+
+
+    <!--Theme Heebo-->
+
+    <style name="TextAppearance.Heebo.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:textSize">14.62sp</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+    <style name="TextAppearance.Heebo.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/heebo</item>
+        <item name="android:fontFamily">@font/heebo</item>
+    </style>
+
+
+    <!--Theme AdventPro-->
+
+    <style name="TextAppearance.AdventPro.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:textSize">14.62sp</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="TextAppearance.AdventPro.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/advent_pro</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+
+
+    <!--Theme Actor-->
+
+    <style name="TextAppearance.Actor.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:textSize">14.62sp</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
+    </style>
+
+    <style name="TextAppearance.Actor.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/actor</item>
+        <item name="android:fontFamily">@font/actor</item>
     </style>
 </resources>

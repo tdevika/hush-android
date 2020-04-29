@@ -19,6 +19,5 @@ class WatchListViewModel @Inject constructor(private val watchListUseCase: Watch
                 onError { uiState.value = UiState.Error(it.message) }
             }
         }
-
     }
 }

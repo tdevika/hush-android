@@ -15,11 +15,12 @@ class PortfolioAdapter : ListAdapter<Portfolio, PortfolioViewHolder>(
         .setBackgroundThreadExecutor(Executors.newSingleThreadExecutor())
         .build()
 ) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PortfolioViewHolder = PortfolioViewHolder(
-        ItemPortfolioBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PortfolioViewHolder =
+        PortfolioViewHolder(
+            ItemPortfolioBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
         )
-    )
 
     override fun onBindViewHolder(holder: PortfolioViewHolder, position: Int) =
         holder.bind(getItem(position))

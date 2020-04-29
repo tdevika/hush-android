@@ -26,7 +26,8 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         (applicationContext as HushApplication).appComponent.inject(this)
-        binding = DataBindingUtil.setContentView(this,
+        binding = DataBindingUtil.setContentView(
+            this,
             R.layout.activity_home
         )
         viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)

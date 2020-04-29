@@ -26,7 +26,6 @@ class StocksAdapter : ListAdapter<Stock, StocksAdapter.StocksViewHolder>(DIFF_CA
             binding.stock = stock
         }
     }
-
 }
 
 private val DIFF_CALLBACK: DiffUtil.ItemCallback<Stock> =
@@ -37,5 +36,4 @@ private val DIFF_CALLBACK: DiffUtil.ItemCallback<Stock> =
 
         override fun areContentsTheSame(oldItem: Stock, newItem: Stock): Boolean =
             oldItem == newItem
-
     }

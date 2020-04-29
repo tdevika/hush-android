@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
-        <item>@font/lobster_two</item>
+        <item>@font/biryani_extralight</item>
         <item>@font/muli</item>
         <item>@font/montserrat</item>
+        <item>@font/nunito_extralight</item>
         <item>@font/open_sans</item>
         <item>@font/montserrat_bold</item>
         <item>@font/actor</item>
         <item>@font/advent_pro</item>
         <item>@font/comfortaa_light</item>
+        <item>@font/heebo</item>
         <item>@font/heebo</item>
     </array>
 </resources>
