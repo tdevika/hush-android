@@ -2,8 +2,8 @@ package com.devika.hush.data.domain
 
 import com.devika.hush.data.repository.HushRepository
 import com.devika.hush.injection.scope.IoDispatcher
-import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
+import kotlinx.coroutines.CoroutineDispatcher
 
 class RefreshCacheUseCase @Inject constructor(
     private val hushRepository: HushRepository,

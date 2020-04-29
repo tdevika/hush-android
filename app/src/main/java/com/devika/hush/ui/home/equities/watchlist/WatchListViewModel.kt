@@ -6,8 +6,8 @@ import com.devika.hush.data.domain.onLoading
 import com.devika.hush.data.domain.onSuccess
 import com.devika.hush.ui.base.BaseViewModel
 import com.devika.hush.ui.base.UiState
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 class WatchListViewModel @Inject constructor(private val watchListUseCase: WatchListUseCase) :
     BaseViewModel<UiState>() {
