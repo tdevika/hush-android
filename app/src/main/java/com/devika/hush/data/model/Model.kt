@@ -9,60 +9,44 @@ import androidx.room.Relation
 data class Portfolio(
     @PrimaryKey val symbol: String,
     val security: String,
-    val avgCost: String,
-    val closePrice: String,
-    val eps: String,
-    val hi52Wk: String,
+    val avgCost: Float,
+    val closePrice: Float,
+    val eps: Float,
+    val hi52Wk: Float,
     val index: String,
-    val lo52Wk: String,
-    val pe: String,
-    val prevClosePrice: String,
-    val quantity: String,
+    val lo52Wk: Float,
+    val pe: Float,
+    val prevClosePrice: Float,
+    val quantity: Int,
     val sector: String
 
 ) {
 
-    fun dayChange(): Double {
-        return if (closePrice.isNotEmpty()) "%.2f".format(closePrice.toFloat() - prevClosePrice.toFloat()).toDouble() else 00.00
-    }
+    fun dayChangePercentage() = "%.2f".format(((closePrice - prevClosePrice) / closePrice) * 100).toFloat()
 
-    fun dayChangePercentage(): Float {
-        return if (closePrice.isNotEmpty() && prevClosePrice.isNotEmpty()) "%.2f".format(((closePrice.toFloat() - prevClosePrice.toFloat()) / closePrice.toFloat()) * 100)
-            .toFloat() else 0.0f
-    }
-
-    fun netChangePercentage(): Float {
-        return if (closePrice.isNotEmpty() && avgCost.isNotEmpty()) "%.2f".format(((closePrice.toFloat() - avgCost.toFloat()) / avgCost.toFloat()) * 100)
-            .toFloat() else 0.0f
-    }
+    fun netChangePercentage() = "%.2f".format(((closePrice - avgCost) / avgCost) * 100).toFloat()
 }
 
 @Entity(tableName = "stock")
 data class Stock(
     @PrimaryKey val symbol: String,
     val security: String,
-    val closePrice: String,
-    val hi52Wk: String,
+    val closePrice: Float,
+    val hi52Wk: Float,
     val index: String,
-    val lo52Wk: String,
-    val prevClosePrice: String,
-    var isStockAddedToWatchList: Boolean
-) {
+    val lo52Wk: Float,
+    val prevClosePrice: Float
+    ) {
 
-    fun dayChange(): Double {
-        return if (closePrice.isNotEmpty()) "%.2f".format(closePrice.toFloat() - prevClosePrice.toFloat()).toDouble() else 00.00
-    }
+    fun dayChange() = "%.2f".format(closePrice - prevClosePrice).toFloat()
 
-    fun dayChangePercentage(): Float {
-        return if (closePrice.isNotEmpty() && prevClosePrice.isNotEmpty()) "%.2f".format(((closePrice.toFloat() - prevClosePrice.toFloat()) / closePrice.toFloat()) * 100)
-            .toFloat() else 0.0f
-    }
+    fun dayChangePercentage() = "%.2f".format(((closePrice - prevClosePrice) / closePrice) * 100).toFloat()
 }
 
 @Entity
 data class WatchList(
     @PrimaryKey val symbol: String,
-    val price: String,
+    val price: Float,
     val date: String
 )
 

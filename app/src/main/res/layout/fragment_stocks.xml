@@ -4,7 +4,7 @@
     <data>
 
         <variable
-            name="stockViewModel"
+            name="viewModel"
             type="com.devika.hush.ui.home.equities.stocks.StocksViewModel" />
     </data>
 
@@ -20,20 +20,18 @@
             android:layout_gravity="center"
             android:indeterminateDrawable="@drawable/progress_bar"
             android:visibility="visible"
-            app:setProgressState = "@{stockViewModel.uiState()}"/>
+            app:setProgressState="@{viewModel.uiState()}" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="LinearLayoutManager"
-            app:setData = "@{stockViewModel.uiState()}"
-            />
+            app:setStocks="@{viewModel.uiState()}" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            app:setErrorState = "@{stockViewModel.uiState()}"
-            />
+            app:setErrorState="@{viewModel.uiState()}" />
     </FrameLayout>
 </layout>
