@@ -1,6 +1,5 @@
 package com.devika.hush.ui.home.equities.portfolio
 
-import com.devika.hush.data.domain.Result
 import com.devika.hush.data.domain.SuspendUseCase
 import com.devika.hush.data.model.Portfolio
 import com.devika.hush.data.repository.HushRepository
