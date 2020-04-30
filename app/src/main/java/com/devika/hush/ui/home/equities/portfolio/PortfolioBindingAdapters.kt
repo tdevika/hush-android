@@ -12,14 +12,11 @@ fun setPortfolio(
     recyclerView: RecyclerView,
     uiState: UiState?
 ) {
-    if (recyclerView.adapter == null) {
-        recyclerView.adapter = PortfolioAdapter()
-    }
     uiState?.let {
         when (uiState) {
             is UiState.Success -> {
                 recyclerView.isVisible = true
-                (recyclerView.adapter as PortfolioAdapter).submitList(uiState.value.getList<Portfolio>())
+                (recyclerView.adapter as PortfolioAdapter).submitList(uiState.value.getList())
             }
             else -> recyclerView.isVisible = false
         }
