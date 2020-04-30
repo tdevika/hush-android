@@ -45,6 +45,7 @@ class StocksAdapter : ListAdapter<Stock, StocksAdapter.StocksViewHolder>(DIFF_CA
             notifyDataSetChanged()
         }
 
+
     }
 
     override fun submitList(list: List<Stock>?) {
