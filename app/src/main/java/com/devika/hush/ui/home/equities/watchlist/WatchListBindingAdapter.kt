@@ -12,9 +12,6 @@ fun setWatchlist(
     recyclerView: RecyclerView,
     uiState: UiState?
 ) {
-    if (recyclerView.adapter == null) {
-        recyclerView.adapter = WatchListAdapter()
-    }
     uiState?.let {
         when (uiState) {
             is UiState.Success -> {

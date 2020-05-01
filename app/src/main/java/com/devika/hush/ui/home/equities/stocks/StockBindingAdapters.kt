@@ -11,9 +11,6 @@ fun setStocks(
     recycler: RecyclerView,
     uiState: UiState?
 ) {
-    if (recycler.adapter == null) {
-        recycler.adapter = StocksAdapter()
-    }
     uiState?.let {
         when (uiState) {
             is UiState.Success -> {

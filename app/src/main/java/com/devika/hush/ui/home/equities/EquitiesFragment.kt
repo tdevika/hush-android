@@ -2,7 +2,10 @@ package com.devika.hush.ui.home.equities
 
 import android.content.Context
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.devika.hush.HushApplication
@@ -27,7 +30,9 @@ class EquitiesFragment : BaseFragment<FragmentEquitiesBinding, EquitiesViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.pager.adapter = DemoCollectionAdapter(this)
+        setHasOptionsMenu(true)
+        binding.pager.adapter = EquitiesTabAdapter(this)
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         TabLayoutMediator(binding.tabLayout, binding.pager) { tab, position ->
             when (position) {
                 0 -> {
@@ -42,9 +47,14 @@ class EquitiesFragment : BaseFragment<FragmentEquitiesBinding, EquitiesViewModel
             }
         }.attach()
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_menu, menu)
+    }
+
 }
 
-class DemoCollectionAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+class EquitiesTabAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = 3
     override fun createFragment(position: Int): Fragment {
         return when (position) {
