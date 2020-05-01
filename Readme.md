@@ -1,7 +1,5 @@
 # Tracket
 
-### Roadmap
-
 ### Product Backlog
  - [ ]Core
     - [ ]Portfolio
@@ -13,32 +11,42 @@
  - [ ]Show Progress and handle error and complete state for the app
 
 ### Tech Backlog
- - [ ]Add new navigation implementation
- - [ ]Implement Day Night(Dark) mode
- - [ ]Immersive mode
- - [ ]ThemeOverlay
- - [ ]Integrate ktlint
- - [ ]Release : https://www.raywenderlich.com/9043-android-app-bundles-getting-started
-    - [ ]App icon
-    - [ ]App font
-    - [ ]App color pallet 
- - [ ]Integrate CI Bitrise
- - [ ]Add animated vector drawable for tab icons
- - [ ]Analytics
- - [ ]Viewpager pager 2
- - [ ]Explore lint
  - Architecture 
     - Usecases
-    
-     
+ - Style
+     - [ ]Add new navigation implementation
+     - [ ]Implement Day Night(Dark) mode
+     - [ ]Immersive mode
+     - [ ]ThemeOverlay
+     - [ ]Adaptive app icon
+     - [ ]App font
+     - [ ]App color pallet 
+     - [ ]Add animated vector drawable for tab icons
+ - [ ]Integrate ktlint
+ - [ ]Explore Android Studio lint
+ - [ ]Release : https://www.raywenderlich.com/9043-android-app-bundles-getting-started
+ - [ ]Integrate CI Bitrise
+ - [ ]Analytics
+ - [ ]Viewpager pager 2
 
 ### Daily Update
+30/04/2020
+ - App Theme : Developing Themes with Style
+    -  
 29/04/2020
- - []
+ - Downloadable Fonts 
+ - Adaptive icons
+ - App Color pallet
 28/04/2020
  - [Feature]
      - Integrate CI Bitrise : https://www.youtube.com/watch?v=jVMubvLDyHU
- 
+26/04/2020
+ - [Code cleanup]
+    - Integrate ktlint : https://www.youtube.com/watch?v=YmZIkUGnCco
+    - Refactor > Remove unused resource 
+    - Analyze -> Run inspection by name > Kotlin | Redundant constructs | Unused symbol
+    - Add pre-commit hook for ktlint : https://www.youtube.com/watch?v=eysVDO2_X0s
+    
 22/01/2019
   - [Feature]
        - Dagger2
@@ -48,13 +56,6 @@
 
   - [Referred] : https://medium.com/androiddevelopers/appcompat-v23-2-daynight-d10f90c83e94, https://github.com/chrisbanes/tivi
 
-26/04/2020
- - [Code cleanup]
-    - Integrate ktlint : https://www.youtube.com/watch?v=YmZIkUGnCco
-    - Refactor > Remove unused resource 
-    - Analyze -> Run inspection by name > Kotlin | Redundant constructs | Unused symbol
-    - Add pre-commit hook for ktlint : https://www.youtube.com/watch?v=eysVDO2_X0s
-    
 15/01/2019
  - [Feature]
       - Added release/debug unique server endpoints
@@ -133,6 +134,10 @@
 
     
 ### Learning 
+- Style 
+    - Typography
+    - Theme
+    - Material Components for Android [https://medium.com/androiddevelopers/migrating-to-material-components-for-android-ec6757795351]
 - Create parallel network requests
         launch {
             try {

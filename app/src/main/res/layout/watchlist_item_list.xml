@@ -34,7 +34,7 @@
                 android:layout_marginTop="@dimen/space_4dp"
                 android:padding="@dimen/space_2dp"
                 android:text="@{watchList.watchList.symbol}"
-                android:textColor="@color/black"
+                android:textColor="@color/black_800"
                 android:textSize="@dimen/space_18sp"
                 android:textStyle="bold" />
 
@@ -58,7 +58,7 @@
                 android:layout_marginTop="@dimen/space_4dp"
                 android:layout_marginBottom="@dimen/space_6dp"
                 android:text="@{`` + watchList.watchList.price}"
-                android:textColor="@color/black"
+                android:textColor="@color/black_800"
                 android:textSize="@dimen/space_12sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -70,7 +70,7 @@
                 android:layout_marginBottom="@dimen/space_6dp"
                 android:layout_toRightOf="@+id/price"
                 android:text="@{`` + watchList.watchList.date}"
-                android:textColor="@color/black"
+                android:textColor="@color/black_800"
                 android:textSize="@dimen/space_12sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -116,7 +116,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/space_2dp"
                 android:text="@{`` + watchList.stock.dayChange}"
-                android:textColor="@{watchList.stock.dayChangePercentage() &lt; 0 ? @color/red : @color/green}"
+                android:textColor="@{watchList.stock.dayChangePercentage() &lt; 0 ? @color/red_600 : @color/green_200}"
                 android:textSize="@dimen/space_16sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -127,7 +127,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/space_2dp"
                 android:text="@{ watchList.stock.dayChangePercentage + `%`}"
-                android:textColor="@{watchList.stock.dayChangePercentage() &lt; 0 ? @color/red : @color/green}"
+                android:textColor="@{watchList.stock.dayChangePercentage() &lt; 0 ? @color/red_600 : @color/green_200}"
                 android:textSize="@dimen/space_16sp" />
 
             <ImageView

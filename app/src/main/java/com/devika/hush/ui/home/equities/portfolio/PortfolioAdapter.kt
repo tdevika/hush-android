@@ -31,7 +31,6 @@ class PortfolioViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(portfolio: Portfolio) {
         binding.portfolio = portfolio
-        binding.executePendingBindings()
     }
 }
 
