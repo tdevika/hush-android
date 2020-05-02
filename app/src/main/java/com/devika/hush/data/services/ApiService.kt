@@ -24,4 +24,6 @@ interface ApiService {
 
     @DELETE("delete-from-watchlist")
     suspend fun deleteWatchList(@Query("symbol") symbol: String)
+
+    fun getDetails(): Any
 }

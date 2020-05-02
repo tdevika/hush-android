@@ -9,8 +9,9 @@ import com.devika.hush.HushApplication
 import com.devika.hush.R
 import com.devika.hush.databinding.FragmentPortfolioBinding
 import com.devika.hush.ui.base.BaseFragment
+import com.devika.hush.ui.home.equities.EquitiesViewModel
 
-class PortfolioFragment : BaseFragment<FragmentPortfolioBinding, PortfolioViewModel>() {
+class PortfolioFragment : BaseFragment<FragmentPortfolioBinding, EquitiesViewModel>() {
 
     private lateinit var portfolioAdapter: PortfolioAdapter
     override fun onAttach(context: Context) {
@@ -20,22 +21,13 @@ class PortfolioFragment : BaseFragment<FragmentPortfolioBinding, PortfolioViewMo
 
     override fun layoutId() = R.layout.fragment_portfolio
 
-    override fun getViewModelClass() = PortfolioViewModel::class.java
+    override fun getViewModelClass() = EquitiesViewModel::class.java
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         subscribeToModel()
         setHasOptionsMenu(true)
         setRecyclerView()
-    }
-
-    private fun setRecyclerView() {
-        portfolioAdapter = PortfolioAdapter()
-        binding.recycler.adapter = portfolioAdapter
-    }
-
-    private fun subscribeToModel() {
-        binding.viewModel = viewModel
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -52,4 +44,14 @@ class PortfolioFragment : BaseFragment<FragmentPortfolioBinding, PortfolioViewMo
         })
         return super.onOptionsItemSelected(item)
     }
+
+    private fun setRecyclerView() {
+        portfolioAdapter = PortfolioAdapter(viewModel)
+        binding.recycler.adapter = portfolioAdapter
+    }
+
+    private fun subscribeToModel() {
+        binding.viewModel = viewModel
+    }
+
 }

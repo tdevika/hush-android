@@ -7,6 +7,8 @@ import android.view.MenuInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.devika.hush.HushApplication
 import com.devika.hush.R
@@ -46,6 +48,15 @@ class EquitiesFragment : BaseFragment<FragmentEquitiesBinding, EquitiesViewModel
                 }
             }
         }.attach()
+
+       navigateToDetailFragment()
+    }
+
+    private fun navigateToDetailFragment() {
+        viewModel.navigateToDetail.observe(viewLifecycleOwner, Observer {
+            val action= EquitiesFragmentDirections.actionEquitiesFragmentToDetailFragment(it)
+            findNavController().navigate(action)
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

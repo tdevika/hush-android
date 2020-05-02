@@ -31,6 +31,11 @@ class HushRepository @Inject constructor(
         refreshCacheWithRemoteStocks()
         refreshCacheWithRemotePortfolio()
         refreshCacheWithRemoteWatchList()
+        refreshCacheWithRemoteDetails()
+    }
+
+    private suspend fun refreshCacheWithRemoteDetails() {
+        val details = apiService.getDetails()
     }
 
     private suspend fun refreshCacheWithRemoteWatchList() {

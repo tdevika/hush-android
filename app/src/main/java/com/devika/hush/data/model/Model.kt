@@ -4,6 +4,7 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.Relation
+import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "portfolio")
 data class Portfolio(
@@ -60,4 +61,26 @@ data class DetailWatchList(
         entityColumn = "symbol"
     )
     val stock: Stock
+)
+
+@Entity(tableName = "stock_details")
+class StockDetails : ArrayList<StockDetailsItem>()
+
+data class StockDetailsItem(
+    @SerializedName("corporate_action")
+    val corporateAction: List<CorporateAction>,
+    val historicalData: List<HistoricalData>,
+    val portfolio: Portfolio
+)
+
+data class CorporateAction(
+    @SerializedName("ex_dt")
+    val exDt: String,
+    val purpose: String
+)
+
+data class HistoricalData(
+    val closePrice: Double,
+    val date: String,
+    val netTrdQty: Int
 )
