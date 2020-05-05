@@ -31,7 +31,45 @@
        - [Downloadable Fonts](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts)
        - [Developing Themes with Style (Android Dev Summit '19](https://www.youtube.com/watch?v=Owkf8DhAOSo)
        - [Sample](https://github.com/googlesamples/android-DownloadableFonts)
-   - **Color pallet**
+   - **Color palettes**
+      - [Choosing palettes types](https://color.adobe.com/create)
+        - Monochromatic
+        - Analogous
+        - Complimentary
+        - Trirad
+      - Use [this](https://material.io/design/color/the-color-system.html#tools-for-picking-colors) tool to generate color palettes
+      - Use [this](https://material.io/design/color/dark-theme.html#ui-application) guideline to map android color palettes
+      - Output
+        ```xml
+            <!--    light-->
+            <color name="md_dark_grey_50">#F7F7F7</color> <!-- colorBackground -->
+            <color name="md_dark_grey_50">#F7F7F7</color> <!-- colorSurface -->
+            <color name="md_dark_grey_500">#8A8A8A</color> <!-- colorPrimary (500/700)-->
+            <color name="md_dark_grey_700">#505050</color> <!-- colorPrimaryVariant (colorPrimary+100/200)-->
+            <color name="md_dark_grey_200">#E2E2E2</color> <!-- colorSecondary (colorPrimary - 200/300)/-->
+            <color name="md_dark_grey_200">#E2E2E2</color> <!-- colorSecondaryVariant (colorPrimary - 200/300)/-->
+            <color name="md_red_600">#B00020</color> <!-- colorError -->
+            <color name="md_dark_grey_50">#121212</color> <!-- colorOnPrimary-->
+            <color name="md_dark_grey_900">#121212</color><!-- colorOnSecondary-->
+            <color name="md_dark_grey_900">#F7F7F7</color><!-- colorOnBackground-->
+            <color name="md_dark_grey_900">#F7F7F7</color><!-- colorOnSurface-->
+            <item name="md_dark_grey_50">#121212</item><!-- colorOnError-->
+        ```
+        ```xml
+            <!--    dark-->
+            <color name="md_dark_grey_900">#121212</color> <!-- colorBackground -->
+            <color name="md_dark_grey_800">#272727</color> <!-- colorSurface | The color #272727 is the result of combining the dark theme surface color #121212 and the 8% Primary color.Use Android studio color alpha to get % -->
+            <color name="md_dark_grey_200">#E2E2E2</color> <!-- colorPrimary (200)-->
+            <color name="md_dark_grey_700">#505050</color> <!-- colorPrimaryVariant (colorPrimary+100/200/500)-->
+            <color name="md_dark_grey_200">#E2E2E2</color> <!-- colorSecondary (colorPrimary + 0/100)-->
+            <color name="md_dark_grey_200">#E2E2E2</color> <!--colorSecondaryVariant (colorPrimary + 0/100/200/300)-->
+            <color name="md_red_200">#CF6679</color>   <!-- colorError created by taking the light theme error color (#B00020) and lightening it with a 40% white overlay-->
+            <color name="md_dark_grey_900">#121212</color> <!-- colorOnPrimary-->
+            <color name="md_dark_grey_900">#121212</color><!-- colorOnSecondary-->
+            <color name="md_dark_grey_50">#F7F7F7</color><!-- colorOnBackground-->
+            <color name="md_dark_grey_50">#F7F7F7</color><!-- colorOnSurface-->
+            <item name="md_dark_grey_900">#121212</item><!-- colorOnError-->
+        ```
       - Referred
         - [Developing Themes with Style (Android Dev Summit '19](https://www.youtube.com/watch?v=Owkf8DhAOSo)
         - [Building a real Android app with Material Tools - Nick Rout - DevFest South Africa](https://www.youtube.com/watch?v=hjATvyrA0CQ)
@@ -87,7 +125,7 @@
       - [ ]ThemeOverlay
       - [ ]Adaptive app icon
       - [ ]App font
-      - [ ]App color pallet 
+      - [ ]App color palettes
       - [ ]Add animated vector drawable for tab icons
   - [ ]Integrate ktlint
   - [ ]Explore Android Studio lint
