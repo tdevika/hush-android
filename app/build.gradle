@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
+    def Theme = '' + (System.getenv("APP_THEME") ?: "Montserrat") + ''
     compileSdkVersion rootProject.compileSdkVersion
     defaultConfig {
         applicationId "com.devika.hush"
@@ -13,6 +14,7 @@ android {
         versionName rootProject.versionName
         versionCode rootProject.versionCode
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [application_theme: Theme]
     }
     buildTypes {
         release {

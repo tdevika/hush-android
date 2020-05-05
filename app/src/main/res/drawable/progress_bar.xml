@@ -7,13 +7,12 @@
     android:toDegrees="270">
     <shape
         android:shape="ring"
-        android:useLevel="false"
         android:thickness="4dp"
-        >
+        android:useLevel="false">
         <gradient
-            android:centerColor="@color/colorPrimary"
+            android:centerColor="?attr/colorPrimary"
             android:centerY="0.5"
-            android:endColor="@color/colorAccent"
+            android:endColor="?attr/colorSecondary"
             android:type="sweep"
             android:useLevel="false" />
 

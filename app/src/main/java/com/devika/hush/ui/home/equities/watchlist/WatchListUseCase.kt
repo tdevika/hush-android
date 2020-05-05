@@ -4,14 +4,14 @@ import com.devika.hush.data.domain.SuspendUseCase
 import com.devika.hush.data.model.DetailWatchList
 import com.devika.hush.data.repository.HushRepository
 import com.devika.hush.injection.scope.DefaultDispatcher
-import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
+import kotlinx.coroutines.CoroutineDispatcher
 
-class WatchListUseCase @Inject constructor(private val hushRepository: HushRepository, @DefaultDispatcher defaultDispatcher: CoroutineDispatcher) :
+class WatchListUseCase @Inject constructor(
+    private val hushRepository: HushRepository,
+    @DefaultDispatcher defaultDispatcher: CoroutineDispatcher
+) :
     SuspendUseCase<Unit, List<DetailWatchList>>(defaultDispatcher) {
-    override suspend fun execute(parameters: Unit): List<DetailWatchList> = hushRepository.getWatchList()
+    override suspend fun execute(parameters: Unit): List<DetailWatchList> =
+        hushRepository.getWatchList()
 }
-
-
-
-

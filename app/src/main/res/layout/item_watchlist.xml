@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.devika.hush.R" />
+
+        <variable
+            name="watchList"
+            type="com.devika.hush.data.model.DetailWatchList" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_8dp"
+        android:layout_marginTop="@dimen/space_4dp"
+        android:layout_marginEnd="@dimen/space_8dp"
+        android:layout_marginBottom="@dimen/space_4dp"
+        tools:cardCornerRadius="@dimen/space_2dp"
+        tools:cardElevation="@dimen/space_2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/symbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/space_6dp"
+                android:layout_marginTop="@dimen/space_4dp"
+                android:padding="@dimen/space_2dp"
+                android:text="@{watchList.watchList.symbol}"
+                android:textColor="@color/black_800"
+                android:textSize="@dimen/space_18sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/closePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/space_4dp"
+                android:layout_marginEnd="@dimen/space_4dp"
+                android:text="@{`` + watchList.stock.closePrice}"
+                android:textSize="@dimen/space_15sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/symbol"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/space_6dp"
+                android:layout_marginTop="@dimen/space_4dp"
+                android:layout_marginBottom="@dimen/space_6dp"
+                android:text="@{`` + watchList.watchList.price}"
+                android:textColor="@color/black_800"
+                android:textSize="@dimen/space_12sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/symbol"
+                android:layout_marginTop="@dimen/space_4dp"
+                android:layout_marginBottom="@dimen/space_6dp"
+                android:layout_toRightOf="@+id/price"
+                android:text="@{`` + watchList.watchList.date}"
+                android:textColor="@color/black_800"
+                android:textSize="@dimen/space_12sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/highLowText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/closePrice"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/space_6dp"
+                android:layout_marginRight="@dimen/space_6dp"
+                android:layout_marginBottom="@dimen/space_2dp"
+                android:text="@string/day_hi_lo_text"
+                android:textSize="@dimen/space_15sp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/highValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/highLowText"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/space_2dp"
+                android:layout_marginEnd="@dimen/space_6dp"
+                android:text="@{`` + watchList.stock.hi52Wk}"
+                android:textSize="@dimen/space_15sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lowValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/highValue"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/space_2dp"
+                android:layout_marginEnd="@dimen/space_6dp"
+                android:text="@{`` + watchList.stock.lo52Wk}"
+                android:textSize="@dimen/space_15sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dayChange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/highLowText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/space_2dp"
+                android:text="@{`` + watchList.stock.dayChange}"
+                android:textColor="@{watchList.stock.dayChangePercentage() &lt; 0 ? @color/red_600 : @color/green_200}"
+                android:textSize="@dimen/space_16sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dayChangePercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dayChange"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/space_2dp"
+                android:text="@{ watchList.stock.dayChangePercentage + `%`}"
+                android:textColor="@{watchList.stock.dayChangePercentage() &lt; 0 ? @color/red_600 : @color/green_200}"
+                android:textSize="@dimen/space_16sp" />
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dayChange"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_4dp"
+                android:layout_toLeftOf="@id/dayChangePercentage"
+                android:src="@{watchList.stock.dayChangePercentage() &lt; 0 ? @drawable/ic_arrow_drop_down : @drawable/ic_arrow_drop_up}" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

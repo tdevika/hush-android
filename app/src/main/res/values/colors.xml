@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1b7713</color>
-    <color name="colorPrimaryDark">#004a00</color>
-    <color name="colorAccent">#53a743</color>
-    <color name="black">#000000</color>
-    <color name="red">#DE1616</color>
-    <color name="green">#004a00</color>
+<!--    <color name="colorPrimary">#1b7713</color>-->
+<!--    <color name="colorPrimaryDark">#004a00</color>-->
+<!--    <color name="colorAccent">#53a743</color>-->
+<!--    <color name="black">#000000</color>-->
+<!--    <color name="colorPrimaryVariant">#00675b</color>-->
+<!--    <color name="colorOnPrimary">#FFFFFF</color>-->
+<!--    <color name="colorSecondary">#b2dfdb</color>-->
+<!--    <color name="colorSecondaryVariant">#82ada9</color>-->
+<!--    <color name="colorOnSecondary">#000000</color>-->
+<!--    <color name="colorBackground">#FFFFFF</color>-->
+<!--    <color name="colorOnBackground">#000000</color>-->
+<!--    <color name="colorSurface">#000000</color>-->
+<!--    <color name="colorOnSurface">#fff</color>-->
+<!--    <color name="colorError">#C51162</color>-->
+<!--    <color name="colorOnError">#fff</color>-->
+<!--    <color name="red">#DE1616</color>-->
+<!--    <color name="green">#004a00</color>-->
+
+    <!--Color palette-->
+
+    <color name="purple_200">#bb86fc</color> <!--Color primary (dark)-->
+    <color name="purple_500">#656a5d</color> <!--Color primary (light)-->
+    <color name="purple_600">#4b01d0</color> <!--Color primary variant (dark)-->
+    <color name="purple_700">#3b3f33</color> <!--Color primary variant (light)-->
+
+    <color name="green_200">#ac9f62</color> <!--Color secondary-->
+    <color name="green_500">#7b7136</color> <!--Color secondary variant-->
+
+    <color name="red_200">#cf6679</color> <!--Color error (dark)-->
+    <color name="red_600">#b00020</color> <!--Color error (light)-->
+
+    <!--Color surface (light), color on error (light), -->
+    <!--color on surface (dark), color on surface (dark)-->
+    <color name="white_50">#ffffff</color>
+
+    <color name="black_800">#121212</color> <!--Color surface (dark)-->
+    <!--Color on secondary (light), color on background (light),-->
+    <!--color on surface (light)-->
+    <color name="black_900">#000000</color>
 </resources>

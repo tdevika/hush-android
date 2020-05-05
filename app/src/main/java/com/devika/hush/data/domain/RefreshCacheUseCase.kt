@@ -9,5 +9,6 @@ class RefreshCacheUseCase @Inject constructor(
     private val hushRepository: HushRepository,
     @IoDispatcher ioDispatcher: CoroutineDispatcher
 ) : SuspendUseCase<Unit, Unit>(ioDispatcher) {
-    public override suspend fun execute(parameters: Unit)= (hushRepository.refreshCacheWithRemoteData())
+    public override suspend fun execute(parameters: Unit) =
+        (hushRepository.refreshCacheWithRemoteData())
 }

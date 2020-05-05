@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="Base.Theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarColor" tools:ignore="NewApi">?android:attr/colorBackground</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?attr/colorControlHighlight</item>
+    </style>
+
+    <style name="Base.Theme.Montserrat" parent="Base.Theme">
+        <!--Material color attributes (light theme) -->
+        <!--colorPrimary colors map to components and elements, such as app bars and buttons. -->
+        <!--colorSecondary colors are most often used as accents on components, such as FABs and -->
+        <!--selection controls.-->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorSecondary">@color/green_200</item>
+        <item name="colorSecondaryVariant">@color/green_500</item>
+        <!--colorBackground appears behind scrollable content and is used for the default window-->
+        <!--background. colorSurface is mapped to the surface of components such as cards, sheets-->
+        <!--and menus. colorError is used to indicate an error state for components such as-->
+        <!--text fields.-->
+        <item name="android:colorBackground">@color/white_50</item>
+        <item name="colorSurface">@color/white_50</item>
+        <item name="colorError">@color/red_600</item>
+        <!--"On" colors define how text, icons and strokes are colored in relation to the surface-->
+        <!--on which they appear.-->
+        <item name="colorOnPrimary">@color/white_50</item>
+        <item name="colorOnSecondary">@color/black_900</item>
+        <item name="colorOnBackground">@color/black_900</item>
+        <item name="colorOnSurface">@color/black_900</item>
+        <item name="colorOnError">@color/white_50</item>
+        <!--Material type attributes-->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Montserrat.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Montserrat.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Montserrat.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Montserrat.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Montserrat.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Montserrat.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Montserrat.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Montserrat.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Montserrat.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Montserrat.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Montserrat.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Montserrat.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Montserrat.Overline</item>
+        <!--Material shape attributes-->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyTheme.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MyTheme.LargeComponent</item>
+        <!--Component styles-->
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.Dialog.Alert</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.MyTheme.BottomSheetDialog</item>
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.PrimarySurface</item>
+    </style>
+
+    <style name="Base.Theme.Muli" parent="Base.Theme">
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Muli.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Muli.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Muli.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Muli.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Muli.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Muli.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Muli.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Muli.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Muli.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Muli.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Muli.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Muli.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Muli.Overline</item>
+    </style>
+
+    <style name="Base.Theme.Actor" parent="Base.Theme">
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Actor.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Actor.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Actor.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Actor.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Actor.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Actor.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Actor.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Actor.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Actor.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Actor.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Actor.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Actor.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Actor.Overline</item>
+    </style>
+
+    <style name="Base.Theme.AdventPro" parent="Base.Theme">
+        <item name="textAppearanceHeadline1">@style/TextAppearance.AdventPro.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.AdventPro.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.AdventPro.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.AdventPro.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.AdventPro.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.AdventPro.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.AdventPro.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.AdventPro.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.AdventPro.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.AdventPro.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.AdventPro.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.AdventPro.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.AdventPro.Overline</item>
+    </style>
+
+    <style name="Base.Theme.Heebo" parent="Base.Theme">
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Heebo.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Heebo.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Heebo.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Heebo.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Heebo.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Heebo.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Heebo.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Heebo.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Heebo.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Heebo.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Heebo.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Heebo.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Heebo.Overline</item>
+    </style>
+
+    <style name="Base.Theme.Nunito" parent="Base.Theme">
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Nunito.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Nunito.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Nunito.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Nunito.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Nunito.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Nunito.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Nunito.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Nunito.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Nunito.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Nunito.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Nunito.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Nunito.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Nunito.Overline</item>
+    </style>
+
+    <style name="Base.Theme.Biryani" parent="Base.Theme">
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Biryani.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Biryani.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Biryani.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Biryani.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Biryani.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Biryani.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Biryani.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Biryani.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Biryani.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Biryani.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Biryani.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Biryani.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Biryani.Overline</item>
+    </style>
+
+    <style name="Theme.Hush" parent="Base.Theme.Montserrat"/>
+
+</resources>

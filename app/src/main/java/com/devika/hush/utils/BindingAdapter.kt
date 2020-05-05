@@ -1,13 +1,10 @@
 package com.devika.hush.utils
 
-import android.graphics.Color
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
-import com.devika.hush.data.model.Portfolio
 import com.devika.hush.ui.base.UiState
-import java.text.DecimalFormat
 
 @BindingAdapter(value = ["setProgressState"], requireAll = true)
 fun setProgressState(
@@ -34,5 +31,3 @@ fun setErrorState(
         }
     }
 }
-
-
