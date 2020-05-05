@@ -2,7 +2,11 @@ package com.devika.hush.ui.home.equities
 
 import android.content.Context
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -62,7 +66,6 @@ class EquitiesFragment : Fragment() {
                 0 -> tab.text = "PORTFOLIO"
                 1 -> tab.text = "WATCHLIST"
                 2 -> tab.text = "STOCKS"
-
             }
         }.attach()
     }

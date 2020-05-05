@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.devika.hush.HushApplication
 import com.devika.hush.databinding.FragmentExploreBinding
 import com.devika.hush.injection.component.injector
 import com.devika.hush.utils.HushViewModelFactory
@@ -19,7 +18,7 @@ class ExploreFragment : Fragment() {
     lateinit var viewModelFactory: HushViewModelFactory
 
     private lateinit var binding: FragmentExploreBinding
-    private lateinit var viewModel : ExploreViewModel
+    private lateinit var viewModel: ExploreViewModel
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -39,7 +38,4 @@ class ExploreFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = viewModelProvider(viewModelFactory)
     }
-
-
-
 }

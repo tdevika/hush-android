@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import com.devika.hush.HushApplication
 import com.devika.hush.databinding.FragmentPortfolioBinding
 import com.devika.hush.injection.component.injector
 import com.devika.hush.ui.home.equities.EquitiesViewModel
@@ -70,5 +69,4 @@ class PortfolioFragment : Fragment() {
         viewModel = parentViewModelProvider(viewModelFactory)
         binding.viewModel = viewModel
     }
-
 }

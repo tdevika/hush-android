@@ -10,12 +10,12 @@ import com.devika.hush.data.model.StockDetails
 import com.devika.hush.ui.base.BaseState
 import com.devika.hush.ui.base.BaseViewModel
 import com.devika.hush.ui.base.UiState
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 class DetailsViewModel @Inject constructor(private val detailsUseCase: DetailsUseCase) :
     BaseViewModel() {
-    private val _stockDetails =  MutableLiveData<StockDetails>()
+    private val _stockDetails = MutableLiveData<StockDetails>()
     fun stockDetails(): LiveData<StockDetails> = _stockDetails
 
     val _isAddToWatchlist = MutableLiveData<Boolean>()
@@ -34,8 +34,6 @@ class DetailsViewModel @Inject constructor(private val detailsUseCase: DetailsUs
         }
     }
 
-    fun addToWatchList(){
-
+    fun addToWatchList() {
     }
-
 }

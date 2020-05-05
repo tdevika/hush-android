@@ -2,7 +2,12 @@ package com.devika.hush.injection.component
 
 import androidx.fragment.app.Fragment
 import com.devika.hush.HushApplication
-import com.devika.hush.injection.module.*
+import com.devika.hush.injection.module.ActivityModule
+import com.devika.hush.injection.module.AppModule
+import com.devika.hush.injection.module.CoroutinesModule
+import com.devika.hush.injection.module.FragmentModule
+import com.devika.hush.injection.module.NetworkModule
+import com.devika.hush.injection.module.ViewModelModule
 import com.devika.hush.ui.home.HomeActivity
 import com.devika.hush.ui.home.details.DetailFragment
 import com.devika.hush.ui.home.equities.EquitiesFragment

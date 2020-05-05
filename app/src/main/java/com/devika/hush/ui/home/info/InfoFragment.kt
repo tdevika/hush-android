@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.devika.hush.HushApplication
 import com.devika.hush.databinding.FragmentInfoBinding
 import com.devika.hush.injection.component.injector
 import com.devika.hush.utils.HushViewModelFactory
@@ -23,7 +22,7 @@ class InfoFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-       injector.inject(this)
+        injector.inject(this)
     }
 
     override fun onCreateView(
@@ -39,6 +38,4 @@ class InfoFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = viewModelProvider(viewModelFactory)
     }
-
-
 }

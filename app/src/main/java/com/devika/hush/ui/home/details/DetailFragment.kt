@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.devika.hush.HushApplication
 import com.devika.hush.databinding.FragmentDetailsBinding
 import com.devika.hush.injection.component.injector
 import com.devika.hush.utils.HushViewModelFactory
@@ -18,7 +17,7 @@ class DetailFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: HushViewModelFactory
 
-    private lateinit  var viewModel : DetailsViewModel
+    private lateinit var viewModel: DetailsViewModel
 
     private lateinit var binding: FragmentDetailsBinding
 
@@ -27,17 +26,18 @@ class DetailFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-       injector.inject(this)
+        injector.inject(this)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentDetailsBinding.inflate(inflater,container, false).apply {
+        binding = FragmentDetailsBinding.inflate(inflater, container, false).apply {
             lifecycleOwner = viewLifecycleOwner
         }
-        return  binding.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -50,5 +50,4 @@ class DetailFragment : Fragment() {
         binding.viewModel = viewModel
         symbol?.let { viewModel.getStockDetails(it) }
     }
-
 }

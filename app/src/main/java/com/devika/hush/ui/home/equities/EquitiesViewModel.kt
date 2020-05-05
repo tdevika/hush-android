@@ -13,8 +13,8 @@ import com.devika.hush.ui.home.equities.portfolio.PortfolioUseCase
 import com.devika.hush.ui.home.equities.stocks.StocksUseCase
 import com.devika.hush.ui.home.equities.watchlist.WatchListUseCase
 import com.devika.hush.utils.Event
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 class EquitiesViewModel @Inject constructor(
     private val portfolioUseCase: PortfolioUseCase,
@@ -34,8 +34,7 @@ class EquitiesViewModel @Inject constructor(
 
     private val _navigateToDetail = MutableLiveData<Event<String>>()
     val navigateToDetail: LiveData<Event<String>>
-    get() =  _navigateToDetail
-
+    get() = _navigateToDetail
 
     init {
         viewModelScope.launch {

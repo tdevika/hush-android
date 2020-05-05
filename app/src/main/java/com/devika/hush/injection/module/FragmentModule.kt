@@ -2,7 +2,6 @@ package com.devika.hush.injection.module
 
 import androidx.lifecycle.ViewModel
 import com.devika.hush.injection.scope.ViewModelScope
-import com.devika.hush.ui.home.details.DetailFragment
 import com.devika.hush.ui.home.details.DetailsViewModel
 import com.devika.hush.ui.home.equities.EquitiesViewModel
 import com.devika.hush.ui.home.explore.ExploreViewModel
@@ -32,6 +31,5 @@ abstract class FragmentModule {
     @Binds
     @IntoMap
     @ViewModelScope(DetailsViewModel::class)
-    abstract fun bindDetailsViewModel(detailsViewModel: DetailsViewModel):ViewModel
-
+    abstract fun bindDetailsViewModel(detailsViewModel: DetailsViewModel): ViewModel
 }

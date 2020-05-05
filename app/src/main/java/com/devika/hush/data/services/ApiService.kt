@@ -4,7 +4,11 @@ import com.devika.hush.data.model.Portfolio
 import com.devika.hush.data.model.Stock
 import com.devika.hush.data.model.StockDetails
 import com.devika.hush.data.model.WatchList
-import retrofit2.http.*
+import retrofit2.http.Body
+import retrofit2.http.DELETE
+import retrofit2.http.GET
+import retrofit2.http.PUT
+import retrofit2.http.Query
 
 interface ApiService {
     @GET("get-portfolio")

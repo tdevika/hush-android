@@ -63,7 +63,6 @@ data class DetailWatchList(
     val stock: Stock
 )
 
-
 data class StockDetails(
     @SerializedName("corporate_action")
     val corporateAction: List<CorporateAction>,

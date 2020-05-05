@@ -2,10 +2,12 @@ package com.devika.hush.ui.home.equities.stocks
 
 import android.content.Context
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import com.devika.hush.HushApplication
 import com.devika.hush.databinding.FragmentStocksBinding
 import com.devika.hush.injection.component.injector
 import com.devika.hush.ui.home.equities.EquitiesViewModel
@@ -13,12 +15,12 @@ import com.devika.hush.utils.HushViewModelFactory
 import com.devika.hush.utils.parentViewModelProvider
 import javax.inject.Inject
 
-class StocksFragment : Fragment(){
+class StocksFragment : Fragment() {
 
     @Inject
     lateinit var viewModelFactory: HushViewModelFactory
     private lateinit var binding: FragmentStocksBinding
-    private lateinit var viewModel:EquitiesViewModel
+    private lateinit var viewModel: EquitiesViewModel
     private lateinit var stocksAdapter: StocksAdapter
 
     override fun onAttach(context: Context) {
@@ -31,7 +33,7 @@ class StocksFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentStocksBinding.inflate(inflater,container,false).apply {
+        binding = FragmentStocksBinding.inflate(inflater, container, false).apply {
             lifecycleOwner = viewLifecycleOwner
         }
         return binding.root

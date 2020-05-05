@@ -54,7 +54,6 @@ class PortfolioAdapter(val itemClickListener: ItemClickListener) :
             submitList(filterResults.values as MutableList<Portfolio>?)
             notifyDataSetChanged()
         }
-
     }
 
     override fun submitList(list: List<Portfolio>?) {
@@ -63,7 +62,6 @@ class PortfolioAdapter(val itemClickListener: ItemClickListener) :
         }
         super.submitList(list)
     }
-
 
     inner class PortfolioViewHolder(
         private val binding: ItemPortfolioBinding

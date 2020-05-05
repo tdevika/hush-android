@@ -4,8 +4,8 @@ import com.devika.hush.data.domain.SuspendUseCase
 import com.devika.hush.data.model.StockDetails
 import com.devika.hush.data.repository.HushRepository
 import com.devika.hush.injection.scope.DefaultDispatcher
-import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
+import kotlinx.coroutines.CoroutineDispatcher
 
 class DetailsUseCase @Inject constructor(private val hushRepository: HushRepository, @DefaultDispatcher defaultDispatcher: CoroutineDispatcher) :
     SuspendUseCase<String, StockDetails>(defaultDispatcher) {

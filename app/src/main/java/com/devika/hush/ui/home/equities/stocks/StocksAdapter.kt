@@ -11,7 +11,7 @@ import com.devika.hush.data.model.Stock
 import com.devika.hush.databinding.ItemStocksBinding
 import com.devika.hush.ui.home.equities.ItemClickListener
 
-class StocksAdapter(val itemClickListener :ItemClickListener)  : ListAdapter<Stock, StocksAdapter.StocksViewHolder>(DIFF_CALLBACK) ,Filterable{
+class StocksAdapter(val itemClickListener: ItemClickListener) : ListAdapter<Stock, StocksAdapter.StocksViewHolder>(DIFF_CALLBACK), Filterable {
 
     val stockList = mutableListOf<Stock>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StocksViewHolder =
@@ -45,7 +45,6 @@ class StocksAdapter(val itemClickListener :ItemClickListener)  : ListAdapter<Sto
             submitList(filterResults.values as MutableList<Stock>?)
             notifyDataSetChanged()
         }
-
     }
 
     override fun submitList(list: List<Stock>?) {

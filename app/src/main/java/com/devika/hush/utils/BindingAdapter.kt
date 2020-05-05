@@ -5,7 +5,6 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import com.devika.hush.ui.base.BaseState
-import com.devika.hush.ui.base.UiState
 
 @BindingAdapter(value = ["setProgressState"], requireAll = true)
 fun setProgressState(

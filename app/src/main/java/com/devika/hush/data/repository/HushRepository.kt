@@ -1,7 +1,11 @@
 package com.devika.hush.data.repository
 
 import com.devika.hush.data.database.HushDao
-import com.devika.hush.data.model.*
+import com.devika.hush.data.model.DetailWatchList
+import com.devika.hush.data.model.Portfolio
+import com.devika.hush.data.model.Stock
+import com.devika.hush.data.model.StockDetails
+import com.devika.hush.data.model.WatchList
 import com.devika.hush.data.services.ApiService
 import javax.inject.Inject
 
@@ -46,6 +50,6 @@ class HushRepository @Inject constructor(
     }
 
     suspend fun getStockDetails(symbol: String): StockDetails {
-       return apiService.getStockDetails(symbol)
+        return apiService.getStockDetails(symbol)
     }
 }

@@ -48,7 +48,6 @@ class WatchListAdapter(private val itemClickListener: ItemClickListener) :
             submitList(filterResults.values as MutableList<DetailWatchList>?)
             notifyDataSetChanged()
         }
-
     }
 
     override fun submitList(list: List<DetailWatchList>?) {
@@ -57,7 +56,6 @@ class WatchListAdapter(private val itemClickListener: ItemClickListener) :
         }
         super.submitList(list)
     }
-
 
     inner class WatchListViewHolder(private val binding: ItemWatchlistBinding) :
         RecyclerView.ViewHolder(binding.root) {
