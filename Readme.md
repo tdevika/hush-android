@@ -1,45 +1,64 @@
 # Tracket
 
-### Product Backlog
- - [ ]Core
-    - [ ]Portfolio
-    - [ ]Watchlist
-    - [ ]All Stocks
-    - [ ]Filter Stocks (iosched filter bottom sheet)
-    - [ ]Stock search (iosched search)
- - [ ]Add google plus login
- - [ ]Show Progress and handle error and complete state for the app
-
-### Tech Backlog
- - Architecture 
-    - Usecases
- - Style
-     - [ ]Add new navigation implementation
-     - [ ]Implement Day Night(Dark) mode
-     - [ ]Immersive mode
-     - [ ]ThemeOverlay
-     - [ ]Adaptive app icon
-     - [ ]App font
-     - [ ]App color pallet 
-     - [ ]Add animated vector drawable for tab icons
- - [ ]Integrate ktlint
- - [ ]Explore Android Studio lint
- - [ ]Release : https://www.raywenderlich.com/9043-android-app-bundles-getting-started
- - [ ]Integrate CI Bitrise
- - [ ]Analytics
- - [ ]Viewpager pager 2
-
 ### Daily Update
-30/04/2020
- - App Theme : Developing Themes with Style
-    -  
-29/04/2020
- - Downloadable Fonts 
- - Adaptive icons
- - App Color pallet
+
+- 29/04/2020 - 05/05/2020
+
+    - **Implement Typography Theming (Adding downloadable font feature) (Extension : Dynamic font selection from app)**
+      - If you want to use a Downloadable Font before Android O, make sure you are using AppCompatTextView or that you are loading the font yourself with ResourcesCompat.getFont().
+      - Theme Attribute Mapping (Including Downloadable Fonts ) is applied to only below items, for TextView and EditTexts wee need to set attr explicitly as shown below
+           BottomNavigationView
+           Chip
+           FloatingActionButton
+           MaterialButton
+           MaterialCardView
+           TabLayout
+
+                <androidx.appcompat.widget.AppCompatTextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:textAppearance="?attr/textAppearanceSubtitle1" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:textAppearance="?attr/textAppearanceBody1" />                  
+
+       - Referred
+         - [Typography Theming](https://material.io/develop/android/theming/typography/)
+         - [Understand which textAppearance will suit best from this guide](https://material.io/design/typography/the-type-system.html#applying-the-type-scale)
+         - [Downloadable Fonts](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts)
+         - [Developing Themes with Style (Android Dev Summit '19](https://www.youtube.com/watch?v=Owkf8DhAOSo)
+         - [Sample](https://github.com/googlesamples/android-DownloadableFonts)
+
+
+
+ 
+ - [Feature]
+    - App Color pallet 
+ - [Learning]
+ - [Referred]
+ 
+  - [Feature]
+     - Adaptive icons
+  - [Learning]
+  - [Referred]
+  
+ - [Feature]
+    - Adaptive icons
+ - [Learning]
+ - [Referred]
+
+ - [Feature]
+     - Implement Theme switcher functionality
+ - [Learning]
+     - **Tried setting custom fonts from manifest and gradle properties but failed (Need to find solution for this)**
+     - Implemented color palette , source : https://github.com/material-components
+     
 28/04/2020
  - [Feature]
      - Integrate CI Bitrise : https://www.youtube.com/watch?v=jVMubvLDyHU
+     
 26/04/2020
  - [Code cleanup]
     - Integrate ktlint : https://www.youtube.com/watch?v=YmZIkUGnCco
@@ -71,46 +90,7 @@
  - [Feature]
       - Show Progress and handle error and complete state of the app
 
-11/01/2019
-- [Feature]
-     - Add Theme switcher and Font switcher icon to bottom bar
 
-10/01/2019
- - [Feature]
-     - Implement Theme switcher and Font switcher functionality
- - [Learning]
-     - **Tried setting custom fonts from manifest and gradle properties but failed (Need to find solution for this)**
-     - Implemented color palette , source : https://github.com/material-components
-
-09/01/2019
- - [Feature]
-    - Implement Typography Theming (Adding downloadable font feature) (Extension : Dynamic font selection from app)
- - [Learning]
-    - Typography Theming : https://material.io/develop/android/theming/typography/
-      - If you want to use a Downloadable Font before Android O, make sure you are using AppCompatTextView or that you are loading the font yourself with ResourcesCompat.getFont().
-      - Sample app to implement downloadable fonts : https://github.com/googlesamples/android-DownloadableFonts, https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts
-      - LL: Theme Attribute Mapping (Including Downloadable Fonts ) is applied to only below items, for TextView and EditTexts wee need to set attr explicitly as shown below
-             BottomNavigationView
-             Chip
-             FloatingActionButton
-             MaterialButton
-             MaterialCardView
-             TabLayout
-
-            <androidx.appcompat.widget.AppCompatTextView
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:textAppearance="?attr/textAppearanceSubtitle1" />
-
-            <com.google.android.material.textfield.TextInputEditText
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:textAppearance="?attr/textAppearanceBody1" />
-
-      - Understand which textAppearance will suit best from this guide : https://material.io/design/typography/the-type-system.html#applying-the-type-scale
-      - Added bottom bar and learned that need to set vectorDrawables.useSupportLibrary true inside app build.gradle under defaultConfig to use vector drawable in that app
- - [Referred] : https://github.com/material-components , https://github.com/chrisbanes/tivi , https://github.com/googlesamples/android-DownloadableFonts
- 
 08/01/2019
  - [Feature]
     - Implement App Color Theming as per Material guideline https://material.io/develop/android/theming/color/
@@ -121,6 +101,36 @@
         - Use the diagram mentioned in above link and generate baseline Material color from here: https://material.io/tools/color/#!/?view.left=0&view.right=1&primary.color=009688&secondary.color=fcfc13
  - [Referred] : https://material.io/, https://github.com/chrisbanes/tivi , https://github.com/seanghay/pelvelea
  
+ -----------------------------------------------------------------------------------------------------------
+ ### Product Backlog
+  - [ ]Core
+     - [ ]Portfolio
+     - [ ]Watchlist
+     - [ ]All Stocks
+     - [ ]Stock Details
+     - [ ]Filter Stocks (iosched filter bottom sheet)
+     - [ ]Stock search (iosched search)
+  - [ ]Add google plus login
+  - [ ]Show Progress and handle error and complete state for the app
+ 
+ ### Tech Backlog
+  - Architecture 
+     - Usecases
+  - Style
+      - [ ]Add new navigation implementation
+      - [ ]Implement Day Night(Dark) mode
+      - [ ]Immersive mode
+      - [ ]ThemeOverlay
+      - [ ]Adaptive app icon
+      - [ ]App font
+      - [ ]App color pallet 
+      - [ ]Add animated vector drawable for tab icons
+  - [ ]Integrate ktlint
+  - [ ]Explore Android Studio lint
+  - [ ]Release : https://www.raywenderlich.com/9043-android-app-bundles-getting-started
+  - [ ]Integrate CI Bitrise
+  - [ ]Analytics
+  - [ ]Viewpager pager 2
  
 ### Tech TODO
  - Fix ./gradlew build issue 
@@ -130,8 +140,7 @@
 
 ### Questions
  - How to merge watchlist/portfolio/bhav api call
- - How to update update db
-
+ - How to update db
     
 ### Learning 
 - Style 
