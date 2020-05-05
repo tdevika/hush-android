@@ -39,7 +39,20 @@
         - Trirad
       - Use [this](https://material.io/design/color/the-color-system.html#tools-for-picking-colors) tool to generate color palettes
       - Use [this](https://material.io/design/color/dark-theme.html#ui-application) guideline to map android color palettes
-      - Output
+      - Output for Monochromatic dark gray color
+        ```xml
+            <!--dark grey-->
+            <color name="md_dark_grey_50">#F7F7F7</color>
+            <color name="md_dark_grey_100">#EEEEEE</color>
+            <color name="md_dark_grey_200">#E2E2E2</color>
+            <color name="md_dark_grey_300">#D0D0D0</color>
+            <color name="md_dark_grey_400">#ABABAB</color>
+            <color name="md_dark_grey_500">#8A8A8A</color>
+            <color name="md_dark_grey_600">#636363</color>
+            <color name="md_dark_grey_700">#505050</color>
+            <color name="md_dark_grey_800">#323232</color>
+            <color name="md_dark_grey_900">#121212</color>  
+        ```
         ```xml
             <!--    light-->
             <color name="md_dark_grey_50">#F7F7F7</color> <!-- colorBackground -->
