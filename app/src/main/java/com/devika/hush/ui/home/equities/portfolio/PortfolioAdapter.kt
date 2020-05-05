@@ -52,7 +52,6 @@ class PortfolioAdapter : ListAdapter<Portfolio, PortfolioViewHolder>(
             submitList(filterResults.values as MutableList<Portfolio>?)
             notifyDataSetChanged()
         }
-
     }
 
     override fun submitList(list: List<Portfolio>?) {
