@@ -63,14 +63,12 @@ data class DetailWatchList(
     val stock: Stock
 )
 
-@Entity(tableName = "stock_details")
-class StockDetails : ArrayList<StockDetailsItem>()
 
-data class StockDetailsItem(
+data class StockDetails(
     @SerializedName("corporate_action")
     val corporateAction: List<CorporateAction>,
     val historicalData: List<HistoricalData>,
-    val portfolio: Portfolio
+    val stock: Stock
 )
 
 data class CorporateAction(

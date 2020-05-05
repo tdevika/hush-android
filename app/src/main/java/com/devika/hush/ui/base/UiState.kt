@@ -1,9 +1,11 @@
 package com.devika.hush.ui.base
 
-sealed class UiState {
-    object Loading : UiState()
+sealed class BaseState{
+    object Loading : BaseState()
+    data class Error(val message: String?) : BaseState()
+}
+sealed class UiState:BaseState() {
     data class Success(val value: Any) : UiState()
-    data class Error(val message: String?) : UiState()
 }
 
 inline fun <reified T> Any.getList(): List<T>? {

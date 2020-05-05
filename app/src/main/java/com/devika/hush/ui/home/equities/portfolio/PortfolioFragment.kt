@@ -2,26 +2,42 @@ package com.devika.hush.ui.home.equities.portfolio
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.Fragment
 import com.devika.hush.HushApplication
-import com.devika.hush.R
 import com.devika.hush.databinding.FragmentPortfolioBinding
-import com.devika.hush.ui.base.BaseFragment
+import com.devika.hush.injection.component.injector
 import com.devika.hush.ui.home.equities.EquitiesViewModel
+import com.devika.hush.utils.HushViewModelFactory
+import com.devika.hush.utils.parentViewModelProvider
+import javax.inject.Inject
 
-class PortfolioFragment : BaseFragment<FragmentPortfolioBinding, EquitiesViewModel>() {
+class PortfolioFragment : Fragment() {
+    @Inject
+    lateinit var viewModelFactory: HushViewModelFactory
 
+    private lateinit var viewModel: EquitiesViewModel
+    private lateinit var binding: FragmentPortfolioBinding
     private lateinit var portfolioAdapter: PortfolioAdapter
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        (context.applicationContext as HushApplication).appComponent.inject(this)
+        injector.inject(this)
     }
 
-    override fun layoutId() = R.layout.fragment_portfolio
-
-    override fun getViewModelClass() = EquitiesViewModel::class.java
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentPortfolioBinding.inflate(inflater, container, false).apply {
+            lifecycleOwner = viewLifecycleOwner
+        }
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -51,6 +67,7 @@ class PortfolioFragment : BaseFragment<FragmentPortfolioBinding, EquitiesViewMod
     }
 
     private fun subscribeToModel() {
+        viewModel = parentViewModelProvider(viewModelFactory)
         binding.viewModel = viewModel
     }
 

@@ -2,9 +2,9 @@ package com.devika.hush.injection.module
 
 import androidx.lifecycle.ViewModel
 import com.devika.hush.injection.scope.ViewModelScope
+import com.devika.hush.ui.home.details.DetailFragment
+import com.devika.hush.ui.home.details.DetailsViewModel
 import com.devika.hush.ui.home.equities.EquitiesViewModel
-import com.devika.hush.ui.home.equities.stocks.StocksViewModel
-import com.devika.hush.ui.home.equities.watchlist.WatchListViewModel
 import com.devika.hush.ui.home.explore.ExploreViewModel
 import com.devika.hush.ui.home.info.InfoViewModel
 import dagger.Binds
@@ -13,16 +13,6 @@ import dagger.multibindings.IntoMap
 
 @Module
 abstract class FragmentModule {
-
-    @Binds
-    @IntoMap
-    @ViewModelScope(StocksViewModel::class)
-    abstract fun bindStockViewModel(stocksViewModel: StocksViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelScope(WatchListViewModel::class)
-    abstract fun bindWatchListViewModel(watchListViewModel: WatchListViewModel): ViewModel
 
     @Binds
     @IntoMap
@@ -38,4 +28,10 @@ abstract class FragmentModule {
     @IntoMap
     @ViewModelScope(ExploreViewModel::class)
     abstract fun bindExploreViewModel(exploreViewModel: ExploreViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelScope(DetailsViewModel::class)
+    abstract fun bindDetailsViewModel(detailsViewModel: DetailsViewModel):ViewModel
+
 }
