@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.devika.hush.data.model.Stock
 import com.devika.hush.databinding.ItemStocksBinding
 
-class StocksAdapter : ListAdapter<Stock, StocksAdapter.StocksViewHolder>(DIFF_CALLBACK) ,Filterable{
+class StocksAdapter : ListAdapter<Stock, StocksAdapter.StocksViewHolder>(DIFF_CALLBACK), Filterable {
 
     val stockList = mutableListOf<Stock>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StocksViewHolder =
@@ -44,8 +44,6 @@ class StocksAdapter : ListAdapter<Stock, StocksAdapter.StocksViewHolder>(DIFF_CA
             submitList(filterResults.values as MutableList<Stock>?)
             notifyDataSetChanged()
         }
-
-
     }
 
     override fun submitList(list: List<Stock>?) {

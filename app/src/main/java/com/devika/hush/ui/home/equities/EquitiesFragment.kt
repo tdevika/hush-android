@@ -51,7 +51,6 @@ class EquitiesFragment : BaseFragment<FragmentEquitiesBinding, EquitiesViewModel
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.search_menu, menu)
     }
-
 }
 
 class EquitiesTabAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
