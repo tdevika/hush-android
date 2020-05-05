@@ -32,7 +32,6 @@
        - [Developing Themes with Style (Android Dev Summit '19](https://www.youtube.com/watch?v=Owkf8DhAOSo)
        - [Sample](https://github.com/googlesamples/android-DownloadableFonts)
    - **Color pallet**
-      - 
       - Referred
         - [Developing Themes with Style (Android Dev Summit '19](https://www.youtube.com/watch?v=Owkf8DhAOSo)
         - [Building a real Android app with Material Tools - Nick Rout - DevFest South Africa](https://www.youtube.com/watch?v=hjATvyrA0CQ)
