@@ -2,6 +2,7 @@
 
 <resources>
 
+    <!--Theme Muli-->
     <style name="TextAppearance.Muli.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="fontFamily">@font/muli</item>
         <item name="android:fontFamily">@font/muli</item>
