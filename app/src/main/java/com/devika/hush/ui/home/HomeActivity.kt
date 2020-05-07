@@ -5,10 +5,12 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import com.devika.hush.HushApplication
 import com.devika.hush.R
+import com.devika.hush.data.repository.PreferenceRepository
 import com.devika.hush.databinding.ActivityHomeBinding
 import com.devika.hush.utils.HushViewModelFactory
 import com.devika.hush.utils.setupWithNavController
@@ -23,6 +25,9 @@ class HomeActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModelFactory: HushViewModelFactory
 
+    @Inject
+    lateinit var preferenceRepository: PreferenceRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         (applicationContext as HushApplication).appComponent.inject(this)
@@ -34,6 +39,12 @@ class HomeActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             setupBottomNavigationBar()
         }
+        preferenceRepository.nightModeLive.observe(
+            this,
+            Observer { nightMode ->
+                nightMode?.let { delegate.localNightMode = it }
+            }
+        )
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {

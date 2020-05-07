@@ -4,7 +4,7 @@
     <!--Top level DayNight theme to be used in AndroidManifest.xml-->
     <style name="Theme.Hush.DayNight" parent="Theme.Hush.Dark" />
 
-    <style name="Theme.Hush.Dark" parent="Base.Theme.Montserrat">
+    <style name="Theme.Hush.Dark" parent="Theme.Hush">
         <!--Material color attributes (dark theme) -->
         <item name="android:colorBackground">@color/md_dark_grey_900</item>
         <item name="colorSurface">@color/md_dark_grey_800</item>

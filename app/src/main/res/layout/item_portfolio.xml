@@ -112,7 +112,7 @@
                 android:layout_marginTop="@dimen/space_12dp"
                 android:gravity="center"
                 android:text="@{portfolio.dayChangePercentage()+`%`}"
-                android:textColor="@{portfolio.dayChangePercentage() &lt; 0 ? @color/red_600 : @color/green_200}"
+                android:textColor="@{portfolio.dayChangePercentage() &lt; 0 ? @color/md_red_500 : @color/md_green_500}"
                 android:textSize="@dimen/space_16sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -123,7 +123,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/space_8dp"
                 android:text="@{portfolio.netChangePercentage() + `%`}"
-                android:textColor="@{portfolio.netChangePercentage() &lt; 0 ? @color/red_600 : @color/green_200}"
+                android:textColor="@{portfolio.netChangePercentage() &lt; 0 ? @color/md_red_500 : @color/md_green_500}"
                 android:textSize="@dimen/space_16sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
