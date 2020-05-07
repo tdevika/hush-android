@@ -2,39 +2,58 @@ package com.devika.hush.ui.home.equities.watchlist
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
-import com.devika.hush.HushApplication
-import com.devika.hush.R
+import androidx.fragment.app.Fragment
 import com.devika.hush.databinding.FragmentWatchListBinding
-import com.devika.hush.ui.base.BaseFragment
+import com.devika.hush.injection.component.injector
+import com.devika.hush.ui.home.equities.EquitiesViewModel
+import com.devika.hush.utils.HushViewModelFactory
+import com.devika.hush.utils.parentViewModelProvider
+import javax.inject.Inject
 
-class WatchListFragment : BaseFragment<FragmentWatchListBinding, WatchListViewModel>() {
+class WatchListFragment : Fragment() {
 
-    lateinit var watchListAdapter: WatchListAdapter
+    @Inject
+    lateinit var viewModelFactory: HushViewModelFactory
+
+    private lateinit var binding: FragmentWatchListBinding
+    private lateinit var viewModel: EquitiesViewModel
+    private lateinit var watchListAdapter: WatchListAdapter
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        (context.applicationContext as HushApplication).appComponent.inject(this)
+        injector.inject(this)
     }
 
-    override fun getViewModelClass(): Class<WatchListViewModel> = WatchListViewModel::class.java
-
-    override fun layoutId(): Int = R.layout.fragment_watch_list
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentWatchListBinding.inflate(inflater, container, false).apply {
+            lifecycleOwner = viewLifecycleOwner
+        }
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setHasOptionsMenu(true)
         subscribeToModel()
+        setHasOptionsMenu(true)
         setRecyclerView()
     }
 
     private fun setRecyclerView() {
-        watchListAdapter = WatchListAdapter()
+        watchListAdapter = WatchListAdapter(viewModel)
         binding.recycler.adapter = watchListAdapter
     }
 
     private fun subscribeToModel() {
+        viewModel = parentViewModelProvider(viewModelFactory)
         binding.watchListViewModel = viewModel
     }
 

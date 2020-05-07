@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.devika.hush.ui.home.equities.portfolio.PortfolioViewModel" />
+            type="com.devika.hush.ui.home.equities.EquitiesViewModel" />
     </data>
 
     <FrameLayout
@@ -21,21 +21,21 @@
             android:layout_height="70dp"
             android:layout_gravity="center"
             android:indeterminateDrawable="@drawable/progress_bar"
-            app:setProgressState="@{viewModel.uiState()}" />
+            app:setProgressState="@{viewModel.portfolioUiState()}" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textColor="@color/black_800"
-            app:setErrorState="@{viewModel.uiState()}" />
+            android:textColor="@color/black"
+            app:setErrorState="@{viewModel.portfolioUiState()}" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="LinearLayoutManager"
-            app:setPortfolio="@{viewModel.uiState()}" />
+            app:setPortfolio="@{viewModel.portfolioUiState()}" />
 
     </FrameLayout>
 </layout>

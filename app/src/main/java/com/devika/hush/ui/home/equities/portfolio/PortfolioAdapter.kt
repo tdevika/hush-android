@@ -10,13 +10,15 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.devika.hush.data.model.Portfolio
 import com.devika.hush.databinding.ItemPortfolioBinding
+import com.devika.hush.ui.home.equities.ItemClickListener
 import java.util.concurrent.Executors
 
-class PortfolioAdapter : ListAdapter<Portfolio, PortfolioViewHolder>(
-    AsyncDifferConfig.Builder(PortfolioDiff)
-        .setBackgroundThreadExecutor(Executors.newSingleThreadExecutor())
-        .build()
-), Filterable {
+class PortfolioAdapter(val itemClickListener: ItemClickListener) :
+    ListAdapter<Portfolio, PortfolioAdapter.PortfolioViewHolder>(
+        AsyncDifferConfig.Builder(PortfolioDiff)
+            .setBackgroundThreadExecutor(Executors.newSingleThreadExecutor())
+            .build()
+    ), Filterable {
 
     val portfolioList: MutableList<Portfolio> = mutableListOf()
 
@@ -60,13 +62,15 @@ class PortfolioAdapter : ListAdapter<Portfolio, PortfolioViewHolder>(
         }
         super.submitList(list)
     }
-}
 
-class PortfolioViewHolder(
-    private val binding: ItemPortfolioBinding
-) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(portfolio: Portfolio) {
-        binding.portfolio = portfolio
+    inner class PortfolioViewHolder(
+        private val binding: ItemPortfolioBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(portfolio: Portfolio) {
+            binding.portfolio = portfolio
+            binding.itemClickListener = itemClickListener
+            binding.executePendingBindings()
+        }
     }
 }
 

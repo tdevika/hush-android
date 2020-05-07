@@ -10,6 +10,11 @@
         <variable
             name="portfolio"
             type="com.devika.hush.data.model.Portfolio" />
+
+        <variable
+            name="itemClickListener"
+            type="com.devika.hush.ui.home.equities.ItemClickListener" />
+
     </data>
 
     <androidx.cardview.widget.CardView
@@ -19,6 +24,7 @@
         android:layout_marginTop="@dimen/space_4dp"
         android:layout_marginEnd="@dimen/space_8dp"
         android:layout_marginBottom="@dimen/space_4dp"
+        android:onClick="@{() -> itemClickListener.onItemClick(portfolio.symbol)}"
         tools:cardCornerRadius="@dimen/space_2dp"
         tools:cardElevation="@dimen/space_2dp">
 
@@ -43,9 +49,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:textAppearance="?attr/textAppearanceSubtitle2"
                 android:layout_marginTop="@dimen/space_4dp"
                 android:layout_marginEnd="@dimen/space_4dp"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
                 app:text="@{portfolio.sector}" />
 
             <androidx.appcompat.widget.AppCompatTextView

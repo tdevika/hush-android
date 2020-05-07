@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.devika.hush.data.model.DetailWatchList
 import com.devika.hush.databinding.ItemWatchlistBinding
+import com.devika.hush.ui.home.equities.ItemClickListener
 
-class WatchListAdapter :
+class WatchListAdapter(private val itemClickListener: ItemClickListener) :
     ListAdapter<DetailWatchList, WatchListAdapter.WatchListViewHolder>(DIFF_CALLBACK), Filterable {
 
     val watchList = mutableListOf<DetailWatchList>()
@@ -60,6 +61,7 @@ class WatchListAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun setData(watchList: DetailWatchList) {
             binding.watchList = watchList
+            binding.itemClickListener = itemClickListener
         }
     }
 }
