@@ -1,15 +1,15 @@
-//package com.devika.hush.ui.home.info.settings
+// package com.devika.hush.ui.home.info.settings
 //
-//import android.os.Bundle
-//import android.view.LayoutInflater
-//import android.view.View
-//import android.view.ViewGroup
-//import androidx.fragment.app.Fragment
-//import androidx.lifecycle.ViewModelProvider
-//import com.google.samples.apps.iosched.ui.info.SettingsViewModel
-//import javax.inject.Inject
+// import android.os.Bundle
+// import android.view.LayoutInflater
+// import android.view.View
+// import android.view.ViewGroup
+// import androidx.fragment.app.Fragment
+// import androidx.lifecycle.ViewModelProvider
+// import com.google.samples.apps.iosched.ui.info.SettingsViewModel
+// import javax.inject.Inject
 //
-//class SettingsFragment : Fragment() {
+// class SettingsFragment : Fragment() {
 //    @Inject
 //    lateinit var viewModelFactory: ViewModelProvider.Factory
 //
@@ -32,4 +32,4 @@
 //        })
 //        return binding.root
 //    }
-//}
+// }

@@ -1,4 +1,4 @@
-///*
+// /*
 // * Copyright 2018 Google LLC
 // *
 // * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,33 +14,33 @@
 // * limitations under the License.
 // */
 //
-//package com.google.samples.apps.iosched.ui.info
+// package com.google.samples.apps.iosched.ui.info
 //
-//import androidx.lifecycle.LiveData
-//import androidx.lifecycle.MutableLiveData
-//import androidx.lifecycle.ViewModel
-//import androidx.lifecycle.viewModelScope
-//import com.google.samples.apps.iosched.model.Theme
-//import com.google.samples.apps.iosched.shared.data.prefs.UserIsAttendee.IN_PERSON
-//import com.google.samples.apps.iosched.shared.domain.prefs.NotificationsPrefSaveActionUseCase
-//import com.google.samples.apps.iosched.shared.domain.prefs.UserIsAttendeePrefSaveActionUseCase
-//import com.google.samples.apps.iosched.shared.domain.settings.GetAnalyticsSettingUseCase
-//import com.google.samples.apps.iosched.shared.domain.settings.GetAvailableThemesUseCase
-//import com.google.samples.apps.iosched.shared.domain.settings.GetNotificationsSettingUseCase
-//import com.google.samples.apps.iosched.shared.domain.settings.GetThemeUseCase
-//import com.google.samples.apps.iosched.shared.domain.settings.GetTimeZoneUseCase
-//import com.google.samples.apps.iosched.shared.domain.settings.GetUserIsAttendeeSettingUseCase
-//import com.google.samples.apps.iosched.shared.domain.settings.SetAnalyticsSettingUseCase
-//import com.google.samples.apps.iosched.shared.domain.settings.SetThemeUseCase
-//import com.google.samples.apps.iosched.shared.domain.settings.SetTimeZoneUseCase
-//import com.google.samples.apps.iosched.shared.result.Event
-//import com.google.samples.apps.iosched.shared.result.data
-//import com.google.samples.apps.iosched.shared.result.successOr
-//import com.google.samples.apps.iosched.shared.result.updateOnSuccess
-//import kotlinx.coroutines.launch
-//import javax.inject.Inject
+// import androidx.lifecycle.LiveData
+// import androidx.lifecycle.MutableLiveData
+// import androidx.lifecycle.ViewModel
+// import androidx.lifecycle.viewModelScope
+// import com.google.samples.apps.iosched.model.Theme
+// import com.google.samples.apps.iosched.shared.data.prefs.UserIsAttendee.IN_PERSON
+// import com.google.samples.apps.iosched.shared.domain.prefs.NotificationsPrefSaveActionUseCase
+// import com.google.samples.apps.iosched.shared.domain.prefs.UserIsAttendeePrefSaveActionUseCase
+// import com.google.samples.apps.iosched.shared.domain.settings.GetAnalyticsSettingUseCase
+// import com.google.samples.apps.iosched.shared.domain.settings.GetAvailableThemesUseCase
+// import com.google.samples.apps.iosched.shared.domain.settings.GetNotificationsSettingUseCase
+// import com.google.samples.apps.iosched.shared.domain.settings.GetThemeUseCase
+// import com.google.samples.apps.iosched.shared.domain.settings.GetTimeZoneUseCase
+// import com.google.samples.apps.iosched.shared.domain.settings.GetUserIsAttendeeSettingUseCase
+// import com.google.samples.apps.iosched.shared.domain.settings.SetAnalyticsSettingUseCase
+// import com.google.samples.apps.iosched.shared.domain.settings.SetThemeUseCase
+// import com.google.samples.apps.iosched.shared.domain.settings.SetTimeZoneUseCase
+// import com.google.samples.apps.iosched.shared.result.Event
+// import com.google.samples.apps.iosched.shared.result.data
+// import com.google.samples.apps.iosched.shared.result.successOr
+// import com.google.samples.apps.iosched.shared.result.updateOnSuccess
+// import kotlinx.coroutines.launch
+// import javax.inject.Inject
 //
-//class SettingsViewModel @Inject constructor(
+// class SettingsViewModel @Inject constructor(
 //    val setTimeZoneUseCase: SetTimeZoneUseCase,
 //    getTimeZoneUseCase: GetTimeZoneUseCase,
 //    val notificationsPrefSaveActionUseCase: NotificationsPrefSaveActionUseCase,
@@ -52,7 +52,7 @@
 //    getAvailableThemesUseCase: GetAvailableThemesUseCase,
 //    val userIsAttendeePrefSaveActionUseCase: UserIsAttendeePrefSaveActionUseCase,
 //    getUserIsAttendeeSettingUseCase: GetUserIsAttendeeSettingUseCase
-//) : ViewModel() {
+// ) : ViewModel() {
 //
 //    // Time Zone setting
 //    private val preferConferenceTimeZoneResult = MutableLiveData<Boolean>()
@@ -152,4 +152,4 @@
 //            userIsAttendeePrefSaveActionUseCase(checked).updateOnSuccess(userIsAttendingResult)
 //        }
 //    }
-//}
+// }
