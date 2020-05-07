@@ -7,7 +7,7 @@
 
         <variable
             name="watchListViewModel"
-            type="com.devika.hush.ui.home.equities.watchlist.WatchListViewModel" />
+            type="com.devika.hush.ui.home.equities.EquitiesViewModel" />
     </data>
 
     <FrameLayout
@@ -22,7 +22,7 @@
             android:layout_margin="@dimen/space_12dp"
             android:textAlignment="center"
             android:textSize="35sp"
-            app:setErrorState="@{watchListViewModel.uiState()}" />
+            app:setErrorState="@{watchListViewModel.watchListUiState()}" />
 
         <ProgressBar
             style="?android:attr/progressBarStyle"
@@ -31,13 +31,13 @@
             android:layout_gravity="center"
             android:indeterminateDrawable="@drawable/progress_bar"
             android:visibility="visible"
-            app:setProgressState="@{watchListViewModel.uiState()}" />
+            app:setProgressState="@{watchListViewModel.watchListUiState()}" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="LinearLayoutManager"
-            app:setWatchlist="@{watchListViewModel.uiState()}" />
+            app:setWatchlist="@{watchListViewModel.watchListUiState()}" />
     </FrameLayout>
 </layout>

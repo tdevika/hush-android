@@ -12,4 +12,7 @@
     <dimen name="space_14sp">14sp</dimen>
     <dimen name="height_70dp">70dp</dimen>
     <dimen name="space_12dp">12dp</dimen>
+    <dimen name="space_16dp">16dp</dimen>
+    <dimen name="space_20dp">20dp</dimen>
+    <dimen name="space_18dp">18dp</dimen>
 </resources>

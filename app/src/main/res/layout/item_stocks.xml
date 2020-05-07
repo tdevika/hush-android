@@ -10,11 +10,15 @@
         <variable
             name="stock"
             type="com.devika.hush.data.model.Stock" />
+        <variable
+            name="itemClickListener"
+            type="com.devika.hush.ui.home.equities.ItemClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="@{() -> itemClickListener.onItemClick(stock.symbol)}"
         android:layout_marginStart="@dimen/space_8dp"
         android:layout_marginTop="@dimen/space_4dp"
         android:layout_marginEnd="@dimen/space_8dp"

@@ -8,12 +8,16 @@
         <variable
             name="watchList"
             type="com.devika.hush.data.model.DetailWatchList" />
+        <variable
+            name="itemClickListener"
+            type="com.devika.hush.ui.home.equities.ItemClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="@{() -> itemClickListener.onItemClick(watchList.watchList.symbol)}"
         android:layout_marginStart="@dimen/space_8dp"
         android:layout_marginTop="@dimen/space_4dp"
         android:layout_marginEnd="@dimen/space_8dp"
