@@ -39,7 +39,7 @@
                 android:layout_marginTop="@dimen/space_4dp"
                 android:padding="@dimen/space_2dp"
                 android:text="@{stock.symbol}"
-                android:textColor="@color/black_800"
+                android:textColor="@color/md_dark_grey_800"
                 android:textSize="@dimen/space_18sp"
                 android:textStyle="bold" />
 
@@ -117,7 +117,7 @@
                 android:layout_below="@id/highLowText"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/space_2dp"
-                android:textColor="@{stock.dayChange() &lt; 0 ? @color/red_600 : @color/green_200}"
+                android:textColor="@{stock.dayChange() &lt; 0 ? @color/md_red_500 : @color/md_red_500}"
                 android:textSize="@dimen/space_16sp"
                 app:text="@{stock.dayChange()+`  `}" />
 
@@ -130,7 +130,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/space_2dp"
                 android:text="@{``+stock.dayChangePercentage() + `%`}"
-                android:textColor="@{stock.dayChangePercentage() &lt; 0 ? @color/red_600 : @color/green_200}"
+                android:textColor="@{stock.dayChangePercentage() &lt; 0 ? @color/md_red_500 : @color/md_red_500}"
                 android:textSize="@dimen/space_16sp" />
 
             <ImageView

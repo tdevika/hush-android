@@ -2,38 +2,34 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    <!--Top level DayNight theme to be used in AndroidManifest.xml-->
+    <style name="Theme.Hush.DayNight" parent="Theme.Hush"/>
 
-    <style name="Base.Theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorSurface</item>
-        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
-        <item name="android:navigationBarColor" tools:ignore="NewApi">?android:attr/colorBackground</item>
-        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
-        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?attr/colorControlHighlight</item>
-    </style>
+    <style name="Theme.Hush" parent="Base.Theme.Montserrat"/>
 
     <style name="Base.Theme.Montserrat" parent="Base.Theme">
         <!--Material color attributes (light theme) -->
+        <!--colorBackground appears behind scrollable content and is used for the default window background-->
+        <item name="android:colorBackground">@color/md_dark_grey_50</item>
+        <!--colorSurface is mapped to the surface of components such as cards, sheets and menus.-->
+        <item name="colorSurface">@color/md_dark_grey_50</item>
         <!--colorPrimary colors map to components and elements, such as app bars and buttons. -->
+        <item name="colorPrimary">@color/md_dark_grey_500</item>
+        <item name="colorPrimaryVariant">@color/md_dark_grey_700</item>
         <!--colorSecondary colors are most often used as accents on components, such as FABs and -->
+        <item name="colorSecondary">@color/md_dark_grey_200</item>
         <!--selection controls.-->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorSecondary">@color/green_200</item>
-        <item name="colorSecondaryVariant">@color/green_500</item>
-        <!--colorBackground appears behind scrollable content and is used for the default window-->
-        <!--background. colorSurface is mapped to the surface of components such as cards, sheets-->
-        <!--and menus. colorError is used to indicate an error state for components such as-->
-        <!--text fields.-->
-        <item name="android:colorBackground">@color/white_50</item>
-        <item name="colorSurface">@color/white_50</item>
-        <item name="colorError">@color/red_600</item>
+        <item name="colorSecondaryVariant">@color/md_dark_grey_200</item>
+        <!--colorError is used to indicate an error state for components such as text fields.-->
+        <item name="colorError">@color/md_red_600</item>
         <!--"On" colors define how text, icons and strokes are colored in relation to the surface-->
         <!--on which they appear.-->
-        <item name="colorOnPrimary">@color/white_50</item>
-        <item name="colorOnSecondary">@color/black_900</item>
-        <item name="colorOnBackground">@color/black_900</item>
-        <item name="colorOnSurface">@color/black_900</item>
-        <item name="colorOnError">@color/white_50</item>
+        <item name="colorOnPrimary">@color/md_dark_grey_50</item>
+        <item name="colorOnSecondary">@color/md_dark_grey_900</item>
+        <item name="colorOnBackground">@color/md_dark_grey_900</item>
+        <item name="colorOnSurface">@color/md_dark_grey_900</item>
+        <item name="colorOnError">@color/md_dark_grey_50</item>
+
         <!--Material type attributes-->
         <item name="textAppearanceHeadline1">@style/TextAppearance.Montserrat.Headline1</item>
         <item name="textAppearanceHeadline2">@style/TextAppearance.Montserrat.Headline2</item>
@@ -48,16 +44,29 @@
         <item name="textAppearanceCaption">@style/TextAppearance.Montserrat.Caption</item>
         <item name="textAppearanceButton">@style/TextAppearance.Montserrat.Button</item>
         <item name="textAppearanceOverline">@style/TextAppearance.Montserrat.Overline</item>
+
         <!--Material shape attributes-->
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyTheme.MediumComponent</item>
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MyTheme.LargeComponent</item>
+
         <!--Component styles-->
+        <item name="appBarLayoutStyle">@style/Widget.Hush.AppBar</item>
+        <item name="toolbarStyle">@style/Widget.Hush.Toolbar</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.Dialog.Alert</item>
-        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.MyTheme.BottomSheetDialog</item>
-        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.PrimarySurface</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Hush.BottomSheetDialog</item>
+
     </style>
 
+    <style name="Base.Theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarColor" tools:ignore="NewApi">?android:attr/colorBackground</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?attr/colorControlHighlight</item>
+    </style>
+
+<!--    TODO: Remove extra fonts-->
     <style name="Base.Theme.Muli" parent="Base.Theme">
         <item name="textAppearanceHeadline1">@style/TextAppearance.Muli.Headline1</item>
         <item name="textAppearanceHeadline2">@style/TextAppearance.Muli.Headline2</item>
@@ -154,6 +163,24 @@
         <item name="textAppearanceOverline">@style/TextAppearance.Biryani.Overline</item>
     </style>
 
-    <style name="Theme.Hush" parent="Base.Theme.Montserrat"/>
+
+    <style name="Theme.Hush.Dark" parent="Theme.Hush">
+        <!--Material color attributes (dark theme) -->
+        <item name="android:colorBackground">@color/md_dark_grey_900</item>
+        <item name="colorSurface">@color/md_dark_grey_800</item>
+        <item name="colorPrimary">@color/md_dark_grey_200</item>
+        <item name="colorPrimaryVariant">@color/md_dark_grey_700</item>
+        <item name="colorSecondary">@color/md_dark_grey_200</item>
+        <item name="colorSecondaryVariant">@color/md_dark_grey_200</item>
+        <item name="colorError">@color/md_red_200</item>
+        <item name="colorOnPrimary">@color/md_dark_grey_900</item>
+        <item name="colorOnSecondary">@color/md_dark_grey_900</item>
+        <item name="colorOnBackground">@color/md_dark_grey_50</item>
+        <item name="colorOnSurface">@color/md_dark_grey_50</item>
+        <item name="colorOnError">@color/md_dark_grey_900</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
+    </style>
+
 
 </resources>

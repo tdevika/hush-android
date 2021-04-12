@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:text="@{`` +viewModel.stockDetails().stock.dayChange()}"
                     android:textSize="@dimen/space_16dp"
-                    android:textColor="@{viewModel.stockDetails().stock.dayChangePercentage() &lt; 0 ? @color/red : @color/green}"
+                    android:textColor="@{viewModel.stockDetails().stock.dayChangePercentage() &lt; 0 ? @color/md_red_500 : @color/md_green_500}"
                     app:layout_constraintStart_toEndOf="@id/icon"
                     app:layout_constraintTop_toBottomOf="@id/closePrice" />
                 <TextView
@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:text="@{` (` + viewModel.stockDetails().stock.dayChangePercentage() + `% )`}"
                     android:textSize="@dimen/space_16dp"
-                    android:textColor="@{viewModel.stockDetails().stock.dayChangePercentage() &lt; 0 ? @color/red : @color/green}"
+                    android:textColor="@{viewModel.stockDetails().stock.dayChangePercentage() &lt; 0 ? @color/md_red_500 : @color/md_green_500}"
                     app:layout_constraintStart_toEndOf="@id/dayChange"
                     app:layout_constraintTop_toBottomOf="@id/closePrice"
                     />

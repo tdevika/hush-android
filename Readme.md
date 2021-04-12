@@ -1,143 +1,172 @@
 # Tracket
 
-### Product Backlog
- - [ ]Core
-    - [ ]Portfolio
-    - [ ]Watchlist
-    - [ ]All Stocks
-    - [ ]Filter Stocks (iosched filter bottom sheet)
-    - [ ]Stock search (iosched search)
- - [ ]Add google plus login
- - [ ]Show Progress and handle error and complete state for the app
-
-### Tech Backlog
- - Architecture 
-    - Usecases
- - Style
-     - [ ]Add new navigation implementation
-     - [ ]Implement Day Night(Dark) mode
-     - [ ]Immersive mode
-     - [ ]ThemeOverlay
-     - [ ]Adaptive app icon
-     - [ ]App font
-     - [ ]App color pallet 
-     - [ ]Add animated vector drawable for tab icons
- - [ ]Integrate ktlint
- - [ ]Explore Android Studio lint
- - [ ]Release : https://www.raywenderlich.com/9043-android-app-bundles-getting-started
- - [ ]Integrate CI Bitrise
- - [ ]Analytics
- - [ ]Viewpager pager 2
-
 ### Daily Update
-30/04/2020
- - App Theme : Developing Themes with Style
-    -  
-29/04/2020
- - Downloadable Fonts 
- - Adaptive icons
- - App Color pallet
-28/04/2020
- - [Feature]
-     - Integrate CI Bitrise : https://www.youtube.com/watch?v=jVMubvLDyHU
-26/04/2020
- - [Code cleanup]
-    - Integrate ktlint : https://www.youtube.com/watch?v=YmZIkUGnCco
-    - Refactor > Remove unused resource 
-    - Analyze -> Run inspection by name > Kotlin | Redundant constructs | Unused symbol
-    - Add pre-commit hook for ktlint : https://www.youtube.com/watch?v=eysVDO2_X0s
-    
-22/01/2019
-  - [Feature]
-       - Dagger2
-  - [Learning]
-       - https://medium.com/@iammert/new-android-injector-with-dagger-2-part-1-8baa60152abe
-       - https://medium.com/google-cloud/playing-with-kotlin-you-know-everything-john-doe-8275a6e98a96
 
-  - [Referred] : https://medium.com/androiddevelopers/appcompat-v23-2-daynight-d10f90c83e94, https://github.com/chrisbanes/tivi
+- 29/04/2020 - 05/05/2020
+   - **Implement Typography Theming (Adding downloadable font feature) (Extension : Dynamic font selection from app)**
+     - If you want to use a Downloadable Font before Android O, make sure you are using AppCompatTextView or that you are loading the font yourself with ResourcesCompat.getFont().
+     - Theme Attribute Mapping (Including Downloadable Fonts ) is applied to only below items, for TextView and EditTexts wee need to set attr explicitly as shown below
+           BottomNavigationView
+           Chip
+           FloatingActionButton
+           MaterialButton
+           MaterialCardView
+           TabLayout
 
-15/01/2019
- - [Feature]
-      - Added release/debug unique server endpoints
-      - Day Night mode implementation
-      - Navigation
- - [Learning]
-      - Changing statusbar color <item name="android:statusBarColor">@android:color/transparent</item>
-      - Changing status bar icon color   <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-      - Added release/debug unique server endpoints
- - [Referred] : https://medium.com/androiddevelopers/appcompat-v23-2-daynight-d10f90c83e94, https://github.com/chrisbanes/tivi
-
-14/01/2019
- - [Feature]
-      - Show Progress and handle error and complete state of the app
-
-11/01/2019
-- [Feature]
-     - Add Theme switcher and Font switcher icon to bottom bar
-
-10/01/2019
- - [Feature]
-     - Implement Theme switcher and Font switcher functionality
- - [Learning]
-     - **Tried setting custom fonts from manifest and gradle properties but failed (Need to find solution for this)**
-     - Implemented color palette , source : https://github.com/material-components
-
-09/01/2019
- - [Feature]
-    - Implement Typography Theming (Adding downloadable font feature) (Extension : Dynamic font selection from app)
- - [Learning]
-    - Typography Theming : https://material.io/develop/android/theming/typography/
-      - If you want to use a Downloadable Font before Android O, make sure you are using AppCompatTextView or that you are loading the font yourself with ResourcesCompat.getFont().
-      - Sample app to implement downloadable fonts : https://github.com/googlesamples/android-DownloadableFonts, https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts
-      - LL: Theme Attribute Mapping (Including Downloadable Fonts ) is applied to only below items, for TextView and EditTexts wee need to set attr explicitly as shown below
-             BottomNavigationView
-             Chip
-             FloatingActionButton
-             MaterialButton
-             MaterialCardView
-             TabLayout
-
-            <androidx.appcompat.widget.AppCompatTextView
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:textAppearance="?attr/textAppearanceSubtitle1" />
-
+          ```xml
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceSubtitle1" />          
+          ```
+          ```xml
             <com.google.android.material.textfield.TextInputEditText
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:textAppearance="?attr/textAppearanceBody1" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBody1" />     
+          ```
+     - Referred
+       - [Typography Theming](https://material.io/develop/android/theming/typography/)
+       - [Understand which textAppearance will suit best from this guide](https://material.io/design/typography/the-type-system.html#applying-the-type-scale)
+       - [Downloadable Fonts](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts)
+       - [Developing Themes with Style (Android Dev Summit '19](https://www.youtube.com/watch?v=Owkf8DhAOSo)
+       - [Sample](https://github.com/googlesamples/android-DownloadableFonts)
+   - **Color palettes**
+      - [Choosing palettes types](https://color.adobe.com/create)
+        - Monochromatic
+        - Analogous
+        - Complimentary
+        - Trirad
+      - Use [this](https://material.io/design/color/the-color-system.html#tools-for-picking-colors) tool to generate color palettes
+      - Use [this](https://material.io/design/color/dark-theme.html#ui-application) guideline to map android color palettes
+      - Output for Monochromatic dark gray color
+        ```xml
+            <!--dark grey-->
+            <color name="md_dark_grey_50">#F7F7F7</color>
+            <color name="md_dark_grey_100">#EEEEEE</color>
+            <color name="md_dark_grey_200">#E2E2E2</color>
+            <color name="md_dark_grey_300">#D0D0D0</color>
+            <color name="md_dark_grey_400">#ABABAB</color>
+            <color name="md_dark_grey_500">#8A8A8A</color>
+            <color name="md_dark_grey_600">#636363</color>
+            <color name="md_dark_grey_700">#505050</color>
+            <color name="md_dark_grey_800">#323232</color>
+            <color name="md_dark_grey_900">#121212</color>  
+        ```
+        ```xml
+            <!--    light-->
+            <color name="md_dark_grey_50">#F7F7F7</color> <!-- colorBackground -->
+            <color name="md_dark_grey_50">#F7F7F7</color> <!-- colorSurface -->
+            <color name="md_dark_grey_500">#8A8A8A</color> <!-- colorPrimary (500/700)-->
+            <color name="md_dark_grey_700">#505050</color> <!-- colorPrimaryVariant (colorPrimary+100/200)-->
+            <color name="md_dark_grey_200">#E2E2E2</color> <!-- colorSecondary (colorPrimary - 200/300)/-->
+            <color name="md_dark_grey_200">#E2E2E2</color> <!-- colorSecondaryVariant (colorPrimary - 200/300)/-->
+            <color name="md_red_600">#B00020</color> <!-- colorError -->
+            <color name="md_dark_grey_50">#121212</color> <!-- colorOnPrimary-->
+            <color name="md_dark_grey_900">#121212</color><!-- colorOnSecondary-->
+            <color name="md_dark_grey_900">#F7F7F7</color><!-- colorOnBackground-->
+            <color name="md_dark_grey_900">#F7F7F7</color><!-- colorOnSurface-->
+            <item name="md_dark_grey_50">#121212</item><!-- colorOnError-->
+        ```
+        ```xml
+            <!--    dark-->
+            <color name="md_dark_grey_900">#121212</color> <!-- colorBackground -->
+            <color name="md_dark_grey_800">#272727</color> <!-- colorSurface | The color #272727 is the result of combining the dark theme surface color #121212 and the 8% Primary color.Use Android studio color alpha to get % -->
+            <color name="md_dark_grey_200">#E2E2E2</color> <!-- colorPrimary (200)-->
+            <color name="md_dark_grey_700">#505050</color> <!-- colorPrimaryVariant (colorPrimary+100/200/500)-->
+            <color name="md_dark_grey_200">#E2E2E2</color> <!-- colorSecondary (colorPrimary + 0/100)-->
+            <color name="md_dark_grey_200">#E2E2E2</color> <!--colorSecondaryVariant (colorPrimary + 0/100/200/300)-->
+            <color name="md_red_200">#CF6679</color>   <!-- colorError created by taking the light theme error color (#B00020) and lightening it with a 40% white overlay-->
+            <color name="md_dark_grey_900">#121212</color> <!-- colorOnPrimary-->
+            <color name="md_dark_grey_900">#121212</color><!-- colorOnSecondary-->
+            <color name="md_dark_grey_50">#F7F7F7</color><!-- colorOnBackground-->
+            <color name="md_dark_grey_50">#F7F7F7</color><!-- colorOnSurface-->
+            <item name="md_dark_grey_900">#121212</item><!-- colorOnError-->
+        ```
+      - Referred
+        - [Developing Themes with Style (Android Dev Summit '19](https://www.youtube.com/watch?v=Owkf8DhAOSo)
+        - [Building a real Android app with Material Tools - Nick Rout - DevFest South Africa](https://www.youtube.com/watch?v=hjATvyrA0CQ)
+        - [UI Design | How to choose colors and color palettes](https://www.youtube.com/watch?v=wuZuvhF4u6U)
+        - [Color codes](https://material.io/design/color/dark-theme.html#ui-application)
+        - [Dribble](https://dribbble.com/shots/7111349/attachments/113890?mode=media)
+        - [Color Tool](https://material.io/resources/color/#!/?view.left=0&view.right=1&secondary.color=4DD0E1&primary.color=6200ee)
+        - [Palette Generator](https://material.io/design/color/the-color-system.html#tools-for-picking-colors)
+        - [Custom color palette](https://codelabs.developers.google.com/codelabs/mdc-103-flutter/index.html?index=..%2F..index#3)
+   - **Dark Theme**
+      - Referred
+        - [material.io](https://material.io/design/color/dark-theme.html)
+        - [Codelab](https://codelabs.developers.google.com/codelabs/design-material-darktheme/index.html?index=..%2F..index#0)
+        - [How to Design a Dark Theme Using Material (Google I/O'19)](https://www.youtube.com/watch?v=9NDLR3COU7Y)
+   - **Themes with Style**
+     - Implement Theme switcher functionality
+     - Tried setting custom fonts from manifest and gradle properties but failed (Need to find solution for this)
+     - Referred
+       - [Refactoring Android Themes with Style](https://medium.com/monzo-bank/refactoring-android-themes-with-style-restructuring-themes-15230569e50)
+   - **Adaptive icons**
+     - Referred
 
-      - Understand which textAppearance will suit best from this guide : https://material.io/design/typography/the-type-system.html#applying-the-type-scale
-      - Added bottom bar and learned that need to set vectorDrawables.useSupportLibrary true inside app build.gradle under defaultConfig to use vector drawable in that app
- - [Referred] : https://github.com/material-components , https://github.com/chrisbanes/tivi , https://github.com/googlesamples/android-DownloadableFonts
+- 28/04/2020
+  - [Integrate CI Bitrise](https://www.youtube.com/watch?v=jVMubvLDyHU)
+     
+- 26/04/2020
+   - Code cleanup
+      - [Integrate ktlint](https://www.youtube.com/watch?v=YmZIkUGnCco)
+      - Refactor > Remove unused resource
+      - Analyze -> Run inspection by name > Kotlin | Redundant constructs | Unused symbol
+      - [Add pre-commit hook for ktlint](https://www.youtube.com/watch?v=eysVDO2_X0s)
+
+- - -
+
+### Product Backlog
+  - [ ]Core
+     - [ ]Portfolio
+     - [ ]Watchlist
+     - [ ]All Stocks
+     - [ ]Stock Details
+     - [ ]Filter Stocks (iosched filter bottom sheet)
+     - [ ]Stock search (iosched search)
+  - [ ]Add google plus login
+  - [ ]Show Progress and handle error and complete state for the app
  
-08/01/2019
- - [Feature]
-    - Implement App Color Theming as per Material guideline https://material.io/develop/android/theming/color/
- - [Learning]
-    - Color Theming : https://material.io/develop/android/theming/color/
-        - Concept is to use themes to control app styling instead if putting parameters to each view. Following procedure is used to achieve this
-        - App uses baseline Material color theme format mentioned here : https://material.io/design/color/the-color-system.html#color-theme-creation
-        - Use the diagram mentioned in above link and generate baseline Material color from here: https://material.io/tools/color/#!/?view.left=0&view.right=1&primary.color=009688&secondary.color=fcfc13
- - [Referred] : https://material.io/, https://github.com/chrisbanes/tivi , https://github.com/seanghay/pelvelea
- 
- 
+### Tech Backlog
+  - Architecture 
+     - Usecases
+  - Style
+      - [ ]Add new navigation implementation
+      - [ ]Implement Day Night(Dark) mode
+      - [ ]Immersive mode
+      - [ ]ThemeOverlay
+      - [ ]Adaptive app icon
+      - [ ]App font
+      - [ ]App color palettes
+      - [ ]Add animated vector drawable for tab icons
+  - [ ]Integrate ktlint
+  - [ ]Explore Android Studio lint
+  - [ ]Release : https://www.raywenderlich.com/9043-android-app-bundles-getting-started
+  - [ ]Integrate CI Bitrise
+  - [ ]Analytics
+  - [ ]Viewpager pager 2
+
+- - -
+
 ### Tech TODO
  - Fix ./gradlew build issue 
+
+- - -
 
 ### Explain 
  - FragmentModule : IntoMap
 
+- - -
+
 ### Questions
  - How to merge watchlist/portfolio/bhav api call
- - How to update update db
+ - How to update db
 
-    
+- - -
+
 ### Learning 
-- Style 
-    - Typography
-    - Theme
-    - Material Components for Android [https://medium.com/androiddevelopers/migrating-to-material-components-for-android-ec6757795351]
+
 - Create parallel network requests
         launch {
             try {
@@ -158,7 +187,6 @@
           emit(Result.error(ioException))
       }
   }
-  
 - https://www.youtube.com/watch?v=Qxj2eBmXLHg
     - Databinding vs ViewBinding vs Kotlin synthetic
     - View model vs saved state 
